@@ -8,15 +8,26 @@ from PhysicsTools.NanoAODTools.postprocessing.framework.eventloop import Module
 
 #2016 MC: https://twiki.cern.ch/twiki/bin/view/CMS/BtagRecommendation80XReReco#Data_MC_Scale_Factors_period_dep
 #2017 MC: https://twiki.cern.ch/twiki/bin/view/CMS/BtagRecommendation94X
+#2018 MC: https://twiki.cern.ch/twiki/bin/view/CMS/BtagRecommendation102X
 DeepCSVMediumWP ={
     "2016" : 0.6324,
     "2017" : 0.4941,
+    "2018" : 0.4184
+}
+
+CSVv2MediumWP = {
+    "2016" : 0.8484,
+    "2017" : 0.8838
 }
 
 class Stop0lObjectsProducer(Module):
     def __init__(self, era):
         self.era = era
         self.metBranchName = "MET"
+        # EE noise mitigation in PF MET
+        # https://hypernews.cern.ch/HyperNews/CMS/get/JetMET/1865.html
+        if self.era == "2017":
+            self.metBranchName = "METFixEE2017"
 
     def beginJob(self):
         pass
@@ -32,9 +43,8 @@ class Stop0lObjectsProducer(Module):
         self.out.branch("Jet_Stop0l",      "O", lenVar="nJet")
         self.out.branch("SB_Stop0l",       "O", lenVar="nSB")
         self.out.branch("Jet_btagStop0l",  "O", lenVar="nJet")
-        self.out.branch("FatJet_Stop0l",   "O", lenVar="nFatJet")
         self.out.branch("Photon_Stop0l",   "O", lenVar="nPhoton")
-        self.out.branch("Jet_dPhiMET",     "F", lenVar="nJet")
+        self.out.branch("Jet_dPhiMET",     "F", lenVar="nJet", limitedPrecision=True)
         self.out.branch("Stop0l_HT",       "F")
         self.out.branch("Stop0l_Mtb",      "F")
         self.out.branch("Stop0l_Ptb",      "F")
@@ -42,9 +52,19 @@ class Stop0lObjectsProducer(Module):
         self.out.branch("Stop0l_nJets",    "I")
         self.out.branch("Stop0l_nbtags",   "I")
         self.out.branch("Stop0l_nSoftb",   "I")
+<<<<<<< HEAD
 	self.out.branch("Stop0l_MtlepMET", "F", lenVar="nElectron + nMuon")
 	self.out.branch("Stop0l_nElectron","I")
 	self.out.branch("Stop0l_nMuon",    "I")
+=======
+        # Copying METFixEE2017 to MET for 2017 Data/MC
+        if self.era == "2017":
+            self.out.branch("MET_phi",                  "F")
+            self.out.branch("MET_pt",                   "F")
+            self.out.branch("MET_sumEt",                "F")
+            self.out.branch("MET_MetUnclustEnUpDeltaX", "F")
+            self.out.branch("MET_MetUnclustEnUpDeltaY", "F")
+>>>>>>> upstream/master
 
     def endFile(self, inputFile, outputFile, inputTree, wrappedOutputTree):
         pass
@@ -72,7 +92,7 @@ class Stop0lObjectsProducer(Module):
         return True
 
     def SelIsotrack(self, isk, met):
-        iso = isk.pfRelIso03_chg/isk.pt
+        iso = isk.pfRelIso03_chg
         if abs(isk.pdgId) == 11 or abs(isk.pdgId) == 13:
             if isk.pt < 5 or iso > 0.2:
                 return False
@@ -122,7 +142,8 @@ class Stop0lObjectsProducer(Module):
         if (abeta > 1.442 and abeta < 1.566) or (abeta > 2.5):
             return False
         ## cut-base ID, 2^0 loose ID
-        if not photon.cutBasedBitmap & 0b1:
+        cutbase =  photon.cutBasedBitmap  if self.era != "2016" else photon.cutBased
+        if not cutbase & 0b1:
             return False
         return True
 
@@ -149,6 +170,16 @@ class Stop0lObjectsProducer(Module):
         if Mtb == float('inf'):
             Mtb = 0
         return Mtb, Ptb
+
+    def CopyMETFixEE2017(self, METFixEE):
+        self.out.fillBranch("MET_phi", METFixEE.phi)
+        self.out.fillBranch("MET_pt", METFixEE.pt)
+        self.out.fillBranch("MET_sumEt", METFixEE.sumEt)
+        self.out.fillBranch("MET_MetUnclustEnUpDeltaX", METFixEE.MetUnclustEnUpDeltaX)
+        self.out.fillBranch("MET_MetUnclustEnUpDeltaY", METFixEE.MetUnclustEnUpDeltaY)
+        return True
+
+
 
 
     def analyze(self, event):
@@ -185,6 +216,8 @@ class Stop0lObjectsProducer(Module):
 	MtLepMET = self.SelMtlepMET(electrons, muons, met)
 
         ### Store output
+        if self.era == "2017":
+            self.CopyMETFixEE2017(met)
         self.out.fillBranch("Electron_Stop0l", self.Electron_Stop0l)
         self.out.fillBranch("Muon_Stop0l",     self.Muon_Stop0l)
         self.out.fillBranch("IsoTrack_Stop0l", self.IsoTrack_Stop0l)

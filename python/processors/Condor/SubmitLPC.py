@@ -13,12 +13,14 @@ import argparse
 from collections import defaultdict
 
 # TODO: set OutDir (and ProjectName?) to be modified based on input filelist location
-DelExe    = '../Stop0l_postproc.py'
+#DelExe    = '../Stop0l_postproc.py'
 #OutDir = '/store/user/%s/StopStudy' %  getpass.getuser()
 tempdir = '/uscms_data/d3/%s/condor_temp/' % getpass.getuser()
 ShortProjectName = 'PostProcess_v1'
 argument = "--inputFiles=%s.$(Process).list "
-sendfiles = ["../keep_and_drop.txt"]
+#sendfiles = ["../keep_and_drop_tauMVA.txt"]
+#sendfiles = ["../keep_and_drop.txt", "../keep_and_drop_res.txt"]
+sendfiles = ["../keep_and_drop_QCD.txt", "../keep_and_drop_smear.txt"]
 
 def tar_cmssw():
     print("Tarring up CMSSW, ignoring file larger than 100MB")
@@ -166,7 +168,7 @@ def my_process(args):
         Tarfiles+=npro
         NewNpro[key] = len(npro)
 
-    Tarfiles.append(os.path.abspath(DelExe))
+    Tarfiles.append(os.path.abspath(args.runfile))
     tarballname ="%s/%s.tar.gz" % (tempdir, ProjectName)
     with tarfile.open(tarballname, "w:gz", dereference=True) as tar:
         [tar.add(f, arcname=f.split('/')[-1]) for f in Tarfiles]
@@ -178,7 +180,8 @@ def my_process(args):
     for name, sample in Process.items():
 
         #define output directory
-        outdir = sample["Outpath__"]
+        if args.outputdir == "": outdir = sample["Outpath__"]
+	else:			 outdir = args.outputdir
         # outputfile = "{common_name}_$(Process).root ".format(common_name=name)
 
         #Update RunExe.csh
@@ -187,7 +190,7 @@ def my_process(args):
             for line in open("RunExe.csh","r"):
                 line = line.replace("DELSCR", os.environ['SCRAM_ARCH'])
                 line = line.replace("DELDIR", os.environ['CMSSW_VERSION'])
-                line = line.replace("DELEXE", DelExe.split('/')[-1])
+                line = line.replace("DELEXE", args.runfile.split('/')[-1])
                 line = line.replace("OUTDIR", outdir)
                 # line = line.replace("OUTFILE", outputfile)
                 outfile.write(line)
@@ -208,6 +211,7 @@ def my_process(args):
                 line = line.replace("TARFILES", tarballname)
                 line = line.replace("TEMPDIR", tempdir)
                 line = line.replace("PROJECTNAME", ProjectName)
+		line = line.replace("MEMORY", args.memory)
                 line = line.replace("ARGUMENTS", arg)
                 outfile.write(line)
 
@@ -227,6 +231,15 @@ if __name__ == "__main__":
     parser.add_argument('-e', '--era',
         default = "2016",type=int,
         help = 'Era of the config file')
+    parser.add_argument('-o', '--outputdir',
+	default = "",
+	help = 'Path to the output directory')
+    parser.add_argument('-f', '--runfile',
+	default = "../Stop0l_postproc.py",
+	help = 'Path to the process file')
+    parser.add_argument('-m', '--memory',
+	default = "2 GB",
+	help = 'Amount of memory to request.')
 
     args = parser.parse_args()
     my_process(args)

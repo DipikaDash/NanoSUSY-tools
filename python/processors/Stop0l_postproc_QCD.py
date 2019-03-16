@@ -8,7 +8,7 @@ from PhysicsTools.NanoSUSYTools.modules.eleMiniCutIDProducer import *
 from PhysicsTools.NanoSUSYTools.modules.Stop0lObjectsProducer import *
 from PhysicsTools.NanoSUSYTools.modules.Stop0lBaselineProducer import *
 from PhysicsTools.NanoSUSYTools.modules.qcdSmearProducer import *
-<<<<<<< HEAD
+
 #from PhysicsTools.NanoSUSYTools.modules.genjettest import *
 
 #from PhysicsTools.NanoSUSYTools.modules.qcdskimmingfile import *

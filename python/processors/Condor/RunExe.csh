@@ -43,7 +43,12 @@ endif
 echo $EXE $argv[2-]
 python $EXE $argv[2-]
 
+set filename = "`echo $argv | sed 's/--inputfile=//'`"
+set filename = "`echo $filename | sed 's/ --era=.*//'`"
+set filename = "`echo $filename | sed 's/list/root/'`"
+
 if ($? == 0) then
+<<<<<<< HEAD
   echo "Process finished. Listing current files: "
   ls
   echo "Hadd file will be named: " $argv[1]
@@ -51,6 +56,16 @@ if ($? == 0) then
   ## Remove skim files once they are merged
   if ($? == 0) then
     foreach outfile (`ls *_Skim.root`)
+=======
+  foreach tarfile (`ls *gz FileList/*gz`)
+    tar -tf $tarfile  | xargs rm -r
+  end
+  rm *Skim.root
+  foreach outfile (`ls *root`)
+    echo "Copying ${outfile} to ${OUTPUT}"
+    xrdcp $outfile "root://cmseos.fnal.gov/${OUTPUT}/${filename}"
+    if ($? == 0) then
+>>>>>>> upstream/hui_trigger_eff
       rm $outfile
     end
   endif

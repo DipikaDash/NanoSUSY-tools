@@ -12,11 +12,17 @@ import getpass
 import argparse
 from collections import defaultdict
 
+n_jobs = 200
+
 # TODO: set OutDir (and ProjectName?) to be modified based on input filelist location
 #DelExe    = '../Stop0l_postproc.py'
 #OutDir = '/store/user/%s/StopStudy' %  getpass.getuser()
 tempdir = '/uscms_data/d3/%s/condor_temp/' % getpass.getuser()
+<<<<<<< HEAD
 ShortProjectName = 'PostProcess_v1'
+=======
+ProjectName = '2016_highdm_QCD'
+>>>>>>> upstream/hui_trigger_eff
 argument = "--inputFiles=%s.$(Process).list "
 #sendfiles = ["../keep_and_drop_tauMVA.txt"]
 #sendfiles = ["../keep_and_drop.txt", "../keep_and_drop_res.txt"]
@@ -62,10 +68,19 @@ def ConfigList(config, era):
         print(stripped_entry)
         process[stripped_entry[0]] = {
             "Filepath__" : "%s/%s" % (stripped_entry[1], stripped_entry[2]),
+<<<<<<< HEAD
             "Outpath__" : "%s" % (stripped_entry[1]) + "/" + ShortProjectName + "/" + stripped_entry[0]+"/",
             "isData" : "Data" in stripped_entry[0],
             "isFastSim" : "fastsim" in stripped_entry[0],
             "era" : era, #era from args
+=======
+            #"isData" : len(stripped_entry) == 6,
+            #"isFastSim" : "fastsim" in stripped_entry[0],
+            #"crossSection":  float(stripped_entry[4]) * float(stripped_entry[7]),
+            #"nEvents":  int(stripped_entry[5])- int(stripped_entry[6]),
+            "era" : "%s" % (stripped_entry[3]),
+            "dataset" : "%s" % (stripped_entry[4])
+>>>>>>> upstream/hui_trigger_eff
         }
         if process[stripped_entry[0]]["isData"]:
             process[stripped_entry[0]].update( {
@@ -87,7 +102,11 @@ def Condor_Sub(condor_file):
     os.chdir(curdir)
 
 
+<<<<<<< HEAD
 def SplitPro(key, file, lineperfile=20):
+=======
+def SplitPro(key, file, fraction=n_jobs):
+>>>>>>> upstream/hui_trigger_eff
     splitedfiles = []
     filelistdir = tempdir + '/' + "FileList"
     try:

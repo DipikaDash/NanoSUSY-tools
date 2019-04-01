@@ -19,11 +19,12 @@ class qcdSmearProducer(Module):
         self.xBinWidth = 0.01
         self.minWindow = 0.01
         self.maxWindow = 0.5
-        self.nSmears = 100
+        self.nSmears = 2
         self.nSmearJets = 2
         self.nBootstraps = 50
         self.doFlatSampling = True
         self.respInputName = "JetResByFlav"
+<<<<<<< HEAD
         #self.respFileName = "file:/eos/uscms/store/user/mkilpatr/13TeV/qcdsmearing_nanoaod/resTailOut_combined_filtered_CHEF_puWeight_weight_WoH_NORMALIZED_NANO.root"
 	self.respFileName = "root://cmseos.fnal.gov//store/user/mkilpatr/13TeV/qcdsmearing_nanoaod/resTailOut_combined_filtered_CHEF_puWeight_weight_WoH_NORMALIZED_NANO.root"
 
@@ -48,6 +49,11 @@ class qcdSmearProducer(Module):
 	self.outsmear.branch("nBootstrapWeight",        "I")
 	self.outsmear.branch("bootstrapWeight",         "I", lenVar="nBootstrapWeight")
 
+=======
+        self.respFileName = "file:/eos/uscms/store/user/ddash/qcd_smeared/resTailOut_combined_filtered_CHEF_puWeight_weight_WoH_NORMALIZED.root"
+	self.outFileName = "Smear_tree_"
+
+>>>>>>> 09dd07abbc406f1028ff602691671d9de14a9a37
     def loadHisto(self,filename,hname):
 	tf = ROOT.TFile.Open(filename)
 	hist = tf.Get(hname)
@@ -55,6 +61,7 @@ class qcdSmearProducer(Module):
 	tf.Close()
 	return hist
 
+<<<<<<< HEAD
     def ptmapping(self, recojet, vecKind):
 	ptrange = [0, 50, 75, 100, 125, 150, 200, 250, 300, 400, 500, 700, 1000, 1500]	
         pt_index = -1
@@ -64,11 +71,43 @@ class qcdSmearProducer(Module):
 		jetpt = recojet.pt
 	for i in xrange(len(ptrange)):
 		if jetpt < float(ptrange[i]): 
+=======
+    def storeSmearFile(self, outFileName, inTree, Jet_pt, MET, weight, bootstrapweight):
+	outFile = ROOT.TFile.Open(outFileName, "recreate")
+	inTree.SetBranchStatus("Jet_pt", 0)
+	inTree.SetBranchStatus("MET_pt", 0)
+	inTree.SetBranchStatus("MET_phi", 0)
+	inTree.SetBranchStatus("genWeight", 0)
+	outTree = inTree.CloneTree(0)
+	jetpt = array( 'f', Jet_pt )
+	outTree.Branch('Jet_pt', jetpt, 'Jet_pt/F')
+	metpt = array( 'f', [MET.Pt()] )
+	outTree.Branch('MET_pt', metpt, 'MET_pt/F')
+	metphi = array( 'f', [MET.Phi()] )
+	outTree.Branch('MET_phi', metphi, 'MET_phi/F')
+	genWeight = array( 'f', [weight] )
+	outTree.Branch('genWeight', genWeight, 'genWeight/F')
+	bootstrapWeight = array( 'i', bootstrapweight )
+	outTree.Branch('bootstrapWeight', bootstrapWeight, 'bootstrapWeight/I')
+	outTree.Fill()
+	outTree.Write()
+	inTree.SetBranchStatus("Jet_pt", 1)
+	inTree.SetBranchStatus("MET_pt", 1)
+	inTree.SetBranchStatus("MET_phi", 1)
+	inTree.SetBranchStatus("genWeight", 1)
+	
+    def ptmapping(self,jets):
+	ptrange = [0, 50, 75, 100, 125, 150, 200, 250, 300, 400, 500, 700, 1000, 1500]	
+        pt_index = -1
+	for i in xrange(len(ptrange)):
+		if jets.pt < float(ptrange[i]): 
+>>>>>>> 09dd07abbc406f1028ff602691671d9de14a9a37
 			pt_index = i - 1
 			break
 	
 	bname=["res_b_comp_14","res_b_comp_15","res_b_comp_16","res_b_comp_17","res_b_comp_18","res_b_comp_19","res_b_comp_20","res_b_comp_21","res_b_comp_22","res_b_comp_23","res_b_comp_24","res_b_comp_25","res_b_comp_26"]
         lgtname=["res_light_comp_1","res_light_comp_2","res_light_comp_3","res_light_comp_4","res_light_comp_5","res_light_comp_6","res_light_comp_7","res_light_comp_8","res_light_comp_9","res_light_comp_10","res_light_comp_11","res_light_comp_12","res_light_comp_13"]
+<<<<<<< HEAD
         if vecKind :
 		return lgtname[pt_index]
 	else:
@@ -80,6 +119,28 @@ class qcdSmearProducer(Module):
     def jetResFunction(self, jets, genjets, vecKind):
 	if vecKind : res = jets.Pt()/genjets.pt
 	else:	     res = jets.pt/genjets.pt
+=======
+        if jets.partonFlavour == 4 :
+		return bname[pt_index]
+        else :
+		return lgtname[pt_index]
+
+    def beginJob(self,histFile=None,histDirName=None):
+        pass
+
+    def endJob(self):
+        pass 
+
+    def beginFile(self, inputFile, outputFile, inputTree, wrappedOutputTree):
+        self.out = wrappedOutputTree
+	#self.out.branch("bootstrapWeight",         "I")
+
+    def endFile(self, inputFile, outputFile, inputTree, wrappedOutputTree):
+        pass
+
+    def jetResFunction(self, jets, genjets):
+        res = jets.pt/genjets.pt
+>>>>>>> 09dd07abbc406f1028ff602691671d9de14a9a37
         return res
 
     def interpolateResToProb(self,cdf,resp):
@@ -134,9 +195,13 @@ class qcdSmearProducer(Module):
     def getScaledWindowAndProb(self,cdf,resp,minWindow,maxWindow):
         window = self.getScaledWindow(resp,minWindow,maxWindow)
         minRes = resp - window
+<<<<<<< HEAD
         if minRes < 0: minRes = 0
 	maxRes = resp + window
 	if maxRes > 2: maxRes = 2
+=======
+        maxRes = resp + window
+>>>>>>> 09dd07abbc406f1028ff602691671d9de14a9a37
 	minProb, maxProb = self.getWindowProb(cdf,minRes,maxRes)
         return minProb, maxProb, minRes, maxRes
 
@@ -147,6 +212,20 @@ class qcdSmearProducer(Module):
 	return minProb, maxProb, minRes, maxRes
 
     def testMetCalc(self, obj1, obj2, obj3):
+<<<<<<< HEAD
+=======
+        tot = ROOT.TLorentzVector()
+        v1 = ROOT.TLorentzVector()
+        v2 = ROOT.TLorentzVector()
+        v3 = ROOT.TLorentzVector()
+        v1.SetPtEtaPhiM(obj1.pt, 0, obj1.phi, 0)
+        v2.SetPtEtaPhiM(obj2.pt, 0, obj2.phi, 0)
+        v3.SetPtEtaPhiM(obj3.pt, 0, obj3.phi, 0)
+	tot = (v1 + (v2 - v3))
+	return tot
+    
+    def addFourVector(self,obj1,obj2):
+>>>>>>> 09dd07abbc406f1028ff602691671d9de14a9a37
         tot = ROOT.TLorentzVector()
         v1 = ROOT.TLorentzVector()
         v2 = ROOT.TLorentzVector()
@@ -159,7 +238,15 @@ class qcdSmearProducer(Module):
     
     def addTLorentzVector(self,obj1,obj2):
         tot = ROOT.TLorentzVector()
+<<<<<<< HEAD
         tot = obj1 + obj2
+=======
+        v1 = ROOT.TLorentzVector()
+        v2 = ROOT.TLorentzVector()
+        v1.SetPtEtaPhiM(obj1.Pt(), 0, obj1.Phi(), 0)
+        v2.SetPtEtaPhiM(obj2.pt, 0, obj2.phi, 0)
+        tot = v1+v2
+>>>>>>> 09dd07abbc406f1028ff602691671d9de14a9a37
         return tot
     
     def subFourVector(self,obj1,obj2):
@@ -171,7 +258,7 @@ class qcdSmearProducer(Module):
         tot = v1-v2
         return tot
     
-    def analyze(self, event):
+    def analyze(self, event, inTree):
         jets      = Collection(event, "Jet")
         genjets   = Collection(event, "GenJet")
         met       = Object(event,     self.metBranchName)
@@ -186,11 +273,25 @@ class qcdSmearProducer(Module):
 	for iB in xrange(self.nBootstraps) :
 		b.append(min(255,ROOT.gRandom.Poisson(1)))
 
+<<<<<<< HEAD
+=======
+	for ib in xrange(len(b)) :
+		print 'bootstrap: ', b[ib]
+
+        #bootstrapping should be done here
+        #the histogram can be accessed by doing self.targeth.{some root function to get the value}
+        #xBinWidth = float(2/self.targeth.GetNbinsX())
+>>>>>>> 09dd07abbc406f1028ff602691671d9de14a9a37
         xBinWidth = 0.01
 
         #begin smearing
         smearWeight = 1
 	SmearJets = []
+<<<<<<< HEAD
+=======
+        eventList = []
+	eventList.append(event)
+>>>>>>> 09dd07abbc406f1028ff602691671d9de14a9a37
 	for iJ in xrange(len(genjets)) :
 		if iJ == self.nSmearJets: break
 		gJ = genjets[iJ]
@@ -200,6 +301,7 @@ class qcdSmearProducer(Module):
 			if jets[iR].genJetIdx != iJ:  continue
 			rJI = iR
 			break
+<<<<<<< HEAD
 
 		testMet = 0
 		if rJI < 0:
@@ -286,12 +388,89 @@ class qcdSmearProducer(Module):
 			newp4 = ROOT.TLorentzVector()
 			newp4.SetPtEtaPhiM(newResValue * info[0].pt,recoJet.Eta(),recoJet.Phi(),recoJet.M())
 			recoJets.append(newp4)
+=======
+
+		testMet = 0
+		if rJI < 0:
+			testMet = self.subFourVector(met, gJ).Pt()
+		else:
+			testMet = self.testMetCalc(met, jets[rJI], gJ).Pt()
+		
+		deltamet = testMet - met.pt
+		if deltamet > met.pt + 100 and deltamet > 0.55 *gJ.pt: continue
+		
+		recoJet = jets[rJI]
+		if rJI < 0 :
+			rJI = len(jets)
+			n1=ROOT.TLorentzVector()
+			newjet = [n1.SetPtEtaPhiM(9.5,gJ.eta,gJ.phi,gJ.mass),-1,0,9.5,0,gJ.pt]
+			recoJet = newjet
+		
+		origRes_ = self.jetResFunction(recoJet, gJ)
+		if origRes_ < 0 or origRes_ > 2 : continue
+		
+		respHistoName = self.ptmapping(jets[rJI])
+		targeth = self.loadHisto(self.respFileName,respHistoName)
+		cdf = targeth.GetBinContent(int(origRes_/self.xBinWidth))
+		print "CDF", cdf
+		minProb, maxProb, minRes, maxRes = self.getScaledWindowAndProb(targeth,origRes_,self.minWindow,self.maxWindow)
+		if minProb - maxProb == 0 : continue
+		
+		SmearJets_buff = [gJ,rJI,targeth,minProb,maxProb,minRes,maxRes] 
+		SmearJets.append(SmearJets_buff)
+
+        if len(SmearJets) == 0: return True
+
+        originalRecoJets = jets
+        originalMET = met
+        originalWeight = weight
+	canSmear = False
+	SmearedJets = []
+
+        for iS in xrange(self.nSmears) :
+		recoJets = []
+		#originalRecoJets_pt = []
+		for iJ in xrange(self.nSmearJets) :
+			info = SmearJets[iJ]
+			newResValue = 1
+			if self.doFlatSampling :
+				newResValue = ROOT.gRandom.Uniform(info[5], info[6]) 
+			else :
+				newResProb = ROOT.gRandom.Uniform(info[3], info[4])   
+				newResValue=self.interpolateProbToRes(info[2], newResProb)
+
+			minProb2, maxProb2, minRes2, maxRes2 = self.getContributionScaledWindowAndProb(info[2], newResValue, self.minWindow, self.maxWindow) 
+			contribProb = maxProb2 - minProb2
+			if contribProb == 0 : continue
+			canSmear = True
+
+			smearingCorr = 1
+			if self.doFlatSampling:
+				deltaMinRes = newResValue - 0.001
+				deltaMaxRes = newResValue + 0.001 
+				deltaMinProb, deltaMaxProb = self.getWindowProb(info[2], deltaMinRes, deltaMaxRes)
+				flatProb = (deltaMaxRes - deltaMinRes)/ (info[6] - info[5])
+				trueProb = deltaMaxProb - deltaMinProb
+				smearingCorr = trueProb / flatProb
+			else:
+				smearingCorr = maxProb - minProb
+
+			smearWeight *= smearingCorr / contribProb
+			recoJet = jets[info[1]]		
+	
+			if iJ == 0 : met = self.addFourVector(met, recoJet)
+			else:        met = self.addTLorentzVector(met, recoJet)
+			newp4 = ROOT.TLorentzVector()
+			newp4.SetPtEtaPhiM(newResValue * info[0].pt,recoJet.eta,recoJet.phi,recoJet.mass)
+			recoJets.append(newp4.Pt())
+>>>>>>> 09dd07abbc406f1028ff602691671d9de14a9a37
 			met -= newp4
 
 		for j in xrange(len(originalRecoJets)):
 			if j == SmearJets[0][1] or j == SmearJets[1][1] :
 				continue
 			else :
+<<<<<<< HEAD
 				jet_buff = ROOT.TLorentzVector()
 				jet_buff.SetPtEtaPhiM(originalRecoJets[j].pt, originalRecoJets[j].eta, originalRecoJets[j].phi, originalRecoJets[j].mass)
 				recoJets.append(jet_buff)
@@ -315,6 +494,18 @@ class qcdSmearProducer(Module):
 			self.outsmear.fillBranch("nBootstrapWeight", self.nBootstraps)
 			self.outsmear.fillBranch("bootstrapWeight", b)
 			self.outsmear.fill()
+=======
+				recoJets.append(originalRecoJets[j].pt)
+			#originalRecoJets_pt.append(originalRecoJets[j].pt)
+
+		if canSmear :
+			recoJets.sort(key = lambda j : j, reverse = True)
+			#print "recoJets: ", recoJets
+			smearWeight /= float(self.nSmears)
+			weight *= smearWeight
+			self.storeSmearFile(self.outFileName + str(eventNum) + "_" + str(iS) + ".root", inTree, recoJets, met, weight, b)
+			#Here is where we need to push values to a new tree
+>>>>>>> 09dd07abbc406f1028ff602691671d9de14a9a37
 
 		smearWeight = 1.0
 		weight = originalWeight
@@ -322,6 +513,10 @@ class qcdSmearProducer(Module):
 		met = originalMET
 		jets = originalRecoJets
 
+<<<<<<< HEAD
 	self.out.fillBranch("nBootstrapWeight",        self.nBootstraps)
 	self.out.fillBranch("bootstrapWeight",         b)
+=======
+	#self.out.fillBranch("bootstrapWeight",         b)
+>>>>>>> 09dd07abbc406f1028ff602691671d9de14a9a37
         return True    

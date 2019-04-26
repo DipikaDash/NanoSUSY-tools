@@ -20,14 +20,24 @@ class qcdskimmingfile(Module):
 	pass 
 
     def beginFile(self, inputFile, outputFile, inputTree, wrappedOutputTree):
-        self.out = wrappedOutputTree
-        self.out = wrappedOutputTree
-        self.out.branch("dphij1met", "F")
-        self.out.branch("dphij2met", "F")
-        self.out.branch("dphij3met", "F")
-        self.out.branch("dphij4met", "F")
-        self.out.branch("Pass_HEM20", "O")
-        self.out.branch("Pass_HEM30", "O")
+            
+       	self.out = wrappedOutputTree
+        self.out.branch("nJetPass", "I")
+        self.out.branch("JetPass_pt","F",lenVar="nJetPass")
+        self.out.branch("JetPass_eta","F",lenVar="nJetPass")
+        self.out.branch("JetPass_phi", "F",lenVar="nJetPass")
+        self.out.branch("JetPass_mass", "F",lenVar="nJetPass")
+    def SelJets(self, jet):
+        if jet.pt < 20 or math.fabs(jet.eta) > 2.4 :
+            return False
+        return True
+    def parselist(self, array, which):
+        listx_, listy_ = which, len(array)
+        out = []
+        for i in xrange(listy_):
+            print "array: ", array[i], array[i][listx_]
+            out.append(array[i][listx_])
+        return out
 
 
 
@@ -42,19 +52,28 @@ class qcdskimmingfile(Module):
 	jets      = Collection(event, "Jet")
 	genjets   = Collection(event, "GenJet")
 	met       = Object(event,     self.metBranchName)
-	njets = len(jets)
-        if met.pt < 200: return True
-        if njets < 2: return True
-        for i in jets:
-            if math.fabs(i.eta) > 4.7 or i.pt < 20: return True
-            else:
-                PassHEM20 = (i.eta > -3.2) & (i.eta < -1.2) & (i.phi > -1.77) & (i.phi<-0.67)
-                PassHEM30 = (i.pt > 30) & (i.eta > -3.2) & (i.eta < -1.2) & (i.phi > -1.77) & (i.phi<-0.67)
-                if njets > 0 : self.out.fillBranch("dphij1met", deltaPhi(jets[0], met))
-                if njets > 1 : self.out.fillBranch("dphij2met", deltaPhi(jets[1], met))
-                if njets > 2 : self.out.fillBranch("dphij3met", deltaPhi(jets[2], met))
-                if njets > 3 : self.out.fillBranch("dphij4met", deltaPhi(jets[3], met))
-                self.out.fillBranch("Pass_HEM20", PassHEM20)
-                self.out.fillBranch("Pass_HEM30", PassHEM30)
+	 stop0l = Object(event, "Stop0l")
+        njets = len(jets)
+        self.Jet_Stop0l = map(self.SelJets, jets)
+        jet_pass =[]
+        for i in xrange(len(jets)):
+               jet_ =[]
+               j=jets[i]
+               if self.Jet_Stop0l[i] == 1:
+                   #j=jets[i]                                                                                                                           
+                   #print "jet: ", j.pt, j.eta, j.phi, j.mass                                                                                           
+                   jet_.append(j.pt)
+                   jet_.append(j.eta)
+                   jet_.append(j.phi)
+                   jet_.append(j.mass)
+                   jet_pass.append(jet_)
+
+        self.out.fillBranch("nJetPass", len(jet_pass))
+        self.out.fillBranch("JetPass_pt", self.parselist(jet_pass, 0))
+        #print "jetpt[0](2): ", j.pt                                                                                                                    
+        self.out.fillBranch("JetPass_eta", self.parselist(jet_pass, 1))
+        self.out.fillBranch("JetPass_phi", self.parselist(jet_pass, 2))
+        self.out.fillBranch("JetPass_mass", self.parselist(jet_pass,3))
+
         return True
 

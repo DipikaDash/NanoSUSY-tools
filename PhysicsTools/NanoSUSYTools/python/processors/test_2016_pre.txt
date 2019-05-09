@@ -1,0 +1,1 @@
+root://cmseos.fnal.gov//eos/uscms/store/user/lpcsusyhad/Stop_production/Fall17_94X_v2_NanAOD_MC/PreProcessed_20Mar2019/QCD_HT1500to2000_TuneCP5_13TeV-madgraph-pythia8/2017_MINIAODv2_RunIIFall17MiniAODv2-PU2017_12Apr2018_94X_v14-v2/190320_171544/0000/prod2017MC_NANO_1-1.root

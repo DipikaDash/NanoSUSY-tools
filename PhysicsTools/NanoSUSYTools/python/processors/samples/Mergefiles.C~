@@ -1,0 +1,14 @@
+void Mergefiles()
+{
+  
+    TChain mychain("Events");
+    for (int i=0 ; i< 2 ;i++){
+    mychain.Add(Form("/eos/uscms/store/user/ddash/nanoAOD/2016/QCD_HT300to500_2016_%d.root",i));
+    // mychain.Add("myfile2.root/mytree");
+    cout << "please ho jaa yaar "<< i << endl;
+    // return mychain;
+
+    }
+    mychain.Merge("/eos/uscms/store/user/ddash/nanoAOD/2016/QCD_300to500_2016.root");
+    return mychain;
+}

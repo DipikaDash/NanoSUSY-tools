@@ -1,0 +1,217 @@
+#include<iostream>
+#include <cmath>
+#include "TString.h"
+#include "TTree.h"
+#include "TCanvas.h"
+#include "TH1.h"
+#include "TH1F.h"
+#include "TH1D.h"
+#include "TF1.h"
+#include <string>
+#include <sstream>
+#include <fstream>
+#include <vector>
+#include "TGraph.h"
+#include "THStack.h"
+#include "TLatex.h"
+#include "TLegend.h"
+#include "TFile.h"
+#include "TMath.h"
+#include "TROOT.h"
+#include "TLegend.h"
+#include "TAttMarker.h"
+#include "TMultiGraph.h"
+#include "TPad.h"
+#include "TColor.h"
+#include "tdrstyle.C"
+#include "CMS_lumi.C"
+using namespace std;
+void stack_CR(){
+
+
+
+
+  TH1* qcd_CR = new TH1D("qcd_CR","",60,100,5000);
+  TH1* nonqcd_CR = new TH1D("nonqcd_CR","",60,100,5000);
+  TH1* data_CR = new TH1D("data_CR","",60,100,5000);
+  TH1* tw_CR= new  TH1D("tw_CR","",60,100,5000);
+  TH1* wjets_CR= new TH1D("wjets_CR","",60,100,5000);
+  TH1* ttw_CR= new TH1D("ttw_CR","",60,100,5000);
+  TH1* ttbar_CR= new TH1D("ttbar_CR","",60,100,5000);
+  TH1* ttz_CR= new TH1D("ttz_CR","",60,100,5000);
+  TH1* znunu_CR= new TH1D("ttz_CR","",60,100,5000);
+  TH1* minor_CR = new TH1D("minor_CR","",60,100,5000);
+
+  TString samples[5]={"met_2016_tree.root","ttbar_2016_tree.root","wjets_2016_tree.root","znunu_2016_tree.root","minor_2016_tree.root"};
+
+  // TFile *file1 = new TFile("MC_data_CR.root", "RECREATE");
+
+
+  for (Int_t j=0;j<5 ; j++){
+    TFile *f1=new TFile(samples[j]);
+    TTree *t1 =(TTree*)f1->Get("Events");
+   
+
+    Int_t run,nJet,Jet_jetID;
+    Float_t Jet_eta,Jet_phi,Jet_pt,MET_phi,MET_pt,MET_sumEt,Stop0l_evtWeight,puWeight,BTagWeight,ISRWeight;
+   
+    Bool_t Pass_JetID,Pass_EventFilter,Pass_ElecVeto,Pass_MuonVeto,Pass_LeptonVeto,Pass_NJets20,Pass_MET,Pass_HT,Pass_QCDCR,Pass_QCDCR_lowDM,Pass_QCDCR_highDM,Jet_Stop0l;
+    vector<unsigned char> *bootstrapWeight=0;
+
+    t1->SetBranchStatus("*",0);
+    t1->SetBranchStatus("Jet_jetID",1);
+    t1->SetBranchStatus("nJet",1);
+    t1->SetBranchStatus("Jet_pt",1);
+    t1->SetBranchStatus("Jet_eta",1);
+    t1->SetBranchStatus("Jet_phi",1);
+    t1->SetBranchStatus("MET_pt",1);
+    t1->SetBranchStatus("Stop0l_evtWeight",1);
+    t1->SetBranchStatus("puWeight",1);
+    t1->SetBranchStatus("BTagWeight",1);
+    t1->SetBranchStatus("ISRWeight",1);
+    t1->SetBranchStatus("Pass_JetID",1);
+    t1->SetBranchStatus("Pass_EventFilter",1);
+    t1->SetBranchStatus("Pass_LeptonVeto",1);
+    t1->SetBranchStatus("Pass_NJets20",1);
+    t1->SetBranchStatus("Pass_MET",1);
+    t1->SetBranchStatus("Pass_HT",1);
+    t1->SetBranchStatus("Pass_QCDCR",1);
+    t1->SetBranchStatus("Jet_Stop0l",1);
+    //t1->SetBranchStatus("Jet_jetID",1);
+    //t1->SetBranchStatus("Jet_jetID",1);
+    //t1->SetBranchStatus("Jet_jetID",1);
+    //t1->SetBranchStatus("Jet_jetID",1); 
+
+    t1->SetBranchAddress("Jet_jetID",&Jet_jetID);
+    t1->SetBranchAddress("nJet",&nJet);
+    t1->SetBranchAddress("Jet_eta",&Jet_eta);
+    t1->SetBranchAddress("Jet_pt",&Jet_pt);
+    t1->SetBranchAddress("Jet_phi",&Jet_phi);
+    t1->SetBranchAddress("MET_pt",&MET_pt);
+    t1->SetBranchAddress("Stop0l_evtWeight",&Stop0l_evtWeight);
+    t1->SetBranchAddress("puWeight",&puWeight);
+    t1->SetBranchAddress("BTagWeight",&BTagWeight);
+    t1->SetBranchAddress("ISRWeight",&ISRWeight);
+    t1->SetBranchAddress("Pass_JetID",&Pass_JetID);
+    t1->SetBranchAddress("Pass_EventFilter",&Pass_EventFilter);
+    t1->SetBranchAddress("Pass_LeptonVeto",&Pass_LeptonVeto);
+    t1->SetBranchAddress("Pass_NJets20",&Pass_NJets20);
+    t1->SetBranchAddress("Pass_MET",&Pass_MET);
+    t1->SetBranchAddress("Pass_HT",&Pass_HT);
+    t1->SetBranchAddress("Pass_QCDCR",&Pass_QCDCR);
+    t1->SetBranchAddress("Jet_Stop0l",&Jet_Stop0l);
+
+
+
+
+    const Double_t lumistr=38.9;
+
+   Double_t a,b,c,d;
+    Int_t nentries =(Int_t)t1->GetEntries();
+   
+    cout <<" no of entries of " << j<< ".root " << nentries << endl ;
+    for(Int_t i=0; i < nentries; i++){
+           t1->GetEntry(i);
+	   
+	   Double_t weightvar= lumistr * 1000 * Stop0l_evtWeight ;
+	   Double_t qweightvar= lumistr * 1000 * Stop0l_evtWeight;
+	   for(int jet=1; jet< nJet+1 ;jet++){
+	     if( Jet_pt[jet] < 20 || TMath::fabs(Jet_eta[jet]) > 2.4 ) continue;     
+	     }
+
+        if(j==0){ qcd_CR->Fill(ht,qweightvar);}
+	if(j==1){data_CR->Fill(ht,1);}
+	if(j==2){ttbar_CR->Fill(ht,weightvar);}
+	if(j==3){wjets_CR->Fill(ht,weightvar);}
+	if(j==4){znunu_CR->Fill(ht,weightvar);}
+	if(j==5){nonqcd_CR->Fill(ht,weightvar);}
+    }
+        
+  }
+}
+/*
+     TCanvas *c1=new TCanvas("c1","comparison",600,600);
+     c1->cd();
+     //     c1->SetLogy();
+     THStack *stack=new THStack("stack","stackplots");
+     TPad *pad1 = new TPad("pad1", "pad1", 0, 0.3, 0.9,0.9);                                                                                                                                                 
+     pad1->Draw();
+     pad1->cd();
+     pad1->SetBottomMargin(0.1);
+     pad1->SetLogy(); 
+     //     stack->GetYaxis()->SetMaximum( 100000);
+     data_CR->SetAxisRange(0,100000000,"y");
+    
+     stack->Add(tw_CR);
+     stack->Add(ttw_CR);
+     stack->Add(ttz_CR);
+     stack->Add(znunu_CR);
+     stack->Add(ttbar_CR);
+     stack->Add(wjets_CR);
+     stack->Add(qcd_CR);
+     tw_CR->SetFillColor(kBlue);
+     ttw_CR->SetFillColor(48);
+     ttz_CR->SetFillColor(kYellow);
+     znunu_CR->SetFillColor(kRed);
+     ttbar_CR->SetFillColor(kMagenta);
+     wjets_CR->SetFillColor(kCyan);
+     qcd_CR->SetFillColor(kGreen);
+
+     Double_t qcd,nonqcd,data,data_now;
+     qcd=qcd_CR->Integral();
+     nonqcd=nonqcd_CR->Integral();
+     data=data_CR->Integral();
+
+     TH1D* all_MC=(TH1D*)nonqcd_CR->Clone("all_MC");
+      all_MC->Add(qcd_CR);
+      all_MCevents=all_MC->Integral();
+      x=all_MCevents/data;
+      data_CR->Scale(x);
+     stack->Draw("HIST");
+     data_CR->Draw("E1same");
+     data_CR->SetMarkerColor(kBlack);
+     data_CR->SetMarkerStyle(20);
+     data_CR->SetMarkerSize(1);
+   stack->SetTitle("stack plot of ht;ht(Gev);no of events");
+   data_now=data_CR->Integral();
+ 
+  cout << "qcd no of events in CR "<< qcd << endl;
+  cout << "nonqcd no of events in CR " << nonqcd << endl;
+  cout << "data no of events in CR " << data << endl;
+
+
+ TLegend *leg = new TLegend(.7,.7,.8,.9,"");                                                                                                                                                              
+  leg->SetFillColor(0);                                                                                                                                                                                    
+  leg->AddEntry(qcd_CR,"qcd_MC","f");                                                                                                                                                                      
+  leg->AddEntry(ttw_CR,"ttw","f");  
+  leg->AddEntry(tw_CR,"tw","f");
+  leg->AddEntry(ttz_CR,"ttz","f");
+  leg->AddEntry(wjets_CR,"wjets","f");
+  leg->AddEntry(znunu_CR,"znunu","f");
+  leg->AddEntry(ttbar_CR,"ttbar","f");
+  leg->Draw("same");                                                                                    
+  gROOT->LoadMacro("tdrstyle.C");
+  setTDRStyle();
+  // gROOT->LoadMacro("CMS_lumi.C");                                                                     
+  writeExtraText = true;
+  extraText  = "preliminary Simulation";
+  lumi_sqrtS = "35.867.1 fb^{-1}(13 TeV)";
+  CMS_lumi( c1,0,0 );
+  c1->cd();          
+ TPad *pad2 = new TPad("pad2", "pad2", 0, 0.15,0.9, 0.3);
+ pad2->Draw();
+ pad2->cd();                                                                                             
+ pad2->SetTopMargin(0.1);
+ pad2->SetBottomMargin(0);
+ TH1D *hratio = (TH1D*)data_CR->Clone("hratio");                                                                                                      
+ hratio->Divide(all_MC); 
+ hratio->SetMarkerStyle(20);
+ hratio->SetMarkerSize(1);        
+hratio->SetAxisRange(0,2,"y");
+hratio->Draw("E1same"); 
+ hratio->GetYaxis()->SetLabelSize(0.2); 
+ TLine *line = new TLine(0,1,3000,1);                                                                      
+line->SetLineColor(kRed);    
+line->Draw("same"); 
+*/ 
+//}

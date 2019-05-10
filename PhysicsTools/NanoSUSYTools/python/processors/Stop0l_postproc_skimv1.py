@@ -2,15 +2,17 @@
 import os, sys
 import argparse
 import ROOT
+from array import array
 ROOT.PyConfig.IgnoreCommandLineOptions = True
+from importlib import import_module
+ROOT.PyConfig.IgnoreCommandLineOptions = True
+from os import system, environ
 
-from PhysicsTools.NanoAODTools.postprocessing.framework.postprocessor import PostProcessor
-from PhysicsTools.NanoAODTools.postprocessing.modules.common.puWeightProducer import *
-from PhysicsTools.NanoAODTools.postprocessing.modules.jme.jecUncertainties import jecUncertProducer
-from PhysicsTools.NanoAODTools.postprocessing.modules.jme.jetmetUncertainties import jetmetUncertaintiesProducer
-from PhysicsTools.NanoAODTools.postprocessing.modules.jme.jetRecalib import jetRecalib
-from PhysicsTools.NanoAODTools.postprocessing.modules.btv.btagSFProducer import btagSFProducer
-from TopTagger.TopTagger.TopTaggerProducer import TopTaggerProducer
+from PhysicsTools.NanoAODTools.postprocessing.framework.datamodel import Collection, Object
+from PhysicsTools.NanoAODTools.postprocessing.framework.eventloop import Module
+from PhysicsTools.NanoAODTools.postprocessing.tools import deltaPhi, deltaR, closest
+from PhysicsTools.NanoAODTools.postprocessing.framework.treeReaderArrayTools import *
+from rootpy.tree import Tree, TreeModel, IntCol, FloatArrayCol
 from PhysicsTools.NanoSUSYTools.modules.qcdskimmingfile import *
 
 # NanoSUSY Tools modules
@@ -54,7 +56,7 @@ def main(args):
             files = [line.strip() for line in f]
 
 
-    p=PostProcessor(args.outputfile,files,cut=" MET_pt >200 & nJet >= 2", branchsel=None, outputbranchsel="keep_and_drop_skim.txt", modules=mods,provenance=False,maxEvents=args.maxEvents)
+    p=PostProcessor(args.outputfile,files,cut=" MET_pt >200", branchsel=None, outputbranchsel="keep_and_drop_skim.txt", modules=mods,provenance=False,maxEvents=args.maxEvents)
     p.run()
 
 if __name__ == "__main__":

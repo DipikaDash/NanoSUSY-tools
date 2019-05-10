@@ -18,7 +18,7 @@ from collections import defaultdict
 tempdir = '/uscms_data/d3/%s/condor_temp/' % getpass.getuser()
 ShortProjectName = 'PostProcess_v1'
 argument = "--inputFiles=%s.$(Process).list "
-sendfiles = ["../keep_and_drop_res.txt"]
+sendfiles = ["../keep_and_drop_smear.txt"]
 #sendfiles = ["../keep_and_drop_sf.txt","../keep_and_drop_res.txt", "../keep_and_drop_QCD.txt", "../keep_and_drop_smear.txt"]
 
 def tar_cmssw():
@@ -147,7 +147,7 @@ def my_process(args):
     global tempdir
     global ProjectName
     ProjectName = time.strftime('%b%d') + ShortProjectName
-    tempdir = tempdir + os.getlogin() + "/" + ProjectName +  "_2018/"
+    tempdir = tempdir + os.getlogin() + "/" + ProjectName +  "_qcd18/"
     try:
         os.makedirs(tempdir)
     except OSError:

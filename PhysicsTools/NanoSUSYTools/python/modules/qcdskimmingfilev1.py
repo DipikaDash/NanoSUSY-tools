@@ -4,24 +4,18 @@ import ROOT
 import math
 ROOT.PyConfig.IgnoreCommandLineOptions = True
 from importlib import import_module
-
+from os import system, environ
 from PhysicsTools.NanoAODTools.postprocessing.framework.datamodel import Collection, Object
 from PhysicsTools.NanoAODTools.postprocessing.framework.eventloop import Module
 from PhysicsTools.NanoAODTools.postprocessing.tools import deltaPhi, deltaR, closest
 #import "$CMSSW_BASE/src/AnalysisTools/QuickRefold/interface/TObjectContainer.h"
-from PhysicsTools.NanoAODTools.postprocessing.framework.postprocessor import PostProcessor
-from PhysicsTools.NanoAODTools.postprocessing.modules.common.puWeightProducer import *
-from PhysicsTools.NanoAODTools.postprocessing.modules.jme.jecUncertainties import jecUncertProducer
-from PhysicsTools.NanoAODTools.postprocessing.modules.jme.jetmetUncertainties import jetmetUncertaintiesProducer
-from PhysicsTools.NanoAODTools.postprocessing.modules.jme.jetRecalib import jetRecalib
-from PhysicsTools.NanoAODTools.postprocessing.modules.btv.btagSFProducer import btagSFProducer
-from TopTagger.TopTagger.TopTaggerProducer import TopTaggerProducer
 
-
-class qcdskimmingfile(Module): 
+class qcdskimmingfilev1(Module): 
     def __init__(self):
 	self.writeHistFile=True
 	self.metBranchName="MET"
+        self.correctionfile=os.environ["CMSSW_BASE"] + "/src/PhysicsTools/NanoSUSYTools/data/QCD/qcdJetRespTailCorr.root"
+        self.correctionhist="RespTailCorr"
     def beginJob(self,histFile=None,histDirName=None):
    	pass
     def endJob(self):
@@ -34,13 +28,24 @@ class qcdskimmingfile(Module):
         self.out.branch("JetPass_eta","F",lenVar="nJetPass") 
         self.out.branch("JetPass_phi", "F",lenVar="nJetPass")
         self.out.branch("JetPass_mass", "F",lenVar="nJetPass")
-
+        self.out.branch("qcdRespTailWeight","F")
+        #self.qcdresptail=self.loadHisto(self.correctionfile,self.correctionhist)
     def endFile(self, inputFile, outputFile, inputTree, wrappedOutputTree):
         pass
 
     def jetResFunction(self, jets, genjets):
 	res = jets.pt/genjets.pt
 	return res
+    def loadhisto(self,filename,hname):
+        file =ROOT.TFile.Open(filename)
+        hist_ = file.Get(hname)
+        hist_.SetDirectory(0)
+        for i in xrange(len(hname)):
+          for j in xrange(len(hname[i])):
+              qcdcorrweight =hist_.GetBinContent(i,j)
+              print 'qcdcorrection weight',qcdcorrweight
+              return qcdcorrweight
+    
     def SelJets(self, jet):
         if jet.pt < 20 or math.fabs(jet.eta) > 2.4 :
             return False
@@ -78,6 +83,8 @@ class qcdskimmingfile(Module):
         self.out.fillBranch("JetPass_eta", self.parselist(jet_pass, 1))
         self.out.fillBranch("JetPass_phi", self.parselist(jet_pass, 2))
         self.out.fillBranch("JetPass_mass", self.parselist(jet_pass,3))
+	#qcdresptail=self.loadhisto(self.correctionfile,self.correctionhist)
+        self.out.fillBranch("qcdRespTailWeight",self.loadhisto(self.correctionfile,self.correctionhist))
                #if j.pt < 20 or math.fabs(j.eta)> 2.4: return True
                #else:
                    #if njets > 0 : self.out.fillBranch("dphij1met", deltaPhi(jets[0], met)) 

@@ -29,7 +29,9 @@ class qcdskimmingfile(Module):
 
     def beginFile(self, inputFile, outputFile, inputTree, wrappedOutputTree):
         self.out = wrappedOutputTree
-        self.out.branch("nJetPass", "I") 
+        self.out.branch("nJetPass", "I")
+        self.out.branch("nJets2p2", "I") 
+        self.out.branch("nJetg2p2", "I")
         self.out.branch("JetPass_pt","F",lenVar="nJetPass") 
         self.out.branch("JetPass_eta","F",lenVar="nJetPass") 
         self.out.branch("JetPass_phi", "F",lenVar="nJetPass")
@@ -45,6 +47,11 @@ class qcdskimmingfile(Module):
         if jet.pt < 20 or math.fabs(jet.eta) > 2.4 :
             return False
         return True
+    def SelJets2p2(self, jet):
+        if jet.pt < 20 or math.fabs(jet.eta) > 2.2 :
+            return False
+        return True
+
     def parselist(self, array, which):
         listx_, listy_ = which, len(array)
         out = []
@@ -59,6 +66,7 @@ class qcdskimmingfile(Module):
         stop0l = Object(event, "Stop0l")
         njets = len(jets)
         self.Jet_Stop0l = map(self.SelJets, jets)
+        self.Jet_Stop0l2p2 = map(self.SelJets2p2, jets)
         jet_pass =[]
         for i in xrange(len(jets)):
                jet_ =[]
@@ -71,21 +79,15 @@ class qcdskimmingfile(Module):
                    jet_.append(j.phi)
                    jet_.append(j.mass)
                    jet_pass.append(jet_)
-                   
+
+        self.out.fillBranch("nJets2p2",sum(self.Jet_Stop0l2p2))
+        print "no of jets: ", sum(self.Jet_Stop0l)
+        self.out.fillBranch("nJetg2p2",sum(self.Jet_Stop0l2p2))
         self.out.fillBranch("nJetPass", len(jet_pass))
         self.out.fillBranch("JetPass_pt", self.parselist(jet_pass, 0))
         #print "jetpt[0](2): ", j.pt
         self.out.fillBranch("JetPass_eta", self.parselist(jet_pass, 1))
         self.out.fillBranch("JetPass_phi", self.parselist(jet_pass, 2))
         self.out.fillBranch("JetPass_mass", self.parselist(jet_pass,3))
-               #if j.pt < 20 or math.fabs(j.eta)> 2.4: return True
-               #else:
-                   #if njets > 0 : self.out.fillBranch("dphij1met", deltaPhi(jets[0], met)) 
-                   #if njets > 1 : self.out.fillBranch("dphij2met", deltaPhi(jets[1], met))
-                   #if njets > 2 : self.out.fillBranch("dphij3met", deltaPhi(jets[2], met))
-                   #if njets > 3 : self.out.fillBranch("dphij4met", deltaPhi(jets[3], met))
-       # self.out.fillBranch("nJetPass", len(jet_pass))
-       
-
-
+      
         return True

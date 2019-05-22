@@ -207,7 +207,7 @@ class qcdskimmingfile(Module):
         self.out.fillBranch("JetPass_eta", self.parselist(jet_pass, 1))
         self.out.fillBranch("JetPass_phi", self.parselist(jet_pass, 2))
         self.out.fillBranch("JetPass_mass", self.parselist(jet_pass,3))
-        if npv >=2:  
+        if npv >=2 and npv <=120:  
             self.out.fillBranch("npvweight",i_npvweight[npv-2])
         else: 
             self.out.fillBranch("npvweight",1)

@@ -272,6 +272,11 @@ class qcdskimmingfile(Module):
         self.out.fillBranch("JetPass_mass", self.parselist(jet_pass,3))
         #self.out.fillBranch("Jet_btagStop0l_pt1", bJetPt[0])
         #self.out.fillBranch("Jet_btagStop0l_pt2", bJetPt[1]) 
+        # if npv >=2 and npv <=120:  
+        #     self.out.fillBranch("npvweight",i_npvweight[npv-2])
+        # else: 
+        #     self.out.fillBranch("npvweight",1)
+
 
        #print 'no of primary vertex',npv
         #if npv >=3 and npv <=120:  

@@ -257,8 +257,9 @@ class qcdskimmingfile(Module):
                    jet_.append(j.phi)
                    jet_.append(j.mass)
                    jet_pass.append(jet_)
-
+       #To fll njet distribution which are passing pt>20 and eta <2.2 only
         self.out.fillBranch("nJets2p2",sum(self.Jet_Stop0l2p2))
+       # To make a boolean cut that jet passes pt >20 and eta <2.2
         self.out.fillBranch("Pass_j202p2",self.Jet_Stop0lj202p2)
         self.out.fillBranch("Pass_j302p2",self.Jet_Stop0lj302p2)
         self.out.fillBranch("Pass_j30",self.Jet_Stop0lj30)

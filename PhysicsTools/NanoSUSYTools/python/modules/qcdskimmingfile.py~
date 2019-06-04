@@ -18,13 +18,13 @@ DeepCSVMediumWP ={
 }
 class qcdskimmingfile(Module): 
 
-    def __init__(self,era):
-        self.era = era
+    def __init__(self):
+       # self.era = era
 	self.writeHistFile=True
 	self.metBranchName="MET"
         self.nBootstraps = 50
-        if self.era == "2017":
-            self.metBranchName = "METFixEE2017"   
+       # if self.era == "2017":
+           # self.metBranchName = "METFixEE2017"   
     def beginJob(self,histFile=None,histDirName=None):
    	pass
     def endJob(self):

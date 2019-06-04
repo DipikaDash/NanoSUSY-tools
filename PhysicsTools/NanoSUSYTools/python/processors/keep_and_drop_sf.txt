@@ -14,3 +14,25 @@
 drop LHEPdfWeight
 drop nLHEPdfWeight
 drop Jet_btagSF*
+drop *L1*
+drop *Electron*
+drop *Flag*
+drop *Gen*
+drop *HLT*
+drop *IsoTrack*
+drop *LHE*
+drop *Muon*
+drop *Photon*
+drop *Pileup*
+drop *SV*
+drop *SoftActivity*
+drop *Tau*
+drop *TrigObj*
+drop HOT*
+drop Resolved*
+drop SB*
+drop PV*
+drop FatJet*
+drop Jet*
+keep Jet_pt
+

@@ -23,7 +23,7 @@
 #include "TMultiGraph.h"
 #include "TPad.h"
 #include "TColor.h"
-#include "tdrstyle.C"
+//#include "tdrstyle.C"
 #include "CMS_lumi.C"
 using namespace std;
 void stack_CR(){
@@ -35,22 +35,25 @@ void stack_CR(){
   TH1* wjets_CR= new TH1D("wjets_CR","",60,100,5000);
   TH1* ttw_CR= new TH1D("ttw_CR","",60,100,5000);
   TH1* ttbar_CR= new TH1D("ttbar_CR","",60,100,5000);
-  TH1* ttz_CR= new TH1D("ttz_CR","",60,100,5000);
-  TH1* znunu_CR= new TH1D("ttz_CR","",60,100,5000);
+  TH1* rare_CR= new TH1D("rare_CR","",60,100,5000);
+  TH1* znunu_CR= new TH1D("znunu_CR","",60,100,5000);
   TH1* minor_CR = new TH1D("minor_CR","",60,100,5000);
 
-  TString samples[5]={"data_2016_tree.root","ttbar_2016_tree.root","wjets_2016_tree.root","znunu_2016_tree.root","minor_2016_tree.root"};
+  TString inputdir ="/eos/uscms/store/user/ddash/nanoAOD/ana_samplesv1/";
+
+  TString samples[7]={inputdir+"data_2018AB_tree.root",inputdir+"ttbar_2018_tree.root",inputdir+"wjets_2018_tree.root",inputdir+"znunu_2018_tree.root",inputdir+"minor_2018_tree.root",inputdir+"rare_2018_tree.root",inputdir+"qcd_orig_2018_tree.root"};
 
   // TFile *file1 = new TFile("MC_data_CR.root", "RECREATE");
 
 
-  for (Int_t j=0;j<5 ; j++){
+  for (Int_t j=0;j<7 ; j++){
     TFile *f1=new TFile(samples[j]);
     TTree *t1 =(TTree*)f1->Get("Events");
    
 
-    Int_t run,nJet,Jet_jetID;
-    Float_t Jet_eta,Jet_phi,Jet_pt,MET_phi,MET_pt,MET_sumEt,Stop0l_evtWeight,puWeight,BTagWeight,ISRWeight;
+    UInt_t nJet;
+    Int_t run,Jet_jetID;
+    Float_t Jet_eta[27],Jet_phi[27],Jet_pt[27],MET_phi,MET_pt,MET_sumEt,Stop0l_evtWeight,Stop0l_HT,puWeight,BTagWeight,ISRWeight;
    
     Bool_t Pass_JetID,Pass_EventFilter,Pass_ElecVeto,Pass_MuonVeto,Pass_LeptonVeto,Pass_NJets20,Pass_MET,Pass_HT,Pass_QCDCR,Pass_QCDCR_lowDM,Pass_QCDCR_highDM,Jet_Stop0l;
     vector<unsigned char> *bootstrapWeight=0;
@@ -74,7 +77,7 @@ void stack_CR(){
     t1->SetBranchStatus("Pass_HT",1);
     t1->SetBranchStatus("Pass_QCDCR",1);
     t1->SetBranchStatus("Jet_Stop0l",1);
-    //t1->SetBranchStatus("Jet_jetID",1);
+    t1->SetBranchStatus("Stop0l_HT",1);
     //t1->SetBranchStatus("Jet_jetID",1);
     //t1->SetBranchStatus("Jet_jetID",1);
     //t1->SetBranchStatus("Jet_jetID",1); 
@@ -97,7 +100,7 @@ void stack_CR(){
     t1->SetBranchAddress("Pass_HT",&Pass_HT);
     t1->SetBranchAddress("Pass_QCDCR",&Pass_QCDCR);
     t1->SetBranchAddress("Jet_Stop0l",&Jet_Stop0l);
-
+    t1->SetBranchAddress("Stop0l_HT",&Stop0l_HT);
 
 
 
@@ -112,15 +115,17 @@ void stack_CR(){
 	   
 	   Double_t weightvar= lumistr * 1000 * Stop0l_evtWeight ;
 	   Double_t qweightvar= lumistr * 1000 * Stop0l_evtWeight;
-	   for(int jet=1; jet< nJet+1 ;jet++){
-	     if( Jet_pt[jet] < 20 || TMath::fabs(Jet_eta[jet]) > 2.4 ) continue;     
+	   for(int jet=1; jet< 27 ;jet++){
+	     if( Jet_pt[jet] < 20 || TMath::Abs(Jet_eta[jet]) > 2.4 ) continue;     
 	     }
 
-	if(j==0){data_CR->Fill(ht,1);}
-	if(j==1){qcd_CR->Fill(ht,qweightvar);}
-	if(j==2){ttbar_CR->Fill(ht,weightvar);}
-	if(j==3){wjets_CR->Fill(ht,weightvar);}
-	if(j==4){znunu_CR->Fill(ht,weightvar);}
+	if(j==0){data_CR->Fill(Stop0l_HT,1);}
+	if(j==1){ttbar_CR->Fill(Stop0l_HT,weightvar);}
+	if(j==2){wjets_CR->Fill(Stop0l_HT,weightvar);}
+	if(j==3){znunu_CR->Fill(Stop0l_HT,weightvar);}
+        if(j==4){minor_CR->Fill(Stop0l_HT,qweightvar);}
+        if(j==5){rare_CR->Fill(Stop0l_HT,weightvar);}
+        if(j==6){qcd_CR->Fill(Stop0l_HT,qweightvar);}
 
     }
         

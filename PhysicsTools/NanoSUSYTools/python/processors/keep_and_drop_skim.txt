@@ -17,10 +17,11 @@ drop Trig*
 drop SV*
 drop HLT*
 drop Flag*
-drop *Up
-drop *Down
+#drop *Up
+#drop *Down
 drop Jet_deep*
 drop Jet_electron*
 drop Jet_muon*
 drop Jet_btagSF*
 drop HOT*
+drop Stop0l_trigger*

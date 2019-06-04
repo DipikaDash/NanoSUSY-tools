@@ -1,1 +1,3 @@
-root://cmseos.fnal.gov//eos/uscms/store/user/lpcsusyhad/Stop_production/Fall17_94X_v2_NanAOD_MC/PreProcessed_20Mar2019/QCD_HT1500to2000_TuneCP5_13TeV-madgraph-pythia8/2017_MINIAODv2_RunIIFall17MiniAODv2-PU2017_12Apr2018_94X_v14-v2/190320_171544/0000/prod2017MC_NANO_1-1.root
+root://cmseos.fnal.gov//eos/uscms/store/user/lpcsusyhad/Stop_production/Summer16_94X_v3/PreProcessed_11Apr2019/QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_smear/QCD_HT700to1000_2016_0.root
+root://cmseos.fnal.gov//eos/uscms/store/user/lpcsusyhad/Stop_production/Summer16_94X_v3/PreProcessed_11Apr2019/QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_smear/QCD_HT700to1000_2016_1.root
+root://cmseos.fnal.gov//eos/uscms/store/user/lpcsusyhad/Stop_production/Summer16_94X_v3/PreProcessed_11Apr2019/QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_smear/QCD_HT700to1000_2016_2.root

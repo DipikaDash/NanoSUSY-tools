@@ -1,8 +1,8 @@
 #!/bin/csh -v
 
-set SCRAM = DELSCR
-set CMSSW = DELDIR
-set EXE   = DELEXE
+set SCRAM  = DELSCR
+set CMSSW  = DELDIR
+set EXE    = DELEXE
 set OUTPUT = OUTDIR
 
 #============================================================================#
@@ -13,10 +13,10 @@ cd ${_CONDOR_SCRATCH_DIR}
 source /cvmfs/cms.cern.ch/cmsset_default.csh
 setenv SCRAM_ARCH ${SCRAM}
 eval `scramv1 project CMSSW ${CMSSW}`
+tar -xzf ${_CONDOR_SCRATCH_DIR}/CMSSW.tar.gz
 cd ${CMSSW}
 eval `scramv1 runtime -csh` # cmsenv is an alias not on the workers
 echo "CMSSW: "$CMSSW_BASE
-tar -xzvf ${_CONDOR_SCRATCH_DIR}/CMSSW.tar.gz
 
 cd ${_CONDOR_SCRATCH_DIR}
 foreach tarfile (`ls *gz FileList/*gz`)
@@ -50,7 +50,6 @@ set filename = "`echo $filename | sed 's/list/root/'`"
 if ($? == 0) then
 <<<<<<< HEAD
   echo "Process finished. Listing current files: "
-  ls
   echo "Hadd file will be named: " $argv[1]
   python $CMSSW_BASE/src/PhysicsTools/NanoAODTools/scripts/haddnano.py $argv[1] `ls *_Skim.root`
   ## Remove skim files once they are merged

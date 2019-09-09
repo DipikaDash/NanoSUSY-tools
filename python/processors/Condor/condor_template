@@ -4,10 +4,16 @@ Requirements = (OpSys == "LINUX") && (Arch != "DUMMY" )
 Should_Transfer_Files = YES
 WhenToTransferOutput = ON_EXIT
 Transfer_Input_Files = TARFILES
+<<<<<<< HEAD
 Output = TEMPDIR/PROJECTNAME_$(Cluster)_$(Process).stdout
 Error = TEMPDIR/PROJECTNAME_$(Cluster)_$(Process).stderr
 Log = TEMPDIR/PROJECTNAME_$(Cluster)_$(Process).log
 Request_Memory = MEMORY
+=======
+Output = TEMPDIR/PROJECTNAME_SAMPLENAME_$(Cluster)_$(Process).stdout
+Error = TEMPDIR/PROJECTNAME_SAMPLENAME_$(Cluster)_$(Process).stderr
+Log = TEMPDIR/PROJECTNAME_SAMPLENAME_$(Cluster)_$(Process).log
+>>>>>>> upstream/dev_v3
 
 ARGUMENTS
 

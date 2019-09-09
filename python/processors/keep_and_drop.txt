@@ -1,4 +1,18 @@
 # this is a comment
+<<<<<<< HEAD
+=======
+drop SV_*
+drop TrigObj_*
+drop TkMET_*
+drop RawMET_*
+#drop CaloMET_*
+drop ChsMET_*
+drop PuppiMET_*
+drop GenDressedLepton_*
+drop SoftActivity*
+drop fixedGridRho*
+drop Electron_mva*
+>>>>>>> upstream/dev_v3
 # drop *btagCSVV2*
 ## Input for Track TauMVA
 #drop PFcand_*
@@ -10,6 +24,7 @@
 #drop Jet_btagDeepFlavB
 #drop Jet_*Mult 
 #drop Jet_*EF
+<<<<<<< HEAD
 ## Drop added by Matt
 #drop HLT*
 #drop Flag_*
@@ -36,3 +51,9 @@
 #drop *genPartFlav*
 #drop isoTrk*
 #drop *fiducialGen*
+=======
+## With PDFUncertiantyProducer, we will only store the systematic
+drop LHEPdfWeight
+drop nLHEPdfWeight
+drop Jet_btagSF*
+>>>>>>> upstream/dev_v3

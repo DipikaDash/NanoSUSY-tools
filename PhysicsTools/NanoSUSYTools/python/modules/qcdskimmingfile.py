@@ -2,6 +2,7 @@
 import os, sys
 import ROOT
 import math
+import numpy as np
 ROOT.PyConfig.IgnoreCommandLineOptions = True
 from importlib import import_module
 
@@ -40,27 +41,19 @@ class qcdskimmingfile(Module):
         self.out.branch("JetPass_mass", "F",lenVar="nJetPass")
         self.out.branch("npvweight","F")
         #self.out.branch("Jet_btagStop0l_pt1", "F")
-        #self.out.branch("Jet_btagStop0l_pt2", "F")
+        self.out.branch("Pass_deltaPhi0p3", "O")
         self.out.branch("nBootstrapWeight", "I")
         self.out.branch("bootstrapWeight", "I", lenVar="nBootstrapWeight")
         self.out.branch("njet_j202p0","I")
         self.out.branch("njet_j302p2","I")
         self.out.branch("njet_j30","I")
         self.out.branch("njet_j25","I")
+        self.out.branch("ht_30", "F")
+        self.out.branch("ht_25", "F")
+        self.out.branch("met_30", "F")
+        self.out.branch("met_25", "F")
 
-        # self.out.branch("njet_j30to100","I")
-        # self.out.branch("njet_j100to200","I")
-        # self.out.branch("njet_j200to400","I")
-        # self.out.branch("njet_j400to600","I")
-        # self.out.branch("njet_j600to1000","I")
-        # self.out.branch("njet_j1kto1p5k","I")
-        # self.out.branch("njet_j20bar","I")
-        # self.out.branch("njet_j20end","I")
-        # self.out.branch("njet_j30bar","I")
-        # self.out.branch("njet_j30end","I")
-
-
-
+      
     def endFile(self, inputFile, outputFile, inputTree, wrappedOutputTree):
         pass
 
@@ -90,55 +83,31 @@ class qcdskimmingfile(Module):
                 return False
         return True
     def selj30(self, jet):
-        if jet.pt < 30 :
+        if jet.pt < 30 or math.fabs(jet.eta) > 2.4 :
             return False
         return True
     def selj25(self, jet):
-        if jet.pt < 25 :
+        if jet.pt < 25 or math.fabs(jet.eta) > 2.4:
             return False
         return True
-
-    def selj30to100(self, jet):
-        if jet.pt < 30 or jet.pt >100 :
-            return False
-        return True
-    def selj100to200(self, jet):
-        if jet.pt < 100 or jet.pt >200 :
-            return False
-        return True
-    def selj200to400(self, jet):
-        if jet.pt < 200 or jet.pt >400 :
-            return False
-        return True
-    def selj400to600(self, jet):
-        if jet.pt < 400 or jet.pt >600 :
-                return False
-        return True
-    def selj600to1000(self, jet):
-        if jet.pt < 600 or jet.pt >1000 :
-            return False
-        return True
-    def selj1kto1p5k(self, jet):
-        if jet.pt < 1000 or jet.pt > 1500 :
-            return False
-        return True
-    def selj20bar(self, jet):
-        if jet.pt < 20 or math.fabs(jet.eta) > 1.4  :
-            return False
-        return True
-    def selj30bar(self, jet):
-        if jet.pt < 30 or math.fabs(jet.eta) > 1.4  :
-            return False
-        return True
-    def selj20end(self, jet):
-        if jet.pt < 20 or math.fabs(jet.eta) < 1.4  :
-            return False
-        return True
-    def selj30end(self, jet):
-        if jet.pt < 30 or math.fabs(jet.eta) < 1.4  :
-            return False
-        return True
-
+    def CalHT(self, jets, jetpt, jeteta):
+        HT = sum([j.pt for i, j in enumerate(jets) if (self.Jet_Stop0l[i] and j.pt > jetpt and math.fabs(j.eta) < jeteta)])
+        return HT
+    def GetJetSortedIdx(self, jets):
+        ptlist = []
+        dphiMET = []
+        for j in jets:
+            if math.fabs(j.eta) > 4.7 or j.pt < 20:
+                pass
+            else:
+                ptlist.append(j.pt)
+                dphiMET.append(j.dPhiMET)
+        return [dphiMET[j] for j in np.argsort(ptlist)[::-1]]
+    def PassdPhi(self, sortedPhi, dPhiCuts, invertdPhi =False):
+        if invertdPhi:
+            return any( a < b for a, b in zip(sortedPhi, dPhiCuts))
+        else:
+            return all( a > b for a, b in zip(sortedPhi, dPhiCuts))
 
     # def CalMTbPTb(self, jets, met):
     #     Bjetpt = []
@@ -293,6 +262,7 @@ class qcdskimmingfile(Module):
         # i_npvweight.append(6824.44)
         # i_npvweight.append(292.14)
         njets = len(jets)
+        sortedPhi = self.GetJetSortedIdx(jets)
         self.Jet_Stop0l = map(self.SelJets, jets)
         self.Jet_Stop0l2p2 = map(self.SelJets2p2,jets)
         #for j in self.Jet_Stop0l2p2:
@@ -301,17 +271,11 @@ class qcdskimmingfile(Module):
         self.Jet_Stop0lj25 = map(self.selj25,jets)
         self.Jet_Stop0lj302p2 =map(self.selj302p2,jets)
         self.Jet_Stop0lj202p0 =map(self.selj202p0,jets)
-        # self.Jet_j30to100 = map(self.selj30to100,jets)
-        # self.Jet_j100to200 =map(self.selj100to200,jets)
-        # self.Jet_j200to400 = map(self.selj200to400,jets)
-        # self.Jet_j400to600 = map(self.selj400to600,jets)
-        # self.Jet_j600to1000 = map(self.selj600to1000,jets)
-        # self.Jet_j1kto1p5k = map(self.selj1kto1p5k,jets)
-        # self.Jet_j20bar = map(self.selj20bar,jets)
-        # self.Jet_j30bar = map(self.selj30bar,jets)
-        # self.Jet_j20end = map(self.selj20end,jets)
-        # self.Jet_j30end = map(self.selj30end,jets)
-
+        i_ht25 = self.CalHT(jets,25,2.4)
+        i_ht30 = self.CalHT(jets,30,2.4)
+        PassdPhiQCD0p3     = self.PassdPhi(sortedPhi, [0.3, 0.15, 0.15], invertdPhi =True)
+        i_met25 =0
+        i_met30=0 
         # local_BJet_Stop0l = map(self.SelBtagJets, jets)
         # self.BJet_Stop0l = [a and b for a, b in zip(self.Jet_Stop0l, local_BJet_Stop0l )]
         # bJetPt = self.CalMTbPTb(jets, met)
@@ -327,6 +291,11 @@ class qcdskimmingfile(Module):
                    jet_.append(j.phi)
                    jet_.append(j.mass)
                    jet_pass.append(jet_)
+               if j.pt >25 and j.eta <2.4:
+                   
+                   i_met25 =met.pt
+               if j.pt >30 and j.eta <2.4:
+                   i_met30 =met.pt
        #To fll njet distribution which are passing pt>20 and eta <2.2 only
         self.out.fillBranch("njet_j202p2",sum(self.Jet_Stop0l2p2))
        # To make a boolean cut that jet passes pt >20 and eta <2.2
@@ -341,20 +310,11 @@ class qcdskimmingfile(Module):
         self.out.fillBranch("JetPass_eta", self.parselist(jet_pass, 1))
         self.out.fillBranch("JetPass_phi", self.parselist(jet_pass, 2))
         self.out.fillBranch("JetPass_mass", self.parselist(jet_pass,3))
-        # self.out.fillBranch("njet_j30to100",sum(self.Jet_j30to100))
-        # self.out.fillBranch("njet_j100to200",sum(self.Jet_j100to200))
-        # self.out.fillBranch("njet_j200to400",sum(self.Jet_j200to400))
-        # self.out.fillBranch("njet_j400to600",sum(self.Jet_j400to600))
-        # self.out.fillBranch("njet_j600to1000",sum(self.Jet_j600to1000))
-        # self.out.fillBranch("njet_j1kto1p5k",sum(self.Jet_j1kto1p5k))
-        # self.out.fillBranch("njet_j20bar",sum(self.Jet_j20bar))
-        # self.out.fillBranch("njet_j30bar",sum(self.Jet_j30bar))
-        # self.out.fillBranch("njet_j20end",sum(self.Jet_j20end))
-        # self.out.fillBranch("njet_j30end",sum(self.Jet_j30end))
-
-
-        #self.out.fillBranch("Jet_btagStop0l_pt1", bJetPt[0])
-        #self.out.fillBranch("Jet_btagStop0l_pt2", bJetPt[1]) 
+        self.out.fillBranch("ht_25", i_ht25)
+        self.out.fillBranch("ht_30", i_ht30)
+        self.out.fillBranch("met_25", i_met25)
+        self.out.fillBranch("met_30", i_met30)
+        self.out.fillBranch("Pass_deltaPhi0p3",PassdPhiQCD0p3)
 
        #print 'no of primary vertex',npv
         #if npv >=3 and npv <=120:  

@@ -20,12 +20,12 @@ git clone git@github.com:susy2015/NanoSUSY-tools.git PhysicsTools/NanoSUSYTools
 scram b
 ```
 
-# Set up NanoSUSYTools framework
+### Set up NanoSUSYTools framework
 cd $CMSSW_BASE/src
 cmsenv
 git clone https://github.com/cms-tau-pog/TauIDSFs TauPOG/TauIDSFs
 git clone -b Stop0l git@github.com:susy2015/nanoAOD-tools.git PhysicsTools/NanoAODTools
-# For condor submission check the specific tag checkout instructions in [readme](python/processors/Condor/README.md)
+### For condor submission check the specific tag checkout instructions in [readme](python/processors/Condor/README.md)
 git clone -b dev_v4 git@github.com:susy2015/NanoSUSY-tools.git PhysicsTools/NanoSUSYTools
 git clone -b Stop0l_NanoAOD_production_V3.1 git@github.com:susy2015/TopTagger.git
 scram b
@@ -38,16 +38,16 @@ getTaggerCfg.sh -n -t DeepResolved_DeepCSV_GR_nanoAOD_2016_v1.0.3
 getTaggerCfg.sh -n -t DeepResolved_DeepCSV_GR_nanoAOD_2017_v1.0.3
 getTaggerCfg.sh -n -t DeepResolved_DeepCSV_GR_nanoAOD_2018_v1.0.3
 
-# Run local MC test
+### Run local MC test
 python Stop0l_postproc.py -i file:[input file] -s [MC sample name (from sampleSet cfg file)] -e [year]
 
-# Run local dataset
+### Run local dataset
 python Stop0l_postproc.py -i file:[input file] -d [data period] -e [year]
 
-# Run a condor job for postprocessing
+### Run a condor job for postprocessing
 python SubmitLPC.py -f [compilefile] -c [inputfile] -e [year] -o [outputfile]
 
-# Scale factors and weights
+### Scale factors and weights
 
     PDF uncertainty module (Done)
         weights stored in NanoAOD accordingly already, need code to extract the envelope
@@ -69,7 +69,7 @@ python SubmitLPC.py -f [compilefile] -c [inputfile] -e [year] -o [outputfile]
     Various systematics
     Trigger path and efficiency:
          efficiency + systematic
-# For QCD smearing and some estimation
+### For QCD smearing and some estimation
 Smearing QCD Notes NANOAOD In PhysicsTools/NanoSUSYTools/python/processors/ You need to create a QCD file with all of the qcd_orig files that you want to run over. An example of all of these files is located in my area: /uscms_data/d3/{USER}/CMSSW_10_2_9/src/PhysicsTools/NanoSUSYTools/python/processors
 
     python Stop0l_postproc_QCD.py -p jetres

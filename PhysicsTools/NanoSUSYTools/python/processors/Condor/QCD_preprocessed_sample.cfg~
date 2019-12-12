@@ -1,0 +1,27 @@
+#2016 QCD
+# QCD_HT_100to200_2016, /eos/uscms/store/user/lpcsusyhad/Stop_production/Summer16_94X_v3/PreProcessed_22Feb2019, QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt, Events, 27990000, 82293477, 0, 1.0
+# QCD_HT_200to300_2016, /eos/uscms/store/user/lpcsusyhad/Stop_production/Summer16_94X_v3/PreProcessed_11Apr2019, QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt, Events, 1712000, 57580393, 0, 1.0
+# QCD_HT_300to500_2016, /eos/uscms/store/user/lpcsusyhad/Stop_production/Summer16_94X_v3/PreProcessed_22Feb2019, QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt, Events, 347700, 54552852, 0, 1.0
+# QCD_HT_500to700_2016, /eos/uscms/store/user/lpcsusyhad/Stop_production/Summer16_94X_v3/PreProcessed_11Apr2019, QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt, Events, 32100, 62622029, 0, 1.0
+# QCD_HT_700to1000_2016, /eos/uscms/store/user/lpcsusyhad/Stop_production/Summer16_94X_v3/PreProcessed_11Apr2019, QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt, Events, 6831, 37041042, 0, 1.0
+# QCD_HT_1000to1500_2016, /eos/uscms/store/user/lpcsusyhad/Stop_production/Summer16_94X_v3/PreProcessed_11Apr2019, QCD_HT1000to1500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt, Events, 1207, 15210939, 0, 1.0
+# QCD_HT_1500to2000_2016, /eos/uscms/store/user/lpcsusyhad/Stop_production/Summer16_94X_v3/PreProcessed_22Feb2019, QCD_HT1500to2000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt, Events, 119.9, 11839357, 0, 1.0
+# QCD_HT_2000toInf_2016, /eos/uscms/store/user/lpcsusyhad/Stop_production/Summer16_94X_v3/PreProcessed_22Feb2019, QCD_HT2000toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt, Events, 25.24, 6019541, 0, 1.0
+#2017 QCD
+QCD_HT_100to200_2017, /eos/uscms/store/user/lpcsusyhad/Stop_production/Fall17_94X_v2_NanAOD_MC/PreProcessed_20Mar2019, QCD_HT100to200_TuneCP5_13TeV-madgraph-pythia8.txt, Events, 27990000, 93216894, 14907, 1.0
+QCD_HT_200to300_2017, /eos/uscms/store/user/lpcsusyhad/Stop_production/Fall17_94X_v2_NanAOD_MC/PreProcessed_18Apr2019, QCD_HT200to300_TuneCP5_13TeV-madgraph-pythia8.txt, Events, 1712000, 58900701, 33323, 1.0
+QCD_HT_300to500_2017, /eos/uscms/store/user/lpcsusyhad/Stop_production/Fall17_94X_v2_NanAOD_MC/PreProcessed_20Mar2019, QCD_HT300to500_TuneCP5_13TeV-madgraph-pythia8.txt, Events, 347700, 59227691, 54430, 1.0
+QCD_HT_500to700_2017, /eos/uscms/store/user/lpcsusyhad/Stop_production/Fall17_94X_v2_NanAOD_MC/PreProcessed_18Apr2019, QCD_HT500to700_TuneCP5_13TeV-madgraph-pythia8.txt, Events, 32100, 55983940, 83168, 1.0
+QCD_HT_700to1000_2017, /eos/uscms/store/user/lpcsusyhad/Stop_production/Fall17_94X_v2_NanAOD_MC/PreProcessed_18Apr2019, QCD_HT700to1000_TuneCP5_13TeV-madgraph-pythia8.txt, Events, 6831, 47621862, 102938, 1.0
+QCD_HT_1000to1500_2017, /eos/uscms/store/user/lpcsusyhad/Stop_production/Fall17_94X_v2_NanAOD_MC/PreProcessed_20Mar2019, QCD_HT1000to1500_TuneCP5_13TeV-madgraph-pythia8.txt, Events, 1207, 16826800, 56038, 1.0
+QCD_HT_1500to2000_2017, /eos/uscms/store/user/lpcsusyhad/Stop_production/Fall17_94X_v2_NanAOD_MC/PreProcessed_20Mar2019, QCD_HT1500to2000_TuneCP5_13TeV-madgraph-pythia8.txt, Events, 119.9, 11561686, 62872, 1.0
+QCD_HT_2000toInf_2017, /eos/uscms/store/user/lpcsusyhad/Stop_production/Fall17_94X_v2_NanAOD_MC/PreProcessed_20Mar2019, QCD_HT2000toInf_TuneCP5_13TeV-madgraph-pythia8.txt, Events, 25.24, 5879352, 57836, 1.0
+# #2018 QCD
+# QCD_HT_100to200_2018, /eos/uscms/store/user/lpcsusyhad/Stop_production/Autumn18_102X_v1/PreProcessed_22March2019, QCD_HT100to200_TuneCP5_13TeV-madgraphMLM-pythia8.txt, Events, 27990000, 93962673, 9705, 1.0
+# QCD_HT_200to300_2018, /eos/uscms/store/user/lpcsusyhad/Stop_production/Autumn18_102X_v1/PreProcessed_22March2019, QCD_HT200to300_TuneCP5_13TeV-madgraphMLM-pythia8.txt, Events, 1712000, 54270554, 18888, 1.0
+# QCD_HT_300to500_2018, /eos/uscms/store/user/lpcsusyhad/Stop_production/Autumn18_102X_v1/PreProcessed_22March2019, QCD_HT300to500_TuneCP5_13TeV-madgraphMLM-pythia8.txt, Events, 347700, 54631132, 30447, 1.0
+# QCD_HT_500to700_2018, /eos/uscms/store/user/lpcsusyhad/Stop_production/Autumn18_102X_v1/PreProcessed_22March2019, QCD_HT500to700_TuneCP5_13TeV-madgraphMLM-pythia8.txt, Events, 32100, 55104581, 48379, 1.0
+# QCD_HT_700to1000_2018, /eos/uscms/store/user/lpcsusyhad/Stop_production/Autumn18_102X_v1/PreProcessed_22March2019, QCD_HT700to1000_TuneCP5_13TeV-madgraphMLM-pythia8.txt, Events, 6831, 44002424, 54861, 1.0
+# QCD_HT_1000to1500_2018, /eos/uscms/store/user/lpcsusyhad/Stop_production/Autumn18_102X_v1/PreProcessed_22March2019, QCD_HT1000to1500_TuneCP5_13TeV-madgraphMLM-pythia8.txt, Events, 1207, 15437011, 29214, 1.0
+# QCD_HT_1500to2000_2018, /eos/uscms/store/user/lpcsusyhad/Stop_production/Autumn18_102X_v1/PreProcessed_22March2019, QCD_HT1500to2000_TuneCP5_13TeV-madgraphMLM-pythia8.txt, Events, 119.9, 10921419, 33668, 1.0
+# QCD_HT_2000toInf_2018, /eos/uscms/store/user/lpcsusyhad/Stop_production/Autumn18_102X_v1/PreProcessed_22March2019, QCD_HT2000toInf_TuneCP5_13TeV-madgraphMLM-pythia8.txt, Events, 25.24, 5445111, 30566, 1.0

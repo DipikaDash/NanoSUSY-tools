@@ -1,0 +1,78 @@
+#!/usr/bin/env python
+import os, sys
+import ROOT
+import math
+ROOT.PyConfig.IgnoreCommandLineOptions = True
+from importlib import import_module
+from os import system, environ
+from PhysicsTools.NanoAODTools.postprocessing.framework.datamodel import Collection, Object
+from PhysicsTools.NanoAODTools.postprocessing.framework.eventloop import Module
+from PhysicsTools.NanoAODTools.postprocessing.tools import deltaPhi, deltaR, closest
+#import "$CMSSW_BASE/src/AnalysisTools/QuickRefold/interface/TObjectContainer.h"
+
+class qcdskimmingfilev1(Module): 
+    def __init__(self):
+	self.writeHistFile=True
+	self.metBranchName="MET"
+        self.correctionfile=os.environ["CMSSW_BASE"] + "/src/PhysicsTools/NanoSUSYTools/data/qcdJetRes/qcdJetRespTailCorr.root"
+        self.correctionhist="RespTailCorr"
+      
+    def beginJob(self,histFile=None,histDirName=None):
+   	pass
+    def endJob(self):
+	pass 
+
+    def beginFile(self, inputFile, outputFile, inputTree, wrappedOutputTree):
+        self.out = wrappedOutputTree
+        self.out.branch("qcdRespTailWeight","F")
+        self.corrhist=self.loadhisto(self.correctionfile,self.correctionhist)
+    def endFile(self, inputFile, outputFile, inputTree, wrappedOutputTree):
+        pass
+
+    def jetResFunction(self, jets, genjets):
+	res = jets.pt/genjets.pt
+	return res
+    def loadhisto(self,filename,hname):
+        file =ROOT.TFile.Open(filename)
+        hist_ = file.Get(hname)
+        hist_.SetDirectory(0)
+        return hist_
+    def checkbjet(self,jet,flavor):
+        if flavor == 5 :
+            b_index= 2
+        else : b_index =1
+        return b_index
+
+    def analyze(self, event):
+	jets      = Collection(event, "Jet")
+	genjets   = Collection(event, "GenJet")
+	met       = Object(event,     self.metBranchName)
+        stop0l = Object(event, "Stop0l")
+        njets = len(jets)
+        # njet= event.Stop0l_nJets
+        # bjet= event.Stop0l_nbtags
+        # print 'njet: ', njet
+        # print 'bjet: ', bjet
+        # try:
+        #     self.flav_ratio = (njet - bjet)/njet
+        # except Exception as e:
+        #     print sys.exc_type
+        #     print e
+        for gJ in xrange(len(genjets)):
+                        gJet = genjets[gJ]
+                        if gJet.pt < 20: continue
+
+                        rJet = 0
+                        for iR in xrange(len(jets)) :
+                                if jets[iR].genJetIdx != gJ: continue
+                                rJet = jets[iR]
+                                break
+                        #partonFlavor = event.Jet_partonFlavour
+                        b_jet = self.checkbjet(rJet,abs(gJet.partonFlavour))
+                        self.resp = gJet.pt / rJet.pt
+                        i_qcdresptailweight = self.corrhist.GetBinContent(self.corrhist.FindBin(self.resp),b_jet)
+                        print 'qcdrespTailWeight is: ', i_qcdresptailweight 
+                        self.out.fillBranch("qcdRespTailWeight",i_qcdresptailweight)
+
+
+        return True

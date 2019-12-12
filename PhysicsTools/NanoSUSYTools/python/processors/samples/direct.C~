@@ -1,0 +1,63 @@
+#include<iostream>
+#include <cmath>
+#include "TString.h"
+#include "TTree.h"
+#include "TChain.h"
+#include "TCanvas.h"
+#include "TH1.h"
+#include "TH1F.h"
+#include "TH1D.h"
+#include "TF1.h"
+#include <string>
+#include <map>
+#include <cmath>
+#include <sstream>
+#include <fstream>
+#include <vector>
+#include "TGraph.h"
+#include "THStack.h"
+#include "TLatex.h"
+#include "TLegend.h"
+#include "TFile.h"
+#include "TTree.h"
+#include "TChain.h"
+#include "TMath.h"
+#include "TROOT.h"
+#include "TLegend.h"
+#include "TAttMarker.h"
+#include "TMultiGraph.h"
+#include "TPad.h"
+#include "THStack.h"
+#include "TColor.h"
+using namespace std;
+
+void direct(){
+
+
+  TH1D *h1=new TH1D ("h1","",800,0,2);
+  TH1D *h2=new TH1D ("h2","",200,0,2);
+  TChain tr1("Events");
+  tr1.Add("/eos/uscms/store/user/ddash/nanoAOD/ana_samplesv1/qcd_smear_2016_sf2_tree.root");
+  //tr1.Add("/uscms/home/ddash/nobackup/mywork/qcd/CMSSW_9_4_10/src/AnalysisMethods/macros/run/mini_samples/qcd_smear_16_mini_tree.root");
+
+  // TChain tr2("Events");
+  // tr2.Add("");
+  TCanvas *c1 = new TCanvas ("c1","",600,600);
+  tr1.Draw("trueResp >> h1"); 
+  //  tr1.Draw("trueResp >>h1","35.9*weight*truePUWeight*btagWeight*topptWeight*sdMVAWeight*resTopWeight*(met >= 250 && (passmetmht || ismc) && (origmet/calomet<5) && (passmetfilters || process==10) && ht >300 &&  j1chEnFrac>0.1 && j1chEnFrac<0.99 && (dphij1met<0.1 || dphij2met<0.1) && nvetolep==0 &&(pseudoRespPassFilter == 1) && abs(trueRespFlv) == 5 && pseudoResp < 1 && pseudoRespCSV >0.8838)","hist");//pseudoRespCSV >0.8838
+  //tr1.Draw("trueResp >> h1","35.9*1000*Stop0l_evtWeight*puWeight*BTagWeight*PrefireWeight*(Pass_MET && Pass_trigger_MET && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio  && Pass_dPhiQCDSF && Stop0l_nVetoElecMuon == 0 && pseudoRespPassFilter == 1 && abs(trueRespFlv) == 5 && pseudoResp < 1 && pseudoRespCSV >0.6324)","");
+  //tr1.Draw("(recojetpt/trueRespGenPT) >> h2","35.9*1000*Stop0l_evtWeight*puWeight*BTagWeight*PrefireWeight*(Pass_MET && Pass_trigger_MET && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio  && (Pass_dPhiQCDSF && Stop0l_nVetoElecMuon == 0 && (pseudoRespPassFilter == 1)) && abs(trueRespFlv) == 5) && pseudoResp < 1","same");
+  //tr1.Draw("trueResp >> h1","","");
+  //  tr1.Draw("(recojetpt/trueRespGenPT) >> h2","","same");
+  // TCanvas *c2 = new TCanvas ("c2","",600,600);
+  // c2->cd();
+  // h1->Draw("");
+  h1->SetTitle("trueResp with cut and weight ;response value;events");
+  h1->SetLineColor(kBlack);
+  h1->SetLineWidth(3);
+  //h2->Draw("same");
+  // h2->SetLineColor(kRed);
+  // h2->SetLineWidth(3);
+  c1->SaveAs("trueResp_smear_sf2_nano.png");//cutwt_nob.png");
+
+}

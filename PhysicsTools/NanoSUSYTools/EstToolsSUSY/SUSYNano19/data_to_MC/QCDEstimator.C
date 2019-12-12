@@ -1,0 +1,101 @@
+#include "../../EstMethods/QCDEstimator.hh"
+
+#include "SRParameters_cut_test.hh"
+
+using namespace EstTools;
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+vector<Quantity> QCDPred();
+void QCDEstimator_v3(){
+  QCDPred();
+}
+
+vector<Quantity> QCDPred(){
+  auto config = qcdConfig();
+
+  QCDEstimator z(config);
+
+  z.runBootstrapping = false;
+  z.splitTF = SPLITTF;
+
+  z.pred();
+  z.naiveTF();
+  z.printYields();
+
+  std::map<TString,int> digits;
+  digits["_DATA"] = 0; // indicate it's data for proper formatting
+  digits["_QCDTF_CR_to_SR_noextrap"] = -3;
+  digits["_QCDTF_SR_extrap"] = -3;
+
+  z.printYieldsTableLatex({"_DATA","QCD_data","_QCDTF", "_TF", "_pred"}, labelMap, "yields_qcd_lm_16.tex","lm", digits); //LM
+  if(z.splitTF){
+    z.printYieldsTableLatex({"_DATA","QCD_data","_QCDTF","TF","_QCDTF_CR_to_SR_noextrap", "_QCDTF_SR_extrap", "_pred"}, labelMap, "yields_qcd_hm_16.tex","hm", digits);
+  }else{
+    z.printYieldsTableLatex({"_DATA","QCD_data","_QCDTF","_TF", "_pred"}, labelMap, "yields_qcd_hm_16.tex","hm", digits);
+  }
+
+  return z.yields.at("_pred");
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+void plotQCDCR(){
+  auto config = qcdConfig();
+  config.catMaps = config.crCatMaps;
+
+  BaseEstimator z(config.outputdir);
+  z.setConfig(config);
+
+  z.plotDataMC({"ttbar-cr", "wjets-cr", "tW-cr", "ttW-cr", "znunu-cr", "qcd-withveto-cr"}, "data-cr", false);
+
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+void plotQCDInclusive(){
+  auto config = qcdConfig();
+
+  config.sel = "Pass_MET";
+//  config.addSample("qcd",  "QCD",      "qcd-4bd/qcd",          qcdvetowgt,  datasel + trigSR + vetoes + dphi_invert);
+  config.addSample("qcd",  "QCD",      "qcd_orig_2016",          wgtvar,  datasel + trigSR + vetoes + dphi_invert);
+
+//  config.addSample("qcd",  "QCD",      "qcd-std/qcd",          qcdvetowgt,  datasel + trigSR + vetoes + dphi_invert);
+
+
+  BaseEstimator z(config);
+
+  vector<TString> mc_samples = {"ttbar-cr", "wjets-cr", "znunu-cr","minor-cr","qcd-cr"};
+  TString data_sample = "data-cr";
+
+  map<TString, BinInfo> varDict {
+        {"met",       BinInfo("MET_pt", "#slash{E}_{T}", 20, 200, 1000, "GeV")},
+	  //{"ht",        BinInfo("Stop0l_HT",  "H_{T}", 30, 0, 3000, "GeV")},
+ 	  // {"njets",     BinInfo("Stop0l_nJets", "N_{j}", 12, -0.5, 11.5)},
+ 	  //   {"nPV",     BinInfo("PV_npvsGood", "N_{PV}", 60, -0.5, 60.5)},
+ 	  //     {"nbjets",    BinInfo("Stop0l_nbtags",  "N_{B}^{medium}", 5, -0.5, 4.5)},
+ 	  //       {"ptb",   BinInfo("Stop0l_Ptb", "p_{T}(b_{1}) [GeV]", 10, 20, 1000)}
+//    {"nt",        BinInfo("nsdtoploose", "N_{t}", 2, -0.5, 1.5)},
+//    {"nw",        BinInfo("nsdwloose", "N_{W}", 2, -0.5, 1.5)},
+//    {"nlbjets",   BinInfo("nlbjets", "N_{B}^{loose}", 5, -0.5, 4.5)},
+//    {"nbjets",    BinInfo("nbjets",  "N_{B}^{medium}", 5, -0.5, 4.5)},
+//    {"dphij1met", BinInfo("dphij1met", "#Delta#phi(j_{1},#slash{E}_{T})", 32, 0, 3.2)},
+//    {"dphij2met", BinInfo("dphij2met", "#Delta#phi(j_{2},#slash{E}_{T})", 32, 0, 3.2)},
+//    {"dphij3met", BinInfo("dphij3met", "#Delta#phi(j_{2},#slash{E}_{T})", 32, 0, 3.2)},
+//    {"mtcsv12met",BinInfo("mtcsv12met", "min(m_{T}(b_{1},#slash{E}_{T}),m_{T}(b_{2},#slash{E}_{T}))", 6, 0, 300)},
+//    {"metovsqrtht",BinInfo("Stop0l_METSig", "#slash{E}_{T}/#sqrt{H_{T}}", 10, 0, 20)},
+//    {"dphij1lmet",BinInfo("dphij1lmet", "#Delta#phi(j_{1}^{ISR},#slash{E}_{T})", vector<double>{0, 2, 3})},
+//    {"njl",       BinInfo("njl", "N_{j}^{ISR}", 5, -0.5, 4.5)},
+//    {"j1lpt",     BinInfo("j1lpt", "p_{T}(j_{1}^{ISR}) [GeV]", 20, 0, 1000)},
+//    {"csvj1pt",   BinInfo("csvj1pt", "p_{T}(b_{1}) [GeV]", 8, 20, 100)}
+
+  };
+
+
+
+  for (auto &var : varDict){
+    z.plotDataMC(var.second, mc_samples, data_sample, Category::dummy_category(), false,"",true);
+  }
+
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -1,0 +1,855 @@
+Warning in <TInterpreter::ReadRootmapFile>: class  RooCBExGaussShape found in libPhysicsToolsTagAndProbe.so  is already in libAnalysisMethodsTnPUtils.so 
+Warning in <TInterpreter::ReadRootmapFile>: class  ZGeneratorLineShape found in libPhysicsToolsTagAndProbe.so  is already in libAnalysisMethodsTnPUtils.so 
+
+Processing BkgPredHM_LowMET_HM.C+...
+Warning in <TClass::Init>: no dictionary for class ROOT::TIOFeatures is available
+### Open file root://cmseos.fnal.gov//eos/uscms/store/user/ddash/nano_samples/ana_samples_v1//data_2017BtoE_tree.root as *data-cr*
+### Open file root://cmseos.fnal.gov//eos/uscms/store/user/ddash/nano_samples/ana_samples_v1//qcd_smear_sf_2017_tree.root as *qcd-cr*
+### Open file root://cmseos.fnal.gov//eos/uscms/store/user/ddash/nano_samples/ana_samples_v1//qcd_smear_sf_2017_tree.root as *qcd-withveto-cr*
+### Open file root://cmseos.fnal.gov//eos/uscms/store/user/ddash/nano_samples/ana_samples_v1//qcd_smear_sf_2017_tree.root as *qcd-withveto-sr*
+### Open file root://cmseos.fnal.gov//eos/uscms/store/user/ddash/nano_samples/ana_samples_v1//ttbar_2017_tree.root as *ttbar-cr*
+### Open file root://cmseos.fnal.gov//eos/uscms/store/user/ddash/nano_samples/ana_samples_v1//wjets_2017_tree.root as *wjets-cr*
+### Open file root://cmseos.fnal.gov//eos/uscms/store/user/ddash/nano_samples/ana_samples_v1//minor_2017_tree.root as *minor-cr*
+### Open file root://cmseos.fnal.gov//eos/uscms/store/user/ddash/nano_samples/ana_samples_v1//znunu_2017_tree.root as *znunu-cr*
+### Open file root://cmseos.fnal.gov//eos/uscms/store/user/ddash/nano_samples/ana_samples_v1//data_2017BtoE_tree.root as *data-norm*
+### Open file root://cmseos.fnal.gov//eos/uscms/store/user/ddash/nano_samples/ana_samples_v1//ttbar_2017_tree.root as *ttbar-norm*
+### Open file root://cmseos.fnal.gov//eos/uscms/store/user/ddash/nano_samples/ana_samples_v1//wjets_2017_tree.root as *wjets-norm*
+### Open file root://cmseos.fnal.gov//eos/uscms/store/user/ddash/nano_samples/ana_samples_v1//minor_2017_tree.root as *minor-norm*
+### Open file root://cmseos.fnal.gov//eos/uscms/store/user/ddash/nano_samples/ana_samples_v1//qcd_smear_sf_2017_tree.root as *qcd-norm*
+### Open file root://cmseos.fnal.gov//eos/uscms/store/user/ddash/nano_samples/ana_samples_v1//qcd_smear_sf_2017_tree.root as *qcd-sr*
+### Open file root://cmseos.fnal.gov//eos/uscms/store/user/ddash/nano_samples/ana_samples_v1//qcd_smear_sf_2017_tree.root as *qcd-sr-int*
+
+--->Running QCD prediction...
+
+... Do NOT run bootstrapping ...
+
+--->calcTF
+
+Calc yields for sample qcd-sr
+qcd-sr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*qcdRespTailWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Pass_dPhiMET && !Pass_dPhiMETHighDM && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && Stop0l_nTop==1 && Stop0l_nResolved==0 && Stop0l_nW==0 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET), MET_pt, entries=730
+  --> 2.43536+/-0.203329, 0.266041+/-0.0481705, 
+qcd-sr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*qcdRespTailWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Pass_dPhiMET && !Pass_dPhiMETHighDM && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && Stop0l_nJets>=5 && Stop0l_nTop==0 && Stop0l_nResolved==0 && Stop0l_nW==0 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET), MET_pt, entries=16495
+  --> 70.3013+/-1.8416, 3.59922+/-0.133191, 
+qcd-sr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*qcdRespTailWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Pass_dPhiMET && !Pass_dPhiMETHighDM && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && Stop0l_nTop==0 && Stop0l_nResolved==0 && Stop0l_nW==1 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET), MET_pt, entries=1993
+  --> 7.4528+/-0.36793, 0.516284+/-0.046384, 
+qcd-sr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*qcdRespTailWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Pass_dPhiMET && !Pass_dPhiMETHighDM && Stop0l_nbtags==1 && Stop0l_Mtb<175 && Stop0l_nJets>=7 && Stop0l_nResolved>=1 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET), MET_pt, entries=6455
+  --> 16.5269+/-0.444997, 0.292547+/-0.0498483, 
+qcd-sr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*qcdRespTailWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Pass_dPhiMET && !Pass_dPhiMETHighDM && Stop0l_nbtags>=2 && Stop0l_Mtb<175 && Stop0l_nJets>=7 && Stop0l_nResolved>=1 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET), MET_pt, entries=5421
+  --> 12.5836+/-0.358719, 0.359503+/-0.0351999, 
+qcd-sr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*qcdRespTailWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Pass_dPhiMET && !Pass_dPhiMETHighDM && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && (Stop0l_nTop+Stop0l_nResolved+Stop0l_nW) >= 2 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET), MET_pt, entries=8
+  --> 0.165291+/-0.061533, 0+/-0, 
+qcd-sr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*qcdRespTailWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Pass_dPhiMET && !Pass_dPhiMETHighDM && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && (Stop0l_nTop+Stop0l_nResolved+Stop0l_nW) >= 2 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET), MET_pt, entries=168
+  --> 0.571273+/-0.0576091, 0.0202343+/-0.00465815, 
+qcd-sr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*qcdRespTailWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Pass_dPhiMET && !Pass_dPhiMETHighDM && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && Stop0l_nTop==1 && Stop0l_nResolved==0 && Stop0l_nW==0 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET), MET_pt, entries=3044
+  --> 7.57276+/-0.279271, 0.59202+/-0.0567188, 
+qcd-sr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*qcdRespTailWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Pass_dPhiMET && !Pass_dPhiMETHighDM && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && Stop0l_nTop==0 && Stop0l_nResolved==1 && Stop0l_nW==0 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET), MET_pt, entries=1308
+  --> 13.3227+/-1.09316, 1.59711+/-0.620392, 
+qcd-sr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*qcdRespTailWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Pass_dPhiMET && !Pass_dPhiMETHighDM && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && Stop0l_nTop==0 && Stop0l_nResolved==1 && Stop0l_nW==0 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET), MET_pt, entries=7165
+  --> 63.5701+/-2.48996, 3.23342+/-0.199802, 
+qcd-sr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*qcdRespTailWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Pass_dPhiMET && !Pass_dPhiMETHighDM && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && Stop0l_nTop==0 && Stop0l_nResolved==0 && Stop0l_nW==1 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET), MET_pt, entries=212
+  --> 0.0949421+/-0.010502, 0.0452513+/-0.00499746, 
+qcd-sr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*qcdRespTailWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Pass_dPhiMET && !Pass_dPhiMETHighDM && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && Stop0l_nJets>=5 && Stop0l_nTop==0 && Stop0l_nResolved==0 && Stop0l_nW==0 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET), MET_pt, entries=114083
+  --> 446.295+/-4.86593, 34.7087+/-0.979896, 
+94487.2 ms
+
+Calc yields for sample qcd-cr
+qcd-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*qcdRespTailWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && Stop0l_nJets>=5 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_dPhiQCD30), MET_pt, entries=48873
+  --> 187.408+/-3.60231, 28.5076+/-0.641855, 
+qcd-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*qcdRespTailWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_dPhiQCD30), MET_pt, entries=48873
+  --> 187.408+/-3.60231, 28.5076+/-0.641855, 
+qcd-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*qcdRespTailWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_dPhiQCD30), MET_pt, entries=48873
+  --> 187.408+/-3.60231, 28.5076+/-0.641855, 
+qcd-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*qcdRespTailWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_dPhiQCD30), MET_pt, entries=48873
+  --> 187.408+/-3.60231, 28.5076+/-0.641855, 
+qcd-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*qcdRespTailWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_dPhiQCD30), MET_pt, entries=48873
+  --> 187.408+/-3.60231, 28.5076+/-0.641855, 
+qcd-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*qcdRespTailWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb<175 && Stop0l_nJets>=7 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_dPhiQCD30), MET_pt, entries=53912
+  --> 122.109+/-2.03384, 14.1276+/-0.329141, 
+qcd-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*qcdRespTailWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb<175 && Stop0l_nJets>=7 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_dPhiQCD30), MET_pt, entries=104414
+  --> 360.823+/-12.9538, 24.7264+/-0.517106, 
+qcd-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*qcdRespTailWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && Stop0l_nJets>=5 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_dPhiQCD30), MET_pt, entries=296813
+  --> 1210.08+/-8.29598, 208.041+/-2.07657, 
+qcd-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*qcdRespTailWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_dPhiQCD30), MET_pt, entries=296813
+  --> 1210.08+/-8.29598, 208.041+/-2.07657, 
+qcd-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*qcdRespTailWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_dPhiQCD30), MET_pt, entries=296813
+  --> 1210.08+/-8.29598, 208.041+/-2.07657, 
+qcd-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*qcdRespTailWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_dPhiQCD30), MET_pt, entries=296813
+  --> 1210.08+/-8.29598, 208.041+/-2.07657, 
+qcd-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*qcdRespTailWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_dPhiQCD30), MET_pt, entries=296813
+  --> 1210.08+/-8.29598, 208.041+/-2.07657, 
+47979.9 ms
+
+Calc yields for sample qcd-sr-int
+qcd-sr-int: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*qcdRespTailWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )), MET_pt, entries=3070
+  --> 74.0705+/-6.06535, 2.63737+/-0.625174, 
+qcd-sr-int: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*qcdRespTailWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && Stop0l_nJets>=5 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )), MET_pt, entries=3070
+  --> 74.0705+/-6.06535, 2.63737+/-0.625174, 
+qcd-sr-int: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*qcdRespTailWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )), MET_pt, entries=3070
+  --> 74.0705+/-6.06535, 2.63737+/-0.625174, 
+qcd-sr-int: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*qcdRespTailWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )), MET_pt, entries=3070
+  --> 74.0705+/-6.06535, 2.63737+/-0.625174, 
+qcd-sr-int: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*qcdRespTailWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )), MET_pt, entries=17082
+  --> 153.371+/-5.44317, 15.7537+/-1.24208, 
+qcd-sr-int: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*qcdRespTailWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb<175 && Stop0l_nJets>=7 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )), MET_pt, entries=34998
+  --> 58.1783+/-1.09579, 2.31994+/-0.0837697, 
+qcd-sr-int: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*qcdRespTailWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )), MET_pt, entries=17082
+  --> 153.371+/-5.44317, 15.7537+/-1.24208, 
+qcd-sr-int: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*qcdRespTailWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )), MET_pt, entries=3070
+  --> 74.0705+/-6.06535, 2.63737+/-0.625174, 
+qcd-sr-int: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*qcdRespTailWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )), MET_pt, entries=17082
+  --> 153.371+/-5.44317, 15.7537+/-1.24208, 
+qcd-sr-int: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*qcdRespTailWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && Stop0l_nJets>=5 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )), MET_pt, entries=17082
+  --> 153.371+/-5.44317, 15.7537+/-1.24208, 
+qcd-sr-int: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*qcdRespTailWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )), MET_pt, entries=17082
+  --> 153.371+/-5.44317, 15.7537+/-1.24208, 
+qcd-sr-int: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*qcdRespTailWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb<175 && Stop0l_nJets>=7 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )), MET_pt, entries=60395
+  --> 200.723+/-2.86403, 4.85643+/-0.115585, 
+41314.1 ms
+
+--->calcDataCorr
+
+Calc yields for sample ttbar-cr
+ttbar-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && Stop0l_nJets>=5 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=25
+  --> 42.7011+/-11.1331, 5.87077+/-4.20678, 
+ttbar-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=25
+  --> 42.7011+/-11.1331, 5.87077+/-4.20678, 
+ttbar-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=25
+  --> 42.7011+/-11.1331, 5.87077+/-4.20678, 
+ttbar-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=25
+  --> 42.7011+/-11.1331, 5.87077+/-4.20678, 
+ttbar-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=93
+  --> 186.486+/-24.0328, 34.1841+/-11.0861, 
+ttbar-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=93
+  --> 186.486+/-24.0328, 34.1841+/-11.0861, 
+ttbar-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=93
+  --> 186.486+/-24.0328, 34.1841+/-11.0861, 
+ttbar-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb<175 && Stop0l_nJets>=7 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=70
+  --> 103.724+/-17.2045, 32.7191+/-9.90996, 
+ttbar-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=93
+  --> 186.486+/-24.0328, 34.1841+/-11.0861, 
+ttbar-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && Stop0l_nJets>=5 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=93
+  --> 186.486+/-24.0328, 34.1841+/-11.0861, 
+ttbar-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb<175 && Stop0l_nJets>=7 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=45
+  --> 83.3838+/-15.1332, 16.8144+/-7.10796, 
+ttbar-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=25
+  --> 42.7011+/-11.1331, 5.87077+/-4.20678, 
+650.699 ms
+
+Calc yields for sample wjets-cr
+wjets-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb<175 && Stop0l_nJets>=7 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=2849
+  --> 3.94519+/-0.461696, 1.26375+/-0.120918, 
+wjets-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb<175 && Stop0l_nJets>=7 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=1038
+  --> 1.35625+/-0.261172, 0.275882+/-0.0424235, 
+wjets-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && Stop0l_nJets>=5 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=1684
+  --> 3.58721+/-0.491794, 1.3452+/-0.136546, 
+wjets-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=1684
+  --> 3.58721+/-0.491794, 1.3452+/-0.136546, 
+wjets-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=1684
+  --> 3.58721+/-0.491794, 1.3452+/-0.136546, 
+wjets-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=1684
+  --> 3.58721+/-0.491794, 1.3452+/-0.136546, 
+wjets-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=12216
+  --> 28.5654+/-1.82647, 9.30453+/-0.47436, 
+wjets-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && Stop0l_nJets>=5 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=12216
+  --> 28.5654+/-1.82647, 9.30453+/-0.47436, 
+wjets-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=12216
+  --> 28.5654+/-1.82647, 9.30453+/-0.47436, 
+wjets-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=12216
+  --> 28.5654+/-1.82647, 9.30453+/-0.47436, 
+wjets-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=12216
+  --> 28.5654+/-1.82647, 9.30453+/-0.47436, 
+wjets-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=1684
+  --> 3.58721+/-0.491794, 1.3452+/-0.136546, 
+34763.4 ms
+
+Calc yields for sample minor-cr
+minor-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=3580
+  --> 5.45839+/-0.690044, 1.64951+/-0.321339, 
+minor-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=3580
+  --> 5.45839+/-0.690044, 1.64951+/-0.321339, 
+minor-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && Stop0l_nJets>=5 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=3580
+  --> 5.45839+/-0.690044, 1.64951+/-0.321339, 
+minor-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb<175 && Stop0l_nJets>=7 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=1226
+  --> 2.30179+/-0.322381, 0.496247+/-0.181031, 
+minor-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=2132
+  --> 1.37553+/-0.227727, 1.02448+/-0.256279, 
+minor-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && Stop0l_nJets>=5 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=2132
+  --> 1.37553+/-0.227727, 1.02448+/-0.256279, 
+minor-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb<175 && Stop0l_nJets>=7 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=3307
+  --> 2.86879+/-0.382382, 0.840276+/-0.227563, 
+minor-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=2132
+  --> 1.37553+/-0.227727, 1.02448+/-0.256279, 
+minor-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=2132
+  --> 1.37553+/-0.227727, 1.02448+/-0.256279, 
+minor-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=3580
+  --> 5.45839+/-0.690044, 1.64951+/-0.321339, 
+minor-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=2132
+  --> 1.37553+/-0.227727, 1.02448+/-0.256279, 
+minor-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=3580
+  --> 5.45839+/-0.690044, 1.64951+/-0.321339, 
+13785.8 ms
+
+Calc yields for sample znunu-cr
+znunu-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb<175 && Stop0l_nJets>=7 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=60
+  --> 0.784974+/-0.138804, 0.263409+/-0.0771767, 
+znunu-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb<175 && Stop0l_nJets>=7 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=116
+  --> 1.61572+/-0.194369, 0.378017+/-0.109746, 
+znunu-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=1535
+  --> 23.9039+/-1.04203, 8.44732+/-0.530658, 
+znunu-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=1535
+  --> 23.9039+/-1.04203, 8.44732+/-0.530658, 
+znunu-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=1535
+  --> 23.9039+/-1.04203, 8.44732+/-0.530658, 
+znunu-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=239
+  --> 3.01358+/-0.356301, 1.37052+/-0.188289, 
+znunu-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && Stop0l_nJets>=5 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=239
+  --> 3.01358+/-0.356301, 1.37052+/-0.188289, 
+znunu-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=239
+  --> 3.01358+/-0.356301, 1.37052+/-0.188289, 
+znunu-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && Stop0l_nJets>=5 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=1535
+  --> 23.9039+/-1.04203, 8.44732+/-0.530658, 
+znunu-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=239
+  --> 3.01358+/-0.356301, 1.37052+/-0.188289, 
+znunu-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=1535
+  --> 23.9039+/-1.04203, 8.44732+/-0.530658, 
+znunu-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=239
+  --> 3.01358+/-0.356301, 1.37052+/-0.188289, 
+10148.1 ms
+
+Calc yields for sample data-cr
+data-cr: 1.0*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb<175 && Stop0l_nJets>=7 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=485
+  --> 435+/-20.8567, 50+/-7.07107, 
+data-cr: 1.0*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=300
+  --> 258+/-16.0624, 42+/-6.48074, 
+data-cr: 1.0*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=300
+  --> 258+/-16.0624, 42+/-6.48074, 
+data-cr: 1.0*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=300
+  --> 258+/-16.0624, 42+/-6.48074, 
+data-cr: 1.0*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=1918
+  --> 1682+/-41.0122, 236+/-15.3623, 
+data-cr: 1.0*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb<175 && Stop0l_nJets>=7 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=329
+  --> 293+/-17.1172, 36+/-6, 
+data-cr: 1.0*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=1918
+  --> 1682+/-41.0122, 236+/-15.3623, 
+data-cr: 1.0*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=1918
+  --> 1682+/-41.0122, 236+/-15.3623, 
+data-cr: 1.0*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && Stop0l_nJets>=5 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=1918
+  --> 1682+/-41.0122, 236+/-15.3623, 
+data-cr: 1.0*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=300
+  --> 258+/-16.0624, 42+/-6.48074, 
+data-cr: 1.0*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=1918
+  --> 1682+/-41.0122, 236+/-15.3623, 
+data-cr: 1.0*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && Stop0l_nJets>=5 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=300
+  --> 258+/-16.0624, 42+/-6.48074, 
+8240.14 ms
+
+Calc yields for sample qcd-withveto-sr
+qcd-withveto-sr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*qcdRespTailWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Pass_dPhiMET && !Pass_dPhiMETHighDM && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && Stop0l_nTop==0 && Stop0l_nResolved==0 && Stop0l_nW==1 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto), MET_pt, entries=112
+  --> 0.0949421+/-0.010502, 0+/-0, 
+qcd-withveto-sr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*qcdRespTailWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Pass_dPhiMET && !Pass_dPhiMETHighDM && Stop0l_nbtags>=2 && Stop0l_Mtb<175 && Stop0l_nJets>=7 && Stop0l_nResolved>=1 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto), MET_pt, entries=4832
+  --> 11.8781+/-0.355475, 0.348806+/-0.0351352, 
+qcd-withveto-sr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*qcdRespTailWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Pass_dPhiMET && !Pass_dPhiMETHighDM && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && Stop0l_nTop==1 && Stop0l_nResolved==0 && Stop0l_nW==0 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto), MET_pt, entries=712
+  --> 2.43536+/-0.203329, 0.265027+/-0.0481698, 
+qcd-withveto-sr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*qcdRespTailWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Pass_dPhiMET && !Pass_dPhiMETHighDM && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && Stop0l_nTop==0 && Stop0l_nResolved==1 && Stop0l_nW==0 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto), MET_pt, entries=1228
+  --> 12.2955+/-1.02619, 1.58286+/-0.620379, 
+qcd-withveto-sr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*qcdRespTailWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Pass_dPhiMET && !Pass_dPhiMETHighDM && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && Stop0l_nTop==0 && Stop0l_nResolved==1 && Stop0l_nW==0 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto), MET_pt, entries=6205
+  --> 31.8152+/-1.09084, 2.23649+/-0.141796, 
+qcd-withveto-sr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*qcdRespTailWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Pass_dPhiMET && !Pass_dPhiMETHighDM && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && (Stop0l_nTop+Stop0l_nResolved+Stop0l_nW) >= 2 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto), MET_pt, entries=168
+  --> 0.571273+/-0.0576091, 0.0202343+/-0.00465815, 
+qcd-withveto-sr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*qcdRespTailWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Pass_dPhiMET && !Pass_dPhiMETHighDM && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && Stop0l_nJets>=5 && Stop0l_nTop==0 && Stop0l_nResolved==0 && Stop0l_nW==0 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto), MET_pt, entries=13830
+  --> 52.8734+/-1.59423, 3.04543+/-0.126296, 
+qcd-withveto-sr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*qcdRespTailWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Pass_dPhiMET && !Pass_dPhiMETHighDM && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && Stop0l_nTop==0 && Stop0l_nResolved==0 && Stop0l_nW==1 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto), MET_pt, entries=1893
+  --> 7.33114+/-0.367717, 0.516284+/-0.046384, 
+qcd-withveto-sr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*qcdRespTailWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Pass_dPhiMET && !Pass_dPhiMETHighDM && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && (Stop0l_nTop+Stop0l_nResolved+Stop0l_nW) >= 2 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto), MET_pt, entries=8
+  --> 0.165291+/-0.061533, 0+/-0, 
+qcd-withveto-sr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*qcdRespTailWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Pass_dPhiMET && !Pass_dPhiMETHighDM && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && Stop0l_nTop==1 && Stop0l_nResolved==0 && Stop0l_nW==0 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto), MET_pt, entries=2844
+  --> 7.20803+/-0.276891, 0.59202+/-0.0567188, 
+qcd-withveto-sr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*qcdRespTailWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Pass_dPhiMET && !Pass_dPhiMETHighDM && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && Stop0l_nJets>=5 && Stop0l_nTop==0 && Stop0l_nResolved==0 && Stop0l_nW==0 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto), MET_pt, entries=103932
+  --> 408.177+/-4.70353, 32.1333+/-0.960214, 
+qcd-withveto-sr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*qcdRespTailWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Pass_dPhiMET && !Pass_dPhiMETHighDM && Stop0l_nbtags==1 && Stop0l_Mtb<175 && Stop0l_nJets>=7 && Stop0l_nResolved>=1 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto), MET_pt, entries=5776
+  --> 14.9591+/-0.436716, 0.276319+/-0.0488985, 
+44886.3 ms
+
+Calc yields for sample qcd-withveto-cr
+qcd-withveto-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*qcdRespTailWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=43587
+  --> 161.365+/-3.22695, 25.6052+/-0.633362, 
+qcd-withveto-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*qcdRespTailWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && Stop0l_nJets>=5 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=43587
+  --> 161.365+/-3.22695, 25.6052+/-0.633362, 
+qcd-withveto-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*qcdRespTailWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb<175 && Stop0l_nJets>=7 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=46660
+  --> 109.927+/-1.97653, 12.9992+/-0.323029, 
+qcd-withveto-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*qcdRespTailWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=43587
+  --> 161.365+/-3.22695, 25.6052+/-0.633362, 
+qcd-withveto-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*qcdRespTailWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=43587
+  --> 161.365+/-3.22695, 25.6052+/-0.633362, 
+qcd-withveto-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*qcdRespTailWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=270817
+  --> 1123.16+/-8.0753, 194.671+/-2.05625, 
+qcd-withveto-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*qcdRespTailWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=43587
+  --> 161.365+/-3.22695, 25.6052+/-0.633362, 
+qcd-withveto-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*qcdRespTailWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=270817
+  --> 1123.16+/-8.0753, 194.671+/-2.05625, 
+qcd-withveto-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*qcdRespTailWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=270817
+  --> 1123.16+/-8.0753, 194.671+/-2.05625, 
+qcd-withveto-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*qcdRespTailWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb<175 && Stop0l_nJets>=7 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=94814
+  --> 237.221+/-2.77876, 23.6769+/-0.51485, 
+qcd-withveto-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*qcdRespTailWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=270817
+  --> 1123.16+/-8.0753, 194.671+/-2.05625, 
+qcd-withveto-cr: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline_QCD*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*qcdRespTailWeight*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && Stop0l_nJets>=5 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto && Pass_dPhiQCD30), MET_pt, entries=270817
+  --> 1123.16+/-8.0753, 194.671+/-2.05625, 
+40613.3 ms
+data-norm: 1.0*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb<175 && Stop0l_nJets>=7 && MET_pt>250.00 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Stop0l_nVetoElecMuon == 1 && Stop0l_MtLepMET < 100 && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )) --> 801+/-28.3019
+ttbar-norm: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*MuSF*ElecSF*TaSF*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb<175 && Stop0l_nJets>=7 && MET_pt>250.00 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Stop0l_nVetoElecMuon == 1 && Stop0l_MtLepMET < 100 && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )) --> 820.91+/-50.2007
+wjets-norm: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*MuSF*ElecSF*TaSF*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb<175 && Stop0l_nJets>=7 && MET_pt>250.00 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Stop0l_nVetoElecMuon == 1 && Stop0l_MtLepMET < 100 && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )) --> 55.2876+/-2.00742
+minor-norm: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*MuSF*ElecSF*TaSF*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb<175 && Stop0l_nJets>=7 && MET_pt>250.00 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Stop0l_nVetoElecMuon == 1 && Stop0l_MtLepMET < 100 && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )) --> 22.1543+/-1.30121
+qcd-norm: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*MuSF*ElecSF*TaSF*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb<175 && Stop0l_nJets>=7 && MET_pt>250.00 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Stop0l_nVetoElecMuon == 1 && Stop0l_MtLepMET < 100 && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )) --> 11.1495+/-0.477876
+
+~~~hmVal_nb1_lowmtb_nj7_nrtgeq1: data(norm) = 801+/-28.3019, total bkg (norm) = 909.502+/-50.26
+
+data-norm: 1.0*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb<175 && Stop0l_nJets>=7 && MET_pt>250.00 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Stop0l_nVetoElecMuon == 1 && Stop0l_MtLepMET < 100 && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )) --> 1153+/-33.9559
+ttbar-norm: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*MuSF*ElecSF*TaSF*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb<175 && Stop0l_nJets>=7 && MET_pt>250.00 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Stop0l_nVetoElecMuon == 1 && Stop0l_MtLepMET < 100 && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )) --> 1579.73+/-67.078
+wjets-norm: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*MuSF*ElecSF*TaSF*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb<175 && Stop0l_nJets>=7 && MET_pt>250.00 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Stop0l_nVetoElecMuon == 1 && Stop0l_MtLepMET < 100 && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )) --> 19.922+/-1.22197
+minor-norm: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*MuSF*ElecSF*TaSF*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb<175 && Stop0l_nJets>=7 && MET_pt>250.00 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Stop0l_nVetoElecMuon == 1 && Stop0l_MtLepMET < 100 && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )) --> 34.5588+/-1.40704
+qcd-norm: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*MuSF*ElecSF*TaSF*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb<175 && Stop0l_nJets>=7 && MET_pt>250.00 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Stop0l_nVetoElecMuon == 1 && Stop0l_MtLepMET < 100 && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )) --> 3.61725+/-0.168828
+
+~~~hmVal_nb2_lowmtb_nj7_nrtgeq1: data(norm) = 1153+/-33.9559, total bkg (norm) = 1637.83+/-67.1041
+
+data-norm: 1.0*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && Stop0l_nJets>=5 && MET_pt>250.00 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Stop0l_nVetoElecMuon == 1 && Stop0l_MtLepMET < 100 && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )) --> 2398+/-48.9694
+ttbar-norm: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*MuSF*ElecSF*TaSF*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && Stop0l_nJets>=5 && MET_pt>250.00 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Stop0l_nVetoElecMuon == 1 && Stop0l_MtLepMET < 100 && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )) --> 1962.15+/-79.0701
+wjets-norm: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*MuSF*ElecSF*TaSF*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && Stop0l_nJets>=5 && MET_pt>250.00 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Stop0l_nVetoElecMuon == 1 && Stop0l_MtLepMET < 100 && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )) --> 465.864+/-10.3503
+minor-norm: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*MuSF*ElecSF*TaSF*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && Stop0l_nJets>=5 && MET_pt>250.00 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Stop0l_nVetoElecMuon == 1 && Stop0l_MtLepMET < 100 && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )) --> 68.2223+/-2.39067
+qcd-norm: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*MuSF*ElecSF*TaSF*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && Stop0l_nJets>=5 && MET_pt>250.00 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Stop0l_nVetoElecMuon == 1 && Stop0l_MtLepMET < 100 && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )) --> 6.16339+/-0.558275
+
+~~~hmVal_nb1_highmtb_nj5_nt0_nrt0_nw0: data(norm) = 2398+/-48.9694, total bkg (norm) = 2502.4+/-79.7824
+
+data-norm: 1.0*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && Stop0l_nJets>=5 && MET_pt>250.00 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Stop0l_nVetoElecMuon == 1 && Stop0l_MtLepMET < 100 && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )) --> 512+/-22.6274
+ttbar-norm: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*MuSF*ElecSF*TaSF*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && Stop0l_nJets>=5 && MET_pt>250.00 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Stop0l_nVetoElecMuon == 1 && Stop0l_MtLepMET < 100 && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )) --> 434.951+/-35.5464
+wjets-norm: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*MuSF*ElecSF*TaSF*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && Stop0l_nJets>=5 && MET_pt>250.00 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Stop0l_nVetoElecMuon == 1 && Stop0l_MtLepMET < 100 && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )) --> 81.2515+/-4.5351
+minor-norm: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*MuSF*ElecSF*TaSF*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && Stop0l_nJets>=5 && MET_pt>250.00 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Stop0l_nVetoElecMuon == 1 && Stop0l_MtLepMET < 100 && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )) --> 22.0619+/-1.29481
+qcd-norm: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*MuSF*ElecSF*TaSF*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && Stop0l_nJets>=5 && MET_pt>250.00 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Stop0l_nVetoElecMuon == 1 && Stop0l_MtLepMET < 100 && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )) --> 0.00500389+/-0.00115709
+
+~~~hmVal_nb2_highmtb_nj5_nt0_nrt0_nw0: data(norm) = 512+/-22.6274, total bkg (norm) = 538.269+/-35.8579
+
+data-norm: 1.0*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && MET_pt>250.00 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Stop0l_nVetoElecMuon == 1 && Stop0l_MtLepMET < 100 && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )) --> 2398+/-48.9694
+ttbar-norm: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*MuSF*ElecSF*TaSF*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && MET_pt>250.00 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Stop0l_nVetoElecMuon == 1 && Stop0l_MtLepMET < 100 && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )) --> 1962.15+/-79.0701
+wjets-norm: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*MuSF*ElecSF*TaSF*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && MET_pt>250.00 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Stop0l_nVetoElecMuon == 1 && Stop0l_MtLepMET < 100 && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )) --> 465.864+/-10.3503
+minor-norm: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*MuSF*ElecSF*TaSF*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && MET_pt>250.00 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Stop0l_nVetoElecMuon == 1 && Stop0l_MtLepMET < 100 && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )) --> 68.2223+/-2.39067
+qcd-norm: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*MuSF*ElecSF*TaSF*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && MET_pt>250.00 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Stop0l_nVetoElecMuon == 1 && Stop0l_MtLepMET < 100 && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )) --> 6.16339+/-0.558275
+
+~~~hmVal_nb1_highmtb_nt1_nrt0_nw0: data(norm) = 2398+/-48.9694, total bkg (norm) = 2502.4+/-79.7824
+
+data-norm: 1.0*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && MET_pt>250.00 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Stop0l_nVetoElecMuon == 1 && Stop0l_MtLepMET < 100 && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )) --> 2398+/-48.9694
+ttbar-norm: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*MuSF*ElecSF*TaSF*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && MET_pt>250.00 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Stop0l_nVetoElecMuon == 1 && Stop0l_MtLepMET < 100 && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )) --> 1962.15+/-79.0701
+wjets-norm: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*MuSF*ElecSF*TaSF*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && MET_pt>250.00 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Stop0l_nVetoElecMuon == 1 && Stop0l_MtLepMET < 100 && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )) --> 465.864+/-10.3503
+minor-norm: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*MuSF*ElecSF*TaSF*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && MET_pt>250.00 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Stop0l_nVetoElecMuon == 1 && Stop0l_MtLepMET < 100 && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )) --> 68.2223+/-2.39067
+qcd-norm: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*MuSF*ElecSF*TaSF*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && MET_pt>250.00 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Stop0l_nVetoElecMuon == 1 && Stop0l_MtLepMET < 100 && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )) --> 6.16339+/-0.558275
+
+~~~hmVal_nb1_highmtb_nt0_nrt0_nw1: data(norm) = 2398+/-48.9694, total bkg (norm) = 2502.4+/-79.7824
+
+data-norm: 1.0*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && MET_pt>250.00 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Stop0l_nVetoElecMuon == 1 && Stop0l_MtLepMET < 100 && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )) --> 2398+/-48.9694
+ttbar-norm: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*MuSF*ElecSF*TaSF*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && MET_pt>250.00 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Stop0l_nVetoElecMuon == 1 && Stop0l_MtLepMET < 100 && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )) --> 1962.15+/-79.0701
+wjets-norm: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*MuSF*ElecSF*TaSF*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && MET_pt>250.00 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Stop0l_nVetoElecMuon == 1 && Stop0l_MtLepMET < 100 && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )) --> 465.864+/-10.3503
+minor-norm: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*MuSF*ElecSF*TaSF*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && MET_pt>250.00 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Stop0l_nVetoElecMuon == 1 && Stop0l_MtLepMET < 100 && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )) --> 68.2223+/-2.39067
+qcd-norm: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*MuSF*ElecSF*TaSF*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && MET_pt>250.00 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Stop0l_nVetoElecMuon == 1 && Stop0l_MtLepMET < 100 && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )) --> 6.16339+/-0.558275
+
+~~~hmVal_nb1_highmtb_nt0_nrt1_nw0: data(norm) = 2398+/-48.9694, total bkg (norm) = 2502.4+/-79.7824
+
+data-norm: 1.0*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && MET_pt>250.00 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Stop0l_nVetoElecMuon == 1 && Stop0l_MtLepMET < 100 && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )) --> 2398+/-48.9694
+ttbar-norm: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*MuSF*ElecSF*TaSF*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && MET_pt>250.00 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Stop0l_nVetoElecMuon == 1 && Stop0l_MtLepMET < 100 && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )) --> 1962.15+/-79.0701
+wjets-norm: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*MuSF*ElecSF*TaSF*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && MET_pt>250.00 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Stop0l_nVetoElecMuon == 1 && Stop0l_MtLepMET < 100 && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )) --> 465.864+/-10.3503
+minor-norm: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*MuSF*ElecSF*TaSF*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && MET_pt>250.00 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Stop0l_nVetoElecMuon == 1 && Stop0l_MtLepMET < 100 && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )) --> 68.2223+/-2.39067
+qcd-norm: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*MuSF*ElecSF*TaSF*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && MET_pt>250.00 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Stop0l_nVetoElecMuon == 1 && Stop0l_MtLepMET < 100 && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )) --> 6.16339+/-0.558275
+
+~~~hmVal_nb1_highmtb_nrtntnwgeq2: data(norm) = 2398+/-48.9694, total bkg (norm) = 2502.4+/-79.7824
+
+data-norm: 1.0*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && MET_pt>250.00 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Stop0l_nVetoElecMuon == 1 && Stop0l_MtLepMET < 100 && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )) --> 512+/-22.6274
+ttbar-norm: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*MuSF*ElecSF*TaSF*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && MET_pt>250.00 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Stop0l_nVetoElecMuon == 1 && Stop0l_MtLepMET < 100 && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )) --> 434.951+/-35.5464
+wjets-norm: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*MuSF*ElecSF*TaSF*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && MET_pt>250.00 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Stop0l_nVetoElecMuon == 1 && Stop0l_MtLepMET < 100 && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )) --> 81.2515+/-4.5351
+minor-norm: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*MuSF*ElecSF*TaSF*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && MET_pt>250.00 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Stop0l_nVetoElecMuon == 1 && Stop0l_MtLepMET < 100 && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )) --> 22.0619+/-1.29481
+qcd-norm: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*MuSF*ElecSF*TaSF*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && MET_pt>250.00 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Stop0l_nVetoElecMuon == 1 && Stop0l_MtLepMET < 100 && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )) --> 0.00500389+/-0.00115709
+
+~~~hmVal_nb2_highmtb_nt1_nrt0_nw0: data(norm) = 512+/-22.6274, total bkg (norm) = 538.269+/-35.8579
+
+data-norm: 1.0*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && MET_pt>250.00 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Stop0l_nVetoElecMuon == 1 && Stop0l_MtLepMET < 100 && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )) --> 512+/-22.6274
+ttbar-norm: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*MuSF*ElecSF*TaSF*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && MET_pt>250.00 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Stop0l_nVetoElecMuon == 1 && Stop0l_MtLepMET < 100 && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )) --> 434.951+/-35.5464
+wjets-norm: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*MuSF*ElecSF*TaSF*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && MET_pt>250.00 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Stop0l_nVetoElecMuon == 1 && Stop0l_MtLepMET < 100 && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )) --> 81.2515+/-4.5351
+minor-norm: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*MuSF*ElecSF*TaSF*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && MET_pt>250.00 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Stop0l_nVetoElecMuon == 1 && Stop0l_MtLepMET < 100 && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )) --> 22.0619+/-1.29481
+qcd-norm: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*MuSF*ElecSF*TaSF*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && MET_pt>250.00 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Stop0l_nVetoElecMuon == 1 && Stop0l_MtLepMET < 100 && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )) --> 0.00500389+/-0.00115709
+
+~~~hmVal_nb2_highmtb_nt0_nrt0_nw1: data(norm) = 512+/-22.6274, total bkg (norm) = 538.269+/-35.8579
+
+data-norm: 1.0*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && MET_pt>250.00 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Stop0l_nVetoElecMuon == 1 && Stop0l_MtLepMET < 100 && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )) --> 512+/-22.6274
+ttbar-norm: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*MuSF*ElecSF*TaSF*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && MET_pt>250.00 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Stop0l_nVetoElecMuon == 1 && Stop0l_MtLepMET < 100 && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )) --> 434.951+/-35.5464
+wjets-norm: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*MuSF*ElecSF*TaSF*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && MET_pt>250.00 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Stop0l_nVetoElecMuon == 1 && Stop0l_MtLepMET < 100 && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )) --> 81.2515+/-4.5351
+minor-norm: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*MuSF*ElecSF*TaSF*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && MET_pt>250.00 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Stop0l_nVetoElecMuon == 1 && Stop0l_MtLepMET < 100 && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )) --> 22.0619+/-1.29481
+qcd-norm: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*MuSF*ElecSF*TaSF*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && MET_pt>250.00 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Stop0l_nVetoElecMuon == 1 && Stop0l_MtLepMET < 100 && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )) --> 0.00500389+/-0.00115709
+
+~~~hmVal_nb2_highmtb_nt0_nrt1_nw0: data(norm) = 512+/-22.6274, total bkg (norm) = 538.269+/-35.8579
+
+data-norm: 1.0*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && MET_pt>250.00 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Stop0l_nVetoElecMuon == 1 && Stop0l_MtLepMET < 100 && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )) --> 512+/-22.6274
+ttbar-norm: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*MuSF*ElecSF*TaSF*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && MET_pt>250.00 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Stop0l_nVetoElecMuon == 1 && Stop0l_MtLepMET < 100 && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )) --> 434.951+/-35.5464
+wjets-norm: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*MuSF*ElecSF*TaSF*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && MET_pt>250.00 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Stop0l_nVetoElecMuon == 1 && Stop0l_MtLepMET < 100 && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )) --> 81.2515+/-4.5351
+minor-norm: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*MuSF*ElecSF*TaSF*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && MET_pt>250.00 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Stop0l_nVetoElecMuon == 1 && Stop0l_MtLepMET < 100 && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )) --> 22.0619+/-1.29481
+qcd-norm: 27987.8*Stop0l_evtWeight*Stop0l_trigger_eff_MET_loose_baseline*17BtoEpuWeight*BTagWeight*topTagWeight*restopTagWeight*wTagWeight*softbTagWeight*PrefireWeight*MuSF*ElecSF*TaSF*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && MET_pt>250.00 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Stop0l_nVetoElecMuon == 1 && Stop0l_MtLepMET < 100 && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETHighDM) || ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Pass_dPhiMETMedDM)) )) --> 0.00500389+/-0.00115709
+
+~~~hmVal_nb2_highmtb_nrtntnwgeq2: data(norm) = 512+/-22.6274, total bkg (norm) = 538.269+/-35.8579
+
+Correcting the split QCD TF
+Correcting the split QCD TF
+Correcting the split QCD TF
+Correcting the split QCD TF
+Correcting the split QCD TF
+Correcting the split QCD TF
+Correcting the split QCD TF
+Correcting the split QCD TF
+Correcting the split QCD TF
+Correcting the split QCD TF
+Correcting the split QCD TF
+Correcting the split QCD TF
+Correcting the split QCD TF
+Correcting the split QCD TF
+Correcting the split QCD TF
+Correcting the split QCD TF
+Correcting the split QCD TF
+Correcting the split QCD TF
+Correcting the split QCD TF
+Correcting the split QCD TF
+Correcting the split QCD TF
+Correcting the split QCD TF
+Correcting the split QCD TF
+Correcting the split QCD TF
+QCD estimated data in CR
+  hmVal_nb1_lowmtb_nj7_nrtgeq1	     354.45+/-0.00	  (0%)      33.26+/-0.00	  (0%) 
+  hmVal_nb2_lowmtb_nj7_nrtgeq1	     216.22+/-0.00	  (0%)      11.92+/-0.00	  (0%) 
+hmVal_nb1_highmtb_nj5_nt0_nrt0_nw0	    1446.79+/-0.00	  (0%)     184.30+/-0.00	  (0%) 
+hmVal_nb2_highmtb_nj5_nt0_nrt0_nw0	     209.65+/-0.00	  (0%)      32.79+/-0.00	  (0%) 
+hmVal_nb1_highmtb_nt1_nrt0_nw0	    1446.79+/-0.00	  (0%)     184.30+/-0.00	  (0%) 
+hmVal_nb1_highmtb_nt0_nrt0_nw1	    1446.79+/-0.00	  (0%)     184.30+/-0.00	  (0%) 
+hmVal_nb1_highmtb_nt0_nrt1_nw0	    1446.79+/-0.00	  (0%)     184.30+/-0.00	  (0%) 
+ hmVal_nb1_highmtb_nrtntnwgeq2	    1446.79+/-0.00	  (0%)     184.30+/-0.00	  (0%) 
+hmVal_nb2_highmtb_nt1_nrt0_nw0	     209.65+/-0.00	  (0%)      32.79+/-0.00	  (0%) 
+hmVal_nb2_highmtb_nt0_nrt0_nw1	     209.65+/-0.00	  (0%)      32.79+/-0.00	  (0%) 
+hmVal_nb2_highmtb_nt0_nrt1_nw0	     209.65+/-0.00	  (0%)      32.79+/-0.00	  (0%) 
+ hmVal_nb2_highmtb_nrtntnwgeq2	     209.65+/-0.00	  (0%)      32.79+/-0.00	  (0%) 
+
+QCD prediction
+  hmVal_nb1_lowmtb_nj7_nrtgeq1	      16.23+/-1.07	  (7%)       0.39+/-0.09	  (22%) 
+  hmVal_nb2_lowmtb_nj7_nrtgeq1	      22.28+/-1.50	  (7%)       0.30+/-0.06	  (19%) 
+hmVal_nb1_highmtb_nj5_nt0_nrt0_nw0	     533.59+/-14.71	  (3%)      30.75+/-2.20	  (7%) 
+hmVal_nb2_highmtb_nj5_nt0_nrt0_nw0	      78.64+/-5.52	  (7%)       4.14+/-0.66	  (16%) 
+hmVal_nb1_highmtb_nt1_nrt0_nw0	       9.05+/-0.41	  (4%)       0.52+/-0.06	  (12%) 
+hmVal_nb1_highmtb_nt0_nrt0_nw1	       8.91+/-0.49	  (6%)       0.46+/-0.05	  (11%) 
+hmVal_nb1_highmtb_nt0_nrt1_nw0	      76.00+/-3.55	  (5%)       2.86+/-0.26	  (9%) 
+ hmVal_nb1_highmtb_nrtntnwgeq2	       0.68+/-0.07	  (10%)       0.02+/-0.00	  (24%) 
+hmVal_nb2_highmtb_nt1_nrt0_nw0	       2.72+/-0.29	  (11%)       0.31+/-0.07	  (24%) 
+hmVal_nb2_highmtb_nt0_nrt0_nw1	       0.11+/-0.01	  (13%)       0.05+/-0.01	  (19%) 
+hmVal_nb2_highmtb_nt0_nrt1_nw0	      14.90+/-1.56	  (10%)       1.84+/-0.77	  (42%) 
+ hmVal_nb2_highmtb_nrtntnwgeq2	       0.18+/-0.07	  (38%)       0.00+/-0.00	  (-nan%) 
+
+Yields
+QCD_data: 9983.47+/-0.00
+  hmVal_nb1_lowmtb_nj7_nrtgeq1	     354.45+/-0.00	      33.26+/-0.00	 
+  hmVal_nb2_lowmtb_nj7_nrtgeq1	     216.22+/-0.00	      11.92+/-0.00	 
+hmVal_nb1_highmtb_nj5_nt0_nrt0_nw0	    1446.79+/-0.00	     184.30+/-0.00	 
+hmVal_nb2_highmtb_nj5_nt0_nrt0_nw0	     209.65+/-0.00	      32.79+/-0.00	 
+hmVal_nb1_highmtb_nt1_nrt0_nw0	    1446.79+/-0.00	     184.30+/-0.00	 
+hmVal_nb1_highmtb_nt0_nrt0_nw1	    1446.79+/-0.00	     184.30+/-0.00	 
+hmVal_nb1_highmtb_nt0_nrt1_nw0	    1446.79+/-0.00	     184.30+/-0.00	 
+ hmVal_nb1_highmtb_nrtntnwgeq2	    1446.79+/-0.00	     184.30+/-0.00	 
+hmVal_nb2_highmtb_nt1_nrt0_nw0	     209.65+/-0.00	      32.79+/-0.00	 
+hmVal_nb2_highmtb_nt0_nrt0_nw1	     209.65+/-0.00	      32.79+/-0.00	 
+hmVal_nb2_highmtb_nt0_nrt1_nw0	     209.65+/-0.00	      32.79+/-0.00	 
+ hmVal_nb2_highmtb_nrtntnwgeq2	     209.65+/-0.00	      32.79+/-0.00	 
+
+_DATA: 11904.00+/-109.11
+  hmVal_nb1_lowmtb_nj7_nrtgeq1	     435.00+/-20.86	      50.00+/-7.07	 
+  hmVal_nb2_lowmtb_nj7_nrtgeq1	     293.00+/-17.12	      36.00+/-6.00	 
+hmVal_nb1_highmtb_nj5_nt0_nrt0_nw0	    1682.00+/-41.01	     236.00+/-15.36	 
+hmVal_nb2_highmtb_nj5_nt0_nrt0_nw0	     258.00+/-16.06	      42.00+/-6.48	 
+hmVal_nb1_highmtb_nt1_nrt0_nw0	    1682.00+/-41.01	     236.00+/-15.36	 
+hmVal_nb1_highmtb_nt0_nrt0_nw1	    1682.00+/-41.01	     236.00+/-15.36	 
+hmVal_nb1_highmtb_nt0_nrt1_nw0	    1682.00+/-41.01	     236.00+/-15.36	 
+ hmVal_nb1_highmtb_nrtntnwgeq2	    1682.00+/-41.01	     236.00+/-15.36	 
+hmVal_nb2_highmtb_nt1_nrt0_nw0	     258.00+/-16.06	      42.00+/-6.48	 
+hmVal_nb2_highmtb_nt0_nrt0_nw1	     258.00+/-16.06	      42.00+/-6.48	 
+hmVal_nb2_highmtb_nt0_nrt1_nw0	     258.00+/-16.06	      42.00+/-6.48	 
+ hmVal_nb2_highmtb_nrtntnwgeq2	     258.00+/-16.06	      42.00+/-6.48	 
+
+_QCDTF: 1.46+/-0.03
+  hmVal_nb1_lowmtb_nj7_nrtgeq1	       0.05+/-0.00	       0.01+/-0.00	 
+  hmVal_nb2_lowmtb_nj7_nrtgeq1	       0.10+/-0.00	       0.03+/-0.00	 
+hmVal_nb1_highmtb_nj5_nt0_nrt0_nw0	       0.37+/-0.00	       0.17+/-0.00	 
+hmVal_nb2_highmtb_nj5_nt0_nrt0_nw0	       0.38+/-0.01	       0.13+/-0.01	 
+hmVal_nb1_highmtb_nt1_nrt0_nw0	       0.01+/-0.00	       0.00+/-0.00	 
+hmVal_nb1_highmtb_nt0_nrt0_nw1	       0.01+/-0.00	       0.00+/-0.00	 
+hmVal_nb1_highmtb_nt0_nrt1_nw0	       0.05+/-0.00	       0.02+/-0.00	 
+ hmVal_nb1_highmtb_nrtntnwgeq2	       0.00+/-0.00	       0.00+/-0.00	 
+hmVal_nb2_highmtb_nt1_nrt0_nw0	       0.01+/-0.00	       0.01+/-0.00	 
+hmVal_nb2_highmtb_nt0_nrt0_nw1	       0.00+/-0.00	       0.00+/-0.00	 
+hmVal_nb2_highmtb_nt0_nrt1_nw0	       0.07+/-0.01	       0.06+/-0.02	 
+ hmVal_nb2_highmtb_nrtntnwgeq2	       0.00+/-0.00	       0.00+/-0.00	 
+
+_QCDTF_CR_to_SR_noextrap: 3.80+/-0.08
+  hmVal_nb1_lowmtb_nj7_nrtgeq1	       0.45+/-0.02	       0.13+/-0.00	 
+  hmVal_nb2_lowmtb_nj7_nrtgeq1	       0.35+/-0.01	       0.05+/-0.00	 
+hmVal_nb1_highmtb_nj5_nt0_nrt0_nw0	       0.11+/-0.00	       0.06+/-0.00	 
+hmVal_nb2_highmtb_nj5_nt0_nrt0_nw0	       0.32+/-0.03	       0.07+/-0.02	 
+hmVal_nb1_highmtb_nt1_nrt0_nw0	       0.11+/-0.00	       0.06+/-0.00	 
+hmVal_nb1_highmtb_nt0_nrt0_nw1	       0.11+/-0.00	       0.06+/-0.00	 
+hmVal_nb1_highmtb_nt0_nrt1_nw0	       0.11+/-0.00	       0.06+/-0.00	 
+ hmVal_nb1_highmtb_nrtntnwgeq2	       0.11+/-0.00	       0.06+/-0.00	 
+hmVal_nb2_highmtb_nt1_nrt0_nw0	       0.32+/-0.03	       0.07+/-0.02	 
+hmVal_nb2_highmtb_nt0_nrt0_nw1	       0.32+/-0.03	       0.07+/-0.02	 
+hmVal_nb2_highmtb_nt0_nrt1_nw0	       0.32+/-0.03	       0.07+/-0.02	 
+ hmVal_nb2_highmtb_nrtntnwgeq2	       0.32+/-0.03	       0.07+/-0.02	 
+
+_QCDTF_CR_to_SR_noextrap_nocorr: 4.84+/-0.09
+  hmVal_nb1_lowmtb_nj7_nrtgeq1	       0.56+/-0.02	       0.20+/-0.01	 
+  hmVal_nb2_lowmtb_nj7_nrtgeq1	       0.48+/-0.01	       0.16+/-0.01	 
+hmVal_nb1_highmtb_nj5_nt0_nrt0_nw0	       0.13+/-0.00	       0.08+/-0.01	 
+hmVal_nb2_highmtb_nj5_nt0_nrt0_nw0	       0.40+/-0.03	       0.09+/-0.02	 
+hmVal_nb1_highmtb_nt1_nrt0_nw0	       0.13+/-0.00	       0.08+/-0.01	 
+hmVal_nb1_highmtb_nt0_nrt0_nw1	       0.13+/-0.00	       0.08+/-0.01	 
+hmVal_nb1_highmtb_nt0_nrt1_nw0	       0.13+/-0.00	       0.08+/-0.01	 
+ hmVal_nb1_highmtb_nrtntnwgeq2	       0.13+/-0.00	       0.08+/-0.01	 
+hmVal_nb2_highmtb_nt1_nrt0_nw0	       0.40+/-0.03	       0.09+/-0.02	 
+hmVal_nb2_highmtb_nt0_nrt0_nw1	       0.40+/-0.03	       0.09+/-0.02	 
+hmVal_nb2_highmtb_nt0_nrt1_nw0	       0.40+/-0.03	       0.09+/-0.02	 
+ hmVal_nb2_highmtb_nrtntnwgeq2	       0.40+/-0.03	       0.09+/-0.02	 
+
+_QCDTF_SR_extrap: 9.67+/-0.49
+  hmVal_nb1_lowmtb_nj7_nrtgeq1	       0.08+/-0.00	       0.06+/-0.01	 
+  hmVal_nb2_lowmtb_nj7_nrtgeq1	       0.22+/-0.01	       0.15+/-0.02	 
+hmVal_nb1_highmtb_nj5_nt0_nrt0_nw0	       2.91+/-0.11	       2.20+/-0.18	 
+hmVal_nb2_highmtb_nj5_nt0_nrt0_nw0	       0.95+/-0.08	       1.36+/-0.33	 
+hmVal_nb1_highmtb_nt1_nrt0_nw0	       0.05+/-0.00	       0.04+/-0.00	 
+hmVal_nb1_highmtb_nt0_nrt0_nw1	       0.05+/-0.00	       0.03+/-0.00	 
+hmVal_nb1_highmtb_nt0_nrt1_nw0	       0.41+/-0.02	       0.21+/-0.02	 
+ hmVal_nb1_highmtb_nrtntnwgeq2	       0.00+/-0.00	       0.00+/-0.00	 
+hmVal_nb2_highmtb_nt1_nrt0_nw0	       0.03+/-0.00	       0.10+/-0.03	 
+hmVal_nb2_highmtb_nt0_nrt0_nw1	       0.00+/-0.00	       0.02+/-0.00	 
+hmVal_nb2_highmtb_nt0_nrt1_nw0	       0.18+/-0.02	       0.61+/-0.28	 
+ hmVal_nb2_highmtb_nrtntnwgeq2	       0.00+/-0.00	       0.00+/-0.00	 
+
+_SubCorr: 18.72+/-0.00
+  hmVal_nb1_lowmtb_nj7_nrtgeq1	       0.81+/-0.00	       0.67+/-0.00	 
+  hmVal_nb2_lowmtb_nj7_nrtgeq1	       0.74+/-0.00	       0.33+/-0.00	 
+hmVal_nb1_highmtb_nj5_nt0_nrt0_nw0	       0.86+/-0.00	       0.78+/-0.00	 
+hmVal_nb2_highmtb_nj5_nt0_nrt0_nw0	       0.81+/-0.00	       0.78+/-0.00	 
+hmVal_nb1_highmtb_nt1_nrt0_nw0	       0.86+/-0.00	       0.78+/-0.00	 
+hmVal_nb1_highmtb_nt0_nrt0_nw1	       0.86+/-0.00	       0.78+/-0.00	 
+hmVal_nb1_highmtb_nt0_nrt1_nw0	       0.86+/-0.00	       0.78+/-0.00	 
+ hmVal_nb1_highmtb_nrtntnwgeq2	       0.86+/-0.00	       0.78+/-0.00	 
+hmVal_nb2_highmtb_nt1_nrt0_nw0	       0.81+/-0.00	       0.78+/-0.00	 
+hmVal_nb2_highmtb_nt0_nrt0_nw1	       0.81+/-0.00	       0.78+/-0.00	 
+hmVal_nb2_highmtb_nt0_nrt1_nw0	       0.81+/-0.00	       0.78+/-0.00	 
+ hmVal_nb2_highmtb_nrtntnwgeq2	       0.81+/-0.00	       0.78+/-0.00	 
+
+_SubNormCorr: 22.26+/-0.28
+  hmVal_nb1_lowmtb_nj7_nrtgeq1	       0.88+/-0.06	       0.88+/-0.06	 
+  hmVal_nb2_lowmtb_nj7_nrtgeq1	       0.70+/-0.04	       0.70+/-0.04	 
+hmVal_nb1_highmtb_nj5_nt0_nrt0_nw0	       0.96+/-0.04	       0.96+/-0.04	 
+hmVal_nb2_highmtb_nj5_nt0_nrt0_nw0	       0.95+/-0.08	       0.95+/-0.08	 
+hmVal_nb1_highmtb_nt1_nrt0_nw0	       0.96+/-0.04	       0.96+/-0.04	 
+hmVal_nb1_highmtb_nt0_nrt0_nw1	       0.96+/-0.04	       0.96+/-0.04	 
+hmVal_nb1_highmtb_nt0_nrt1_nw0	       0.96+/-0.04	       0.96+/-0.04	 
+ hmVal_nb1_highmtb_nrtntnwgeq2	       0.96+/-0.04	       0.96+/-0.04	 
+hmVal_nb2_highmtb_nt1_nrt0_nw0	       0.95+/-0.08	       0.95+/-0.08	 
+hmVal_nb2_highmtb_nt0_nrt0_nw1	       0.95+/-0.08	       0.95+/-0.08	 
+hmVal_nb2_highmtb_nt0_nrt1_nw0	       0.95+/-0.08	       0.95+/-0.08	 
+ hmVal_nb2_highmtb_nrtntnwgeq2	       0.95+/-0.08	       0.95+/-0.08	 
+
+_TF: 1.17+/-0.02
+  hmVal_nb1_lowmtb_nj7_nrtgeq1	       0.04+/-0.00	       0.01+/-0.00	 
+  hmVal_nb2_lowmtb_nj7_nrtgeq1	       0.08+/-0.00	       0.01+/-0.00	 
+hmVal_nb1_highmtb_nj5_nt0_nrt0_nw0	       0.32+/-0.00	       0.13+/-0.00	 
+hmVal_nb2_highmtb_nj5_nt0_nrt0_nw0	       0.30+/-0.01	       0.10+/-0.00	 
+hmVal_nb1_highmtb_nt1_nrt0_nw0	       0.01+/-0.00	       0.00+/-0.00	 
+hmVal_nb1_highmtb_nt0_nrt0_nw1	       0.01+/-0.00	       0.00+/-0.00	 
+hmVal_nb1_highmtb_nt0_nrt1_nw0	       0.05+/-0.00	       0.01+/-0.00	 
+ hmVal_nb1_highmtb_nrtntnwgeq2	       0.00+/-0.00	       0.00+/-0.00	 
+hmVal_nb2_highmtb_nt1_nrt0_nw0	       0.01+/-0.00	       0.01+/-0.00	 
+hmVal_nb2_highmtb_nt0_nrt0_nw1	       0.00+/-0.00	       0.00+/-0.00	 
+hmVal_nb2_highmtb_nt0_nrt1_nw0	       0.06+/-0.00	       0.04+/-0.02	 
+ hmVal_nb2_highmtb_nrtntnwgeq2	       0.00+/-0.00	       0.00+/-0.00	 
+
+_pred: 804.97+/-16.49
+  hmVal_nb1_lowmtb_nj7_nrtgeq1	      16.23+/-1.07	       0.39+/-0.09	 
+  hmVal_nb2_lowmtb_nj7_nrtgeq1	      22.28+/-1.50	       0.30+/-0.06	 
+hmVal_nb1_highmtb_nj5_nt0_nrt0_nw0	     533.59+/-14.71	      30.75+/-2.20	 
+hmVal_nb2_highmtb_nj5_nt0_nrt0_nw0	      78.64+/-5.52	       4.14+/-0.66	 
+hmVal_nb1_highmtb_nt1_nrt0_nw0	       9.05+/-0.41	       0.52+/-0.06	 
+hmVal_nb1_highmtb_nt0_nrt0_nw1	       8.91+/-0.49	       0.46+/-0.05	 
+hmVal_nb1_highmtb_nt0_nrt1_nw0	      76.00+/-3.55	       2.86+/-0.26	 
+ hmVal_nb1_highmtb_nrtntnwgeq2	       0.68+/-0.07	       0.02+/-0.00	 
+hmVal_nb2_highmtb_nt1_nrt0_nw0	       2.72+/-0.29	       0.31+/-0.07	 
+hmVal_nb2_highmtb_nt0_nrt0_nw1	       0.11+/-0.01	       0.05+/-0.01	 
+hmVal_nb2_highmtb_nt0_nrt1_nw0	      14.90+/-1.56	       1.84+/-0.77	 
+ hmVal_nb2_highmtb_nrtntnwgeq2	       0.18+/-0.07	       0.00+/-0.00	 
+
+data-cr: 11904.00+/-109.11
+  hmVal_nb1_lowmtb_nj7_nrtgeq1	     435.00+/-20.86	      50.00+/-7.07	 
+  hmVal_nb2_lowmtb_nj7_nrtgeq1	     293.00+/-17.12	      36.00+/-6.00	 
+hmVal_nb1_highmtb_nj5_nt0_nrt0_nw0	    1682.00+/-41.01	     236.00+/-15.36	 
+hmVal_nb2_highmtb_nj5_nt0_nrt0_nw0	     258.00+/-16.06	      42.00+/-6.48	 
+hmVal_nb1_highmtb_nt1_nrt0_nw0	    1682.00+/-41.01	     236.00+/-15.36	 
+hmVal_nb1_highmtb_nt0_nrt0_nw1	    1682.00+/-41.01	     236.00+/-15.36	 
+hmVal_nb1_highmtb_nt0_nrt1_nw0	    1682.00+/-41.01	     236.00+/-15.36	 
+ hmVal_nb1_highmtb_nrtntnwgeq2	    1682.00+/-41.01	     236.00+/-15.36	 
+hmVal_nb2_highmtb_nt1_nrt0_nw0	     258.00+/-16.06	      42.00+/-6.48	 
+hmVal_nb2_highmtb_nt0_nrt0_nw1	     258.00+/-16.06	      42.00+/-6.48	 
+hmVal_nb2_highmtb_nt0_nrt1_nw0	     258.00+/-16.06	      42.00+/-6.48	 
+ hmVal_nb2_highmtb_nrtntnwgeq2	     258.00+/-16.06	      42.00+/-6.48	 
+
+minor-cr: 54.05+/-1.95
+  hmVal_nb1_lowmtb_nj7_nrtgeq1	       2.30+/-0.32	       0.50+/-0.18	 
+  hmVal_nb2_lowmtb_nj7_nrtgeq1	       2.87+/-0.38	       0.84+/-0.23	 
+hmVal_nb1_highmtb_nj5_nt0_nrt0_nw0	       5.46+/-0.69	       1.65+/-0.32	 
+hmVal_nb2_highmtb_nj5_nt0_nrt0_nw0	       1.38+/-0.23	       1.02+/-0.26	 
+hmVal_nb1_highmtb_nt1_nrt0_nw0	       5.46+/-0.69	       1.65+/-0.32	 
+hmVal_nb1_highmtb_nt0_nrt0_nw1	       5.46+/-0.69	       1.65+/-0.32	 
+hmVal_nb1_highmtb_nt0_nrt1_nw0	       5.46+/-0.69	       1.65+/-0.32	 
+ hmVal_nb1_highmtb_nrtntnwgeq2	       5.46+/-0.69	       1.65+/-0.32	 
+hmVal_nb2_highmtb_nt1_nrt0_nw0	       1.38+/-0.23	       1.02+/-0.26	 
+hmVal_nb2_highmtb_nt0_nrt0_nw1	       1.38+/-0.23	       1.02+/-0.26	 
+hmVal_nb2_highmtb_nt0_nrt1_nw0	       1.38+/-0.23	       1.02+/-0.26	 
+ hmVal_nb2_highmtb_nrtntnwgeq2	       1.38+/-0.23	       1.02+/-0.26	 
+
+non-qcd: 1857.75+/-70.05
+  hmVal_nb1_lowmtb_nj7_nrtgeq1	      89.63+/-15.14	      18.57+/-7.11	 
+  hmVal_nb2_lowmtb_nj7_nrtgeq1	     107.95+/-17.21	      33.84+/-9.91	 
+hmVal_nb1_highmtb_nj5_nt0_nrt0_nw0	     220.51+/-24.11	      45.14+/-11.10	 
+hmVal_nb2_highmtb_nj5_nt0_nrt0_nw0	      47.66+/-11.15	       8.24+/-4.22	 
+hmVal_nb1_highmtb_nt1_nrt0_nw0	     220.51+/-24.11	      45.14+/-11.10	 
+hmVal_nb1_highmtb_nt0_nrt0_nw1	     220.51+/-24.11	      45.14+/-11.10	 
+hmVal_nb1_highmtb_nt0_nrt1_nw0	     220.51+/-24.11	      45.14+/-11.10	 
+ hmVal_nb1_highmtb_nrtntnwgeq2	     220.51+/-24.11	      45.14+/-11.10	 
+hmVal_nb2_highmtb_nt1_nrt0_nw0	      47.66+/-11.15	       8.24+/-4.22	 
+hmVal_nb2_highmtb_nt0_nrt0_nw1	      47.66+/-11.15	       8.24+/-4.22	 
+hmVal_nb2_highmtb_nt0_nrt1_nw0	      47.66+/-11.15	       8.24+/-4.22	 
+ hmVal_nb2_highmtb_nrtntnwgeq2	      47.66+/-11.15	       8.24+/-4.22	 
+
+otherbkgs: 1920.53+/-68.87
+  hmVal_nb1_lowmtb_nj7_nrtgeq1	      80.55+/-14.31	      16.74+/-6.36	 
+  hmVal_nb2_lowmtb_nj7_nrtgeq1	      76.78+/-12.71	      24.08+/-7.08	 
+hmVal_nb1_highmtb_nj5_nt0_nrt0_nw0	     235.21+/-24.47	      51.70+/-10.78	 
+hmVal_nb2_highmtb_nj5_nt0_nrt0_nw0	      48.35+/-11.21	       9.21+/-4.06	 
+hmVal_nb1_highmtb_nt1_nrt0_nw0	     235.21+/-24.47	      51.70+/-10.78	 
+hmVal_nb1_highmtb_nt0_nrt0_nw1	     235.21+/-24.47	      51.70+/-10.78	 
+hmVal_nb1_highmtb_nt0_nrt1_nw0	     235.21+/-24.47	      51.70+/-10.78	 
+ hmVal_nb1_highmtb_nrtntnwgeq2	     235.21+/-24.47	      51.70+/-10.78	 
+hmVal_nb2_highmtb_nt1_nrt0_nw0	      48.35+/-11.21	       9.21+/-4.06	 
+hmVal_nb2_highmtb_nt0_nrt0_nw1	      48.35+/-11.21	       9.21+/-4.06	 
+hmVal_nb2_highmtb_nt0_nrt1_nw0	      48.35+/-11.21	       9.21+/-4.06	 
+ hmVal_nb2_highmtb_nrtntnwgeq2	      48.35+/-11.21	       9.21+/-4.06	 
+
+otherbkgs-noznunu: 1733.81+/-68.82
+  hmVal_nb1_lowmtb_nj7_nrtgeq1	      78.94+/-14.31	      16.36+/-6.35	 
+  hmVal_nb2_lowmtb_nj7_nrtgeq1	      75.99+/-12.71	      23.82+/-7.08	 
+hmVal_nb1_highmtb_nj5_nt0_nrt0_nw0	     211.31+/-24.45	      43.25+/-10.76	 
+hmVal_nb2_highmtb_nj5_nt0_nrt0_nw0	      45.34+/-11.20	       7.84+/-4.06	 
+hmVal_nb1_highmtb_nt1_nrt0_nw0	     211.31+/-24.45	      43.25+/-10.76	 
+hmVal_nb1_highmtb_nt0_nrt0_nw1	     211.31+/-24.45	      43.25+/-10.76	 
+hmVal_nb1_highmtb_nt0_nrt1_nw0	     211.31+/-24.45	      43.25+/-10.76	 
+ hmVal_nb1_highmtb_nrtntnwgeq2	     211.31+/-24.45	      43.25+/-10.76	 
+hmVal_nb2_highmtb_nt1_nrt0_nw0	      45.34+/-11.20	       7.84+/-4.06	 
+hmVal_nb2_highmtb_nt0_nrt0_nw1	      45.34+/-11.20	       7.84+/-4.06	 
+hmVal_nb2_highmtb_nt0_nrt1_nw0	      45.34+/-11.20	       7.84+/-4.06	 
+ hmVal_nb2_highmtb_nrtntnwgeq2	      45.34+/-11.20	       7.84+/-4.06	 
+
+qcd-cr: 8691.99+/-24.60
+  hmVal_nb1_lowmtb_nj7_nrtgeq1	     360.82+/-12.95	      24.73+/-0.52	 
+  hmVal_nb2_lowmtb_nj7_nrtgeq1	     122.11+/-2.03	      14.13+/-0.33	 
+hmVal_nb1_highmtb_nj5_nt0_nrt0_nw0	    1210.08+/-8.30	     208.04+/-2.08	 
+hmVal_nb2_highmtb_nj5_nt0_nrt0_nw0	     187.41+/-3.60	      28.51+/-0.64	 
+hmVal_nb1_highmtb_nt1_nrt0_nw0	    1210.08+/-8.30	     208.04+/-2.08	 
+hmVal_nb1_highmtb_nt0_nrt0_nw1	    1210.08+/-8.30	     208.04+/-2.08	 
+hmVal_nb1_highmtb_nt0_nrt1_nw0	    1210.08+/-8.30	     208.04+/-2.08	 
+ hmVal_nb1_highmtb_nrtntnwgeq2	    1210.08+/-8.30	     208.04+/-2.08	 
+hmVal_nb2_highmtb_nt1_nrt0_nw0	     187.41+/-3.60	      28.51+/-0.64	 
+hmVal_nb2_highmtb_nt0_nrt0_nw1	     187.41+/-3.60	      28.51+/-0.64	 
+hmVal_nb2_highmtb_nt0_nrt1_nw0	     187.41+/-3.60	      28.51+/-0.64	 
+ hmVal_nb2_highmtb_nrtntnwgeq2	     187.41+/-3.60	      28.51+/-0.64	 
+
+qcd-sr: 686.12+/-6.04
+  hmVal_nb1_lowmtb_nj7_nrtgeq1	      16.53+/-0.44	       0.29+/-0.05	 
+  hmVal_nb2_lowmtb_nj7_nrtgeq1	      12.58+/-0.36	       0.36+/-0.04	 
+hmVal_nb1_highmtb_nj5_nt0_nrt0_nw0	     446.29+/-4.87	      34.71+/-0.98	 
+hmVal_nb2_highmtb_nj5_nt0_nrt0_nw0	      70.30+/-1.84	       3.60+/-0.13	 
+hmVal_nb1_highmtb_nt1_nrt0_nw0	       7.57+/-0.28	       0.59+/-0.06	 
+hmVal_nb1_highmtb_nt0_nrt0_nw1	       7.45+/-0.37	       0.52+/-0.05	 
+hmVal_nb1_highmtb_nt0_nrt1_nw0	      63.57+/-2.49	       3.23+/-0.20	 
+ hmVal_nb1_highmtb_nrtntnwgeq2	       0.57+/-0.06	       0.02+/-0.00	 
+hmVal_nb2_highmtb_nt1_nrt0_nw0	       2.44+/-0.20	       0.27+/-0.05	 
+hmVal_nb2_highmtb_nt0_nrt0_nw1	       0.09+/-0.01	       0.05+/-0.00	 
+hmVal_nb2_highmtb_nt0_nrt1_nw0	      13.32+/-1.09	       1.60+/-0.62	 
+ hmVal_nb2_highmtb_nrtntnwgeq2	       0.17+/-0.06	       0.00+/-0.00	 
+
+qcd-sr-int: 1495.24+/-18.74
+  hmVal_nb1_lowmtb_nj7_nrtgeq1	     200.72+/-2.86	       4.86+/-0.12	 
+  hmVal_nb2_lowmtb_nj7_nrtgeq1	      58.18+/-1.10	       2.32+/-0.08	 
+hmVal_nb1_highmtb_nj5_nt0_nrt0_nw0	     153.37+/-5.44	      15.75+/-1.24	 
+hmVal_nb2_highmtb_nj5_nt0_nrt0_nw0	      74.07+/-6.07	       2.64+/-0.63	 
+hmVal_nb1_highmtb_nt1_nrt0_nw0	     153.37+/-5.44	      15.75+/-1.24	 
+hmVal_nb1_highmtb_nt0_nrt0_nw1	     153.37+/-5.44	      15.75+/-1.24	 
+hmVal_nb1_highmtb_nt0_nrt1_nw0	     153.37+/-5.44	      15.75+/-1.24	 
+ hmVal_nb1_highmtb_nrtntnwgeq2	     153.37+/-5.44	      15.75+/-1.24	 
+hmVal_nb2_highmtb_nt1_nrt0_nw0	      74.07+/-6.07	       2.64+/-0.63	 
+hmVal_nb2_highmtb_nt0_nrt0_nw1	      74.07+/-6.07	       2.64+/-0.63	 
+hmVal_nb2_highmtb_nt0_nrt1_nw0	      74.07+/-6.07	       2.64+/-0.63	 
+ hmVal_nb2_highmtb_nrtntnwgeq2	      74.07+/-6.07	       2.64+/-0.63	 
+
+qcd-withveto-cr: 7907.83+/-20.33
+  hmVal_nb1_lowmtb_nj7_nrtgeq1	     237.22+/-2.78	      23.68+/-0.51	 
+  hmVal_nb2_lowmtb_nj7_nrtgeq1	     109.93+/-1.98	      13.00+/-0.32	 
+hmVal_nb1_highmtb_nj5_nt0_nrt0_nw0	    1123.16+/-8.08	     194.67+/-2.06	 
+hmVal_nb2_highmtb_nj5_nt0_nrt0_nw0	     161.36+/-3.23	      25.61+/-0.63	 
+hmVal_nb1_highmtb_nt1_nrt0_nw0	    1123.16+/-8.08	     194.67+/-2.06	 
+hmVal_nb1_highmtb_nt0_nrt0_nw1	    1123.16+/-8.08	     194.67+/-2.06	 
+hmVal_nb1_highmtb_nt0_nrt1_nw0	    1123.16+/-8.08	     194.67+/-2.06	 
+ hmVal_nb1_highmtb_nrtntnwgeq2	    1123.16+/-8.08	     194.67+/-2.06	 
+hmVal_nb2_highmtb_nt1_nrt0_nw0	     161.36+/-3.23	      25.61+/-0.63	 
+hmVal_nb2_highmtb_nt0_nrt0_nw1	     161.36+/-3.23	      25.61+/-0.63	 
+hmVal_nb2_highmtb_nt0_nrt1_nw0	     161.36+/-3.23	      25.61+/-0.63	 
+ hmVal_nb2_highmtb_nrtntnwgeq2	     161.36+/-3.23	      25.61+/-0.63	 
+
+qcd-withveto-sr: 590.82+/-5.37
+  hmVal_nb1_lowmtb_nj7_nrtgeq1	      14.96+/-0.44	       0.28+/-0.05	 
+  hmVal_nb2_lowmtb_nj7_nrtgeq1	      11.88+/-0.36	       0.35+/-0.04	 
+hmVal_nb1_highmtb_nj5_nt0_nrt0_nw0	     408.18+/-4.70	      32.13+/-0.96	 
+hmVal_nb2_highmtb_nj5_nt0_nrt0_nw0	      52.87+/-1.59	       3.05+/-0.13	 
+hmVal_nb1_highmtb_nt1_nrt0_nw0	       7.21+/-0.28	       0.59+/-0.06	 
+hmVal_nb1_highmtb_nt0_nrt0_nw1	       7.33+/-0.37	       0.52+/-0.05	 
+hmVal_nb1_highmtb_nt0_nrt1_nw0	      31.82+/-1.09	       2.24+/-0.14	 
+ hmVal_nb1_highmtb_nrtntnwgeq2	       0.57+/-0.06	       0.02+/-0.00	 
+hmVal_nb2_highmtb_nt1_nrt0_nw0	       2.44+/-0.20	       0.27+/-0.05	 
+hmVal_nb2_highmtb_nt0_nrt0_nw1	       0.09+/-0.01	       0.00+/-0.00	 
+hmVal_nb2_highmtb_nt0_nrt1_nw0	      12.30+/-1.03	       1.58+/-0.62	 
+ hmVal_nb2_highmtb_nrtntnwgeq2	       0.17+/-0.06	       0.00+/-0.00	 
+
+ttbar-cr: 1582.85+/-69.89
+  hmVal_nb1_lowmtb_nj7_nrtgeq1	      83.38+/-15.13	      16.81+/-7.11	 
+  hmVal_nb2_lowmtb_nj7_nrtgeq1	     103.72+/-17.20	      32.72+/-9.91	 
+hmVal_nb1_highmtb_nj5_nt0_nrt0_nw0	     186.49+/-24.03	      34.18+/-11.09	 
+hmVal_nb2_highmtb_nj5_nt0_nrt0_nw0	      42.70+/-11.13	       5.87+/-4.21	 
+hmVal_nb1_highmtb_nt1_nrt0_nw0	     186.49+/-24.03	      34.18+/-11.09	 
+hmVal_nb1_highmtb_nt0_nrt0_nw1	     186.49+/-24.03	      34.18+/-11.09	 
+hmVal_nb1_highmtb_nt0_nrt1_nw0	     186.49+/-24.03	      34.18+/-11.09	 
+ hmVal_nb1_highmtb_nrtntnwgeq2	     186.49+/-24.03	      34.18+/-11.09	 
+hmVal_nb2_highmtb_nt1_nrt0_nw0	      42.70+/-11.13	       5.87+/-4.21	 
+hmVal_nb2_highmtb_nt0_nrt0_nw1	      42.70+/-11.13	       5.87+/-4.21	 
+hmVal_nb2_highmtb_nt0_nrt1_nw0	      42.70+/-11.13	       5.87+/-4.21	 
+ hmVal_nb2_highmtb_nrtntnwgeq2	      42.70+/-11.13	       5.87+/-4.21	 
+
+wjets-cr: 220.85+/-4.41
+  hmVal_nb1_lowmtb_nj7_nrtgeq1	       3.95+/-0.46	       1.26+/-0.12	 
+  hmVal_nb2_lowmtb_nj7_nrtgeq1	       1.36+/-0.26	       0.28+/-0.04	 
+hmVal_nb1_highmtb_nj5_nt0_nrt0_nw0	      28.57+/-1.83	       9.30+/-0.47	 
+hmVal_nb2_highmtb_nj5_nt0_nrt0_nw0	       3.59+/-0.49	       1.35+/-0.14	 
+hmVal_nb1_highmtb_nt1_nrt0_nw0	      28.57+/-1.83	       9.30+/-0.47	 
+hmVal_nb1_highmtb_nt0_nrt0_nw1	      28.57+/-1.83	       9.30+/-0.47	 
+hmVal_nb1_highmtb_nt0_nrt1_nw0	      28.57+/-1.83	       9.30+/-0.47	 
+ hmVal_nb1_highmtb_nrtntnwgeq2	      28.57+/-1.83	       9.30+/-0.47	 
+hmVal_nb2_highmtb_nt1_nrt0_nw0	       3.59+/-0.49	       1.35+/-0.14	 
+hmVal_nb2_highmtb_nt0_nrt0_nw1	       3.59+/-0.49	       1.35+/-0.14	 
+hmVal_nb2_highmtb_nt0_nrt1_nw0	       3.59+/-0.49	       1.35+/-0.14	 
+ hmVal_nb2_highmtb_nrtntnwgeq2	       3.59+/-0.49	       1.35+/-0.14	 
+
+znunu-cr: 186.72+/-2.78
+  hmVal_nb1_lowmtb_nj7_nrtgeq1	       1.62+/-0.19	       0.38+/-0.11	 
+  hmVal_nb2_lowmtb_nj7_nrtgeq1	       0.78+/-0.14	       0.26+/-0.08	 
+hmVal_nb1_highmtb_nj5_nt0_nrt0_nw0	      23.90+/-1.04	       8.45+/-0.53	 
+hmVal_nb2_highmtb_nj5_nt0_nrt0_nw0	       3.01+/-0.36	       1.37+/-0.19	 
+hmVal_nb1_highmtb_nt1_nrt0_nw0	      23.90+/-1.04	       8.45+/-0.53	 
+hmVal_nb1_highmtb_nt0_nrt0_nw1	      23.90+/-1.04	       8.45+/-0.53	 
+hmVal_nb1_highmtb_nt0_nrt1_nw0	      23.90+/-1.04	       8.45+/-0.53	 
+ hmVal_nb1_highmtb_nrtntnwgeq2	      23.90+/-1.04	       8.45+/-0.53	 
+hmVal_nb2_highmtb_nt1_nrt0_nw0	       3.01+/-0.36	       1.37+/-0.19	 
+hmVal_nb2_highmtb_nt0_nrt0_nw1	       3.01+/-0.36	       1.37+/-0.19	 
+hmVal_nb2_highmtb_nt0_nrt1_nw0	       3.01+/-0.36	       1.37+/-0.19	 
+ hmVal_nb2_highmtb_nrtntnwgeq2	       3.01+/-0.36	       1.37+/-0.19	 
+
+
+--->addBackground: qcd_pred
+
+--->combine
+### Open file root://cmseos.fnal.gov//eos/uscms/store/user/ddash/nano_samples/ana_samples_v1//data_2017BtoE_tree.root as *data-sr*
+
+Calc yields for sample data-sr
+data-sr: 1.0*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Pass_dPhiMET && !Pass_dPhiMETHighDM && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && (Stop0l_nTop+Stop0l_nResolved+Stop0l_nW) >= 2 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto), MET_pt, entries=14
+  --> 14+/-3.74166, 0+/-0, 
+data-sr: 1.0*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Pass_dPhiMET && !Pass_dPhiMETHighDM && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && Stop0l_nTop==0 && Stop0l_nResolved==0 && Stop0l_nW==1 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto), MET_pt, entries=37
+  --> 37+/-6.08276, 0+/-0, 
+data-sr: 1.0*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Pass_dPhiMET && !Pass_dPhiMETHighDM && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && Stop0l_nTop==0 && Stop0l_nResolved==1 && Stop0l_nW==0 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto), MET_pt, entries=54
+  --> 49+/-7, 5+/-2.23607, 
+data-sr: 1.0*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Pass_dPhiMET && !Pass_dPhiMETHighDM && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && (Stop0l_nTop+Stop0l_nResolved+Stop0l_nW) >= 2 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto), MET_pt, entries=7
+  --> 4+/-2, 3+/-1.73205, 
+data-sr: 1.0*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Pass_dPhiMET && !Pass_dPhiMETHighDM && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && Stop0l_nTop==1 && Stop0l_nResolved==0 && Stop0l_nW==0 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto), MET_pt, entries=24
+  --> 19+/-4.3589, 5+/-2.23607, 
+data-sr: 1.0*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Pass_dPhiMET && !Pass_dPhiMETHighDM && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && Stop0l_nTop==0 && Stop0l_nResolved==0 && Stop0l_nW==1 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto), MET_pt, entries=8
+  --> 8+/-2.82843, 0+/-0, 
+data-sr: 1.0*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Pass_dPhiMET && !Pass_dPhiMETHighDM && Stop0l_nbtags>=2 && Stop0l_Mtb<175 && Stop0l_nJets>=7 && Stop0l_nResolved>=1 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto), MET_pt, entries=244
+  --> 217+/-14.7309, 27+/-5.19615, 
+data-sr: 1.0*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Pass_dPhiMET && !Pass_dPhiMETHighDM && Stop0l_nbtags>=2 && Stop0l_Mtb>=175 && Stop0l_nJets>=5 && Stop0l_nTop==0 && Stop0l_nResolved==0 && Stop0l_nW==0 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto), MET_pt, entries=196
+  --> 163+/-12.7671, 33+/-5.74456, 
+data-sr: 1.0*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Pass_dPhiMET && !Pass_dPhiMETHighDM && Stop0l_nbtags==1 && Stop0l_Mtb<175 && Stop0l_nJets>=7 && Stop0l_nResolved>=1 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto), MET_pt, entries=118
+  --> 104+/-10.198, 14+/-3.74166, 
+data-sr: 1.0*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Pass_dPhiMET && !Pass_dPhiMETHighDM && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && Stop0l_nTop==1 && Stop0l_nResolved==0 && Stop0l_nW==0 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto), MET_pt, entries=110
+  --> 95+/-9.74679, 15+/-3.87298, 
+data-sr: 1.0*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Pass_dPhiMET && !Pass_dPhiMETHighDM && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && Stop0l_nTop==0 && Stop0l_nResolved==1 && Stop0l_nW==0 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto), MET_pt, entries=343
+  --> 318+/-17.8326, 25+/-5, 
+data-sr: 1.0*(Pass_MET && Pass_NJets30 && Stop0l_nJets>=5 && Stop0l_nbtags>=1 && Pass_dPhiMET && !Pass_dPhiMETHighDM && Stop0l_nbtags==1 && Stop0l_Mtb>=175 && Stop0l_nJets>=5 && Stop0l_nTop==0 && Stop0l_nResolved==0 && Stop0l_nW==0 && Pass_EventFilter && Pass_HT && Pass_JetID && Pass_CaloMETRatio && (run < 319077 || run==1) && Pass_trigger_MET && Pass_LeptonVeto), MET_pt, entries=1310
+  --> 1159+/-34.0441, 151+/-12.2882, 
+1101.47 ms
+27987.8 fb^{-1} (13 TeV)
+-->drawing drawStackAndRatio stack: qcd_pred_stack
+Data: 2465.00+/-49.65MC: 804.97+/-16.49
+ :: Data/MC = 3.06+/-0.09
+Info in <TCanvas::Print>: pdf file LowMET_HM_17BE/sig30/std_pred_trad.pdf has been created
+Info in <TCanvas::SaveSource>: C++ Macro file: LowMET_HM_17BE/sig30/std_pred_trad.C has been generated
+Info in <TCanvas::SaveAs>: ROOT file LowMET_HM_17BE/sig30/std_pred_trad_canvas.root has been created
+
+
+ Traditional 
+qcd_pred
+  hmVal_nb1_lowmtb_nj7_nrtgeq1	      16.23(+1.07)(-1.07)	       0.39(+0.09)(-0.09)	 
+  hmVal_nb2_lowmtb_nj7_nrtgeq1	      22.28(+1.50)(-1.50)	       0.30(+0.06)(-0.06)	 
+hmVal_nb1_highmtb_nj5_nt0_nrt0_nw0	     533.59(+14.71)(-14.71)	      30.75(+2.20)(-2.20)	 
+hmVal_nb2_highmtb_nj5_nt0_nrt0_nw0	      78.64(+5.52)(-5.52)	       4.14(+0.66)(-0.66)	 
+hmVal_nb1_highmtb_nt1_nrt0_nw0	       9.05(+0.41)(-0.41)	       0.52(+0.06)(-0.06)	 
+hmVal_nb1_highmtb_nt0_nrt0_nw1	       8.91(+0.49)(-0.49)	       0.46(+0.05)(-0.05)	 
+hmVal_nb1_highmtb_nt0_nrt1_nw0	      76.00(+3.55)(-3.55)	       2.86(+0.26)(-0.26)	 
+ hmVal_nb1_highmtb_nrtntnwgeq2	       0.68(+0.07)(-0.07)	       0.02(+0.00)(-0.00)	 
+hmVal_nb2_highmtb_nt1_nrt0_nw0	       2.72(+0.29)(-0.29)	       0.31(+0.07)(-0.07)	 
+hmVal_nb2_highmtb_nt0_nrt0_nw1	       0.11(+0.01)(-0.01)	       0.05(+0.01)(-0.01)	 
+hmVal_nb2_highmtb_nt0_nrt1_nw0	      14.90(+1.56)(-1.56)	       1.84(+0.77)(-0.77)	 
+ hmVal_nb2_highmtb_nrtntnwgeq2	       0.18(+0.07)(-0.07)	       0.00(+0.00)(-0.00)	 
+
+total_bkg
+  hmVal_nb1_lowmtb_nj7_nrtgeq1	      16.23(+1.07)(-1.07)	       0.39(+0.09)(-0.09)	 
+  hmVal_nb2_lowmtb_nj7_nrtgeq1	      22.28(+1.50)(-1.50)	       0.30(+0.06)(-0.06)	 
+hmVal_nb1_highmtb_nj5_nt0_nrt0_nw0	     533.59(+14.71)(-14.71)	      30.75(+2.20)(-2.20)	 
+hmVal_nb2_highmtb_nj5_nt0_nrt0_nw0	      78.64(+5.52)(-5.52)	       4.14(+0.66)(-0.66)	 
+hmVal_nb1_highmtb_nt1_nrt0_nw0	       9.05(+0.41)(-0.41)	       0.52(+0.06)(-0.06)	 
+hmVal_nb1_highmtb_nt0_nrt0_nw1	       8.91(+0.49)(-0.49)	       0.46(+0.05)(-0.05)	 
+hmVal_nb1_highmtb_nt0_nrt1_nw0	      76.00(+3.55)(-3.55)	       2.86(+0.26)(-0.26)	 
+ hmVal_nb1_highmtb_nrtntnwgeq2	       0.68(+0.07)(-0.07)	       0.02(+0.00)(-0.00)	 
+hmVal_nb2_highmtb_nt1_nrt0_nw0	       2.72(+0.29)(-0.29)	       0.31(+0.07)(-0.07)	 
+hmVal_nb2_highmtb_nt0_nrt0_nw1	       0.11(+0.01)(-0.01)	       0.05(+0.01)(-0.01)	 
+hmVal_nb2_highmtb_nt0_nrt1_nw0	      14.90(+1.56)(-1.56)	       1.84(+0.77)(-0.77)	 
+ hmVal_nb2_highmtb_nrtntnwgeq2	       0.18(+0.07)(-0.07)	       0.00(+0.00)(-0.00)	 
+
+
+ Summary Traditional 
+                      category	                          pred.                          obs.
+  hmVal_nb1_lowmtb_nj7_nrtgeq1	                          16.63+/-1.07                           118
+  hmVal_nb2_lowmtb_nj7_nrtgeq1	                          22.59+/-1.50                           244
+hmVal_nb1_highmtb_nj5_nt0_nrt0_nw0	                         564.34+/-14.88                          1310
+hmVal_nb2_highmtb_nj5_nt0_nrt0_nw0	                          82.78+/-5.56                           196
+hmVal_nb1_highmtb_nt1_nrt0_nw0	                           9.58+/-0.41                           110
+hmVal_nb1_highmtb_nt0_nrt0_nw1	                           9.37+/-0.50                            37
+hmVal_nb1_highmtb_nt0_nrt1_nw0	                          78.87+/-3.55                           343
+ hmVal_nb1_highmtb_nrtntnwgeq2	                           0.70+/-0.07                            14
+hmVal_nb2_highmtb_nt1_nrt0_nw0	                           3.03+/-0.30                            24
+hmVal_nb2_highmtb_nt0_nrt0_nw1	                           0.16+/-0.02                             8
+hmVal_nb2_highmtb_nt0_nrt1_nw0	                          16.74+/-1.74                            54
+ hmVal_nb2_highmtb_nrtntnwgeq2	                           0.18+/-0.07                             7
+1178 s

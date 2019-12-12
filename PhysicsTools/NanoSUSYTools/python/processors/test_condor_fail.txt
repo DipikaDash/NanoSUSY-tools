@@ -1,0 +1,2 @@
+root://cmseos.fnal.gov//store/user/lpcsusyhad/Stop_production/QCD_smearing/QCD_smeared_2016_PreProcessed_sample//QCD_HT_300to500_2016/QCD_HT_300to500_2016_12.root 
+

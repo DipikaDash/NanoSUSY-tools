@@ -1,0 +1,58 @@
+#include<iostream>
+#include <cmath>
+#include "TString.h"
+#include "TTree.h"
+#include "TChain.h"
+#include "TCanvas.h"
+#include "TH1.h"
+#include "TH1F.h"
+#include "TH1D.h"
+#include "TF1.h"
+#include <string>
+#include <map>
+#include <cmath>
+#include <sstream>
+#include <fstream>
+#include <vector>
+#include "TGraph.h"
+#include "THStack.h"
+#include "TLatex.h"
+#include "TLegend.h"
+#include "TFile.h"
+#include "TTree.h"
+#include "TChain.h"
+#include "TMath.h"
+#include "TROOT.h"
+#include "TLegend.h"
+#include "TAttMarker.h"
+#include "TMultiGraph.h"
+#include "TPad.h"
+#include "THStack.h"
+#include "TColor.h"
+using namespace std;
+void tree_validation_17_18(){
+
+
+//   TH1D *qcd_pred =new TH1D("qcd_pred","",19,0.5,19.5);
+
+//   TFile *output = new TFile("validation_LM_2017.root", "RECREATE");
+//   float values[19]={1131.90,54.60,24.64,4.52,117.84,46.87,22.57,22.33,3.32,0.0,3.91,0.0,0.59,0.34,0.18,49.24,1.40,0.53,0.00};
+//   float errors[19]={18.05,4.97,2.11,1.54,8.87,4.87,2.37,3.07,0.84,1.8,0.80,0.0,0.28,0.11,0.13,1.96,0.40,0.05,0.0};
+
+//   for (int i=1;i < 20 ;i++){
+//     qcd_pred->SetBinContent(i,values[i-1]);
+//     qcd_pred->SetBinError(i,errors[i-1]);
+
+//   }
+//   qcd_pred->SetMarkerStyle(20);
+//   qcd_pred->SetMarkerColor(kGreen);
+//   qcd_pred->Write();
+//   output->Close();
+// }
+
+ 
+  TFile *f1 = new TFile("validation_LM_2018po.root");
+  TFile *f2 = new TFile("validation_LM_2018pre.root");
+  TH1D * qcd_pred1=new(TH1D*)_f1->Get("qcd_pred");
+  TH1D * qcd_pred2=new(TH1D*)_f2->Get("qcd_pred");
+  

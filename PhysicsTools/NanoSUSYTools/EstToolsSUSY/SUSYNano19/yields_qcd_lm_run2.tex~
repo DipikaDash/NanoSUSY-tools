@@ -1,0 +1,114 @@
+% Search region & 	$\met$ & 	_DATA & 	_TF & 	_pred & 	
+\hline
+\multicolumn{5}{c}{low \dm, $\nb=0$, $\nsv=0$, $\ptisr\geq500$\,GeV, $2\leq\nj\leq5$} \\
+\hline
+ %  lm_nb0_nivf0_highptisr_nj2to5
+0 & 450$-$550 & 	4310 & 	0.109$\pm$0.001 & 	470.68$\pm$9.10 \\
+1 & 550$-$650 & 	1472 & 	0.102$\pm$0.002 & 	150.10$\pm$4.73 \\
+2 & 650$-$750 & 	531 & 	0.105$\pm$0.002 & 	56.02$\pm$2.71 \\
+3 & $\geq750$ & 	350 & 	0.080$\pm$0.001 & 	27.87$\pm$1.55 \\
+\hline
+\multicolumn{5}{c}{low \dm, $\nb=0$, $\nsv=0$, $\ptisr\geq500$\,GeV, $\nj\geq6$} \\
+\hline
+ %     lm_nb0_nivf0_highptisr_nj6
+4 & 450$-$550 & 	270 & 	0.190$\pm$0.005 & 	51.22$\pm$3.36 \\
+5 & 550$-$650 & 	118 & 	0.185$\pm$0.009 & 	21.80$\pm$2.27 \\
+6 & 650$-$750 & 	37 & 	0.118$\pm$0.006 & 	4.36$\pm$0.75 \\
+7 & $\geq750$ & 	32 & 	0.203$\pm$0.008 & 	6.50$\pm$1.18 \\
+\hline
+\multicolumn{5}{c}{low \dm, $\nb=0$, $\nsv\geq1$, $\ptisr\geq500$\,GeV, $2\leq\nj\leq5$} \\
+\hline
+ %  lm_nb0_nivf1_highptisr_nj2to5
+8 & 450$-$550 & 	118 & 	0.100$\pm$0.009 & 	11.75$\pm$1.51 \\
+9 & 550$-$650 & 	27 & 	0.098$\pm$0.008 & 	2.65$\pm$0.55 \\
+10 & 650$-$750 & 	28 & 	0.122$\pm$0.011 & 	3.43$\pm$0.72 \\
+11 & $\geq750$ & 	28 & 	0.023$\pm$0.002 & 	0.64$\pm$0.14 \\
+\hline
+\multicolumn{5}{c}{low \dm, $\nb=0$, $\nsv\geq1$, $\ptisr\geq500$\,GeV, $\nj\geq6$} \\
+\hline
+ %     lm_nb0_nivf1_highptisr_nj6
+12 & 450$-$550 & 	17 & 	0.033$\pm$0.005 & 	0.57$\pm$0.16 \\
+13 & 550$-$650 & 	17 & 	0.027$\pm$0.004 & 	0.47$\pm$0.13 \\
+14 & 650$-$750 & 	17 & 	0.002$\pm$0.000 & 	0.04$\pm$0.01 \\
+15 & $\geq750$ & 	17 & 	0.002$\pm$0.000 & 	0.03$\pm$0.01 \\
+\hline
+\multicolumn{5}{c}{low \dm, $\nb=1$, $\nsv=0$, $\mtb<175$~\GeV, $300\leq\ptisr<500$\,GeV, $\ptb<40$\,GeV} \\
+\hline
+ % lm_nb1_nivf0_lowmtb_lowptisr_lowptb
+16 & 300$-$400 & 	507 & 	0.427$\pm$0.014 & 	216.48$\pm$11.96 \\
+17 & 400$-$500 & 	52 & 	0.860$\pm$0.076 & 	44.75$\pm$7.34 \\
+18 & 500$-$600 & 	52 & 	0.187$\pm$0.041 & 	9.75$\pm$2.54 \\
+19 & $\geq600$ & 	52 & 	0.010$\pm$0.003 & 	0.53$\pm$0.18 \\
+\hline
+\multicolumn{5}{c}{low \dm, $\nb=1$, $\nsv=0$, $\mtb<175$~\GeV, $300\leq\ptisr<500$\,GeV, $40<\ptb<70$\,GeV} \\
+\hline
+ % lm_nb1_nivf0_lowmtb_lowptisr_medptb
+20 & 300$-$400 & 	321 & 	0.205$\pm$0.008 & 	65.72$\pm$4.40 \\
+21 & 400$-$500 & 	30 & 	0.026$\pm$0.003 & 	0.79$\pm$0.17 \\
+22 & 500$-$600 & 	30 & 	0.008$\pm$0.002 & 	0.24$\pm$0.07 \\
+23 & $\geq600$ & 	30 & 	0.001$\pm$0.000 & 	0.02$\pm$0.01 \\
+\hline
+\multicolumn{5}{c}{low \dm, $\nb=1$, $\nsv=0$, $\mtb<175$~\GeV, $\ptisr\geq500$\,GeV, $\ptb<40$\,GeV} \\
+\hline
+ % lm_nb1_nivf0_lowmtb_highptisr_lowptb
+24 & 450$-$550 & 	96 & 	0.159$\pm$0.013 & 	15.30$\pm$2.00 \\
+25 & 550$-$650 & 	32 & 	0.151$\pm$0.018 & 	4.84$\pm$1.03 \\
+26 & 650$-$750 & 	8 & 	0.078$\pm$0.006 & 	0.62$\pm$0.23 \\
+27 & $\geq750$ & 	8 & 	0.038$\pm$0.005 & 	0.31$\pm$0.11 \\
+\hline
+\multicolumn{5}{c}{low \dm, $\nb=1$, $\nsv=0$, $\mtb<175$~\GeV, $\ptisr\geq500$\,GeV, $40<\ptb<70$\,GeV} \\
+\hline
+ % lm_nb1_nivf0_lowmtb_highptisr_medptb
+28 & 450$-$550 & 	55 & 	0.112$\pm$0.017 & 	6.18$\pm$1.23 \\
+29 & 550$-$650 & 	17 & 	0.060$\pm$0.006 & 	1.02$\pm$0.27 \\
+30 & 650$-$750 & 	7 & 	0.019$\pm$0.002 & 	0.13$\pm$0.05 \\
+31 & $\geq750$ & 	7 & 	0.053$\pm$0.007 & 	0.37$\pm$0.15 \\
+\hline
+\multicolumn{5}{c}{low \dm, $\nb=1$, $\nsv\geq1$, $\mtb<175$~\GeV, $\ptisr\geq300$\,GeV, $\ptb<40$\,GeV} \\
+\hline
+ % lm_nb1_nivf1_lowmtb_medptisr_lowptb
+32 & 300$-$400 & 	47 & 	0.409$\pm$0.035 & 	19.22$\pm$3.25 \\
+33 & 400$-$500 & 	12 & 	0.569$\pm$0.073 & 	6.83$\pm$2.16 \\
+34 & $\geq500$ & 	12 & 	0.080$\pm$0.033 & 	0.97$\pm$0.48 \\
+\hline
+\multicolumn{5}{c}{low \dm, $\nb\geq2$, $\mtb<175$~\GeV, $300\leq\ptisr<500$\,GeV, $\ptbonetwo<80$\,GeV} \\
+\hline
+ % lm_nb2_lowmtb_lowptisr_lowptb12
+35 & 300$-$400 & 	55 & 	0.242$\pm$0.029 & 	13.33$\pm$2.40 \\
+36 & 400$-$500 & 	55 & 	0.041$\pm$0.009 & 	2.25$\pm$0.59 \\
+37 & $\geq500$ & 	55 & 	0.000$\pm$0.000 & 	0.00$\pm$0.00 \\
+\hline
+\multicolumn{5}{c}{low \dm, $\nb\geq2$, $\mtb<175$~\GeV, $300\leq\ptisr<500$\,GeV, $80<\ptbonetwo<140$\,GeV} \\
+\hline
+ % lm_nb2_lowmtb_lowptisr_medptb12
+38 & 300$-$400 & 	86 & 	0.369$\pm$0.022 & 	31.76$\pm$3.93 \\
+39 & 400$-$500 & 	11 & 	0.287$\pm$0.064 & 	3.16$\pm$1.18 \\
+40 & $\geq500$ & 	11 & 	0.029$\pm$0.007 & 	0.32$\pm$0.12 \\
+\hline
+\multicolumn{5}{c}{low \dm, $\nb\geq2$, $\mtb<175$~\GeV, $300\leq\ptisr<500$\,GeV, $\ptbonetwo\geq140$\,GeV, $\nj\geq7$} \\
+\hline
+ % lm_nb2_lowmtb_lowptisr_highptb12_nj7
+41 & 300$-$400 & 	19 & 	0.301$\pm$0.029 & 	5.72$\pm$1.43 \\
+42 & 400$-$500 & 	7 & 	0.254$\pm$0.053 & 	1.78$\pm$0.77 \\
+43 & $\geq500$ & 	7 & 	0.005$\pm$0.001 & 	0.03$\pm$0.02 \\
+\hline
+\multicolumn{5}{c}{low \dm, $\nb\geq2$, $\mtb<175$~\GeV, $\ptisr\geq500$\,GeV, $\ptbonetwo<80$\,GeV} \\
+\hline
+ % lm_nb2_lowmtb_highptisr_lowptb12
+44 & 450$-$550 & 	6 & 	0.312$\pm$0.074 & 	1.87$\pm$0.88 \\
+45 & 550$-$650 & 	6 & 	0.054$\pm$0.013 & 	0.32$\pm$0.15 \\
+46 & $\geq650$ & 	6 & 	0.017$\pm$0.004 & 	0.10$\pm$0.05 \\
+\hline
+\multicolumn{5}{c}{low \dm, $\nb\geq2$, $\mtb<175$~\GeV, $\ptisr\geq500$\,GeV, $80<\ptbonetwo<140$\,GeV} \\
+\hline
+ % lm_nb2_lowmtb_highptisr_medptb12
+47 & 450$-$550 & 	17 & 	0.041$\pm$0.008 & 	0.69$\pm$0.21 \\
+48 & 550$-$650 & 	17 & 	0.028$\pm$0.008 & 	0.48$\pm$0.18 \\
+49 & $\geq650$ & 	17 & 	0.009$\pm$0.001 & 	0.15$\pm$0.04 \\
+\hline
+\multicolumn{5}{c}{low \dm, $\nb\geq2$, $\mtb<175$~\GeV, $\ptisr\geq500$\,GeV, $\ptbonetwo\geq140$\,GeV, $\nj\geq7$} \\
+\hline
+ % lm_nb2_lowmtb_highptisr_highptb12_nj7
+50 & 450$-$550 & 	10 & 	0.126$\pm$0.008 & 	1.26$\pm$0.41 \\
+51 & 550$-$650 & 	5 & 	0.051$\pm$0.004 & 	0.26$\pm$0.12 \\
+52 & $\geq650$ & 	5 & 	0.038$\pm$0.007 & 	0.19$\pm$0.09 \\

@@ -1,0 +1,1 @@
+root://cmseos.fnal.gov//store/user/lpcsusyhad/Stop_production/Summer16_94X_v3/PostProcessed_10Feb2019_v2p7/Data_MET_2016_PeriodB/Data_MET_2016_PeriodB_13.root

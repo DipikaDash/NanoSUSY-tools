@@ -1,0 +1,7 @@
+void temp_merge(){
+  TChain *mychain = new TChain("Events");
+  mychain->Add("/eos/uscms/store/user/ddash/nanoAOD/ana_samples/qcd_smear_2016.root");
+  mychain->Add("/eos/uscms/store/user/ddash/nanoAOD/ana_samples/qcd_orig_2016.root");
+  mychain->Merge("/eos/uscms/store/user/ddash/nanoAOD/ana_samples/qcd_total_2016.root");
+
+}

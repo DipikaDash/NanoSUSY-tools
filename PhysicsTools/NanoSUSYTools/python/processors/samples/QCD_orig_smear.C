@@ -1,0 +1,296 @@
+#include<iostream>
+#include <cmath>
+#include "TString.h"
+#include "TTree.h"
+#include "TChain.h"
+#include "TCanvas.h"
+#include "TH1.h"
+#include "TH1F.h"
+#include "TH1D.h"
+#include "TF1.h"
+#include <string>
+#include <map>
+#include <cmath>
+#include <sstream>
+#include <fstream>
+#include <vector>
+#include "TGraph.h"
+#include "THStack.h"
+#include "TLatex.h"
+#include "TLegend.h"
+#include "TFile.h"
+#include "TTree.h"
+#include "TChain.h"
+#include "TMath.h"
+#include "TROOT.h"
+#include "TLegend.h"
+#include "TAttMarker.h"
+#include "TMultiGraph.h"
+#include "TPad.h"
+#include "THStack.h"
+#include "TColor.h"
+using namespace std;
+void QCD_orig_smear(){
+
+  TH1D* qcd_CR = new TH1D("qcd_CR","",40,200,600);
+  //  TH1D* qcd_data = new TH1D("qcd_data","",40,200,600);
+
+  TH1D* data_CR = new TH1D("data_CR","",40,200,600);
+  TH1D* data_norm = new TH1D("data_norm","",40,200,600);
+  TH1D* qcd_norm = new TH1D("qcd_norm","",40,200,600);
+  TH1D* nonQCD_noznorm = new TH1D("nonQCD_noznorm","",40,200,600);
+  TH1D* nonQCD_nozCR = new TH1D("nonQCD_nozCR","",40,200,600);
+  TH1D* nonQCD_tot = new TH1D("nonQCD_tot","",40,200,600);
+  TH1D* ttbar_norm= new TH1D("ttbar_norm","",40,200,600);
+
+  TH1D* wjets_norm= new TH1D("wjets_norm","",40,200,600);
+  TH1D* minor_norm= new  TH1D("minor_norm","",40,200,600);
+  TH1D* rare_norm= new TH1D("rare_norm","",40,200,600);
+  TH1D* znunu_CR = new TH1D("znunu_CR","",40,200,600);
+
+  TString inputdir ="/eos/uscms/store/user/ddash/nano_samples/ana_samples/";
+
+  TString samples[4]={inputdir+"data_2016_tree.root",inputdir+"qcd_orig_2016_tree.root",inputdir+"znunu_2016_tree.root",inputdir+"ttbarplusw_2016_tree.root"};
+  //  TString samples[2]={inputdir+"qcd_orig_2018_tree.root",inputdir+"qcd_smear_2018_tree.root"};
+  //TFile *f1 = new TFile("/eos/uscms/store/user/ddash/nanoAOD/ana_samples/qcd_orig_2016_tree.root");
+  for (Int_t j=0;j<4 ; j++){
+   TFile *f1=new TFile(samples[j]);
+    TTree *t1 =(TTree*)f1->Get("Events");
+
+    UInt_t nJet;
+    Int_t run,nLeptonVeto,Jet_jetID,Stop0l_nTop,Stop0l_nW,Stop0l_nResolved,Stop0l_nVetoElecMuon;
+    Float_t Jet_eta[27],Jet_phi[27],Jet_pt[27],MET_phi,Stop0l_MtLepMET,MET_pt,MET_sumEt,Stop0l_evtWeight,qcdRespTailWeight,Stop0l_HT,Stop0l_Mtb,puWeight,BTagWeight,ISRWeight,Jet_dPhiMET[27];
+
+    Bool_t Pass_JetID,Pass_EventFilter,Pass_ElecVeto,Pass_MuonVeto,Pass_LeptonVeto,Pass_NJets20,Pass_MET,Pass_HT,Pass_QCDCR,Pass_QCDCR_lowDM,Pass_QCDCR_highDM,Jet_Stop0l,Pass_LLCR,Pass_lowDM,Pass_highDM, Pass_trigger_MET,Pass_CaloMETRatio,Pass_exHEMVeto30,Pass_dPhiMETLowDM,Pass_dPhiMETHighDM;
+    vector<unsigned char> *bootstrapWeight=0;
+
+   
+    t1->SetBranchStatus("*",0);
+    //    t1->SetBranchStatus("Jet_jetID",1);
+    t1->SetBranchStatus("nJet",1);
+    t1->SetBranchStatus("nLeptonVeto",1);
+    t1->SetBranchStatus("Stop0l_MtLepMET",1);
+    // t1->SetBranchStatus("Jet_pt",1);
+    // t1->SetBranchStatus("Jet_eta",1);
+    // t1->SetBranchStatus("Jet_phi",1);
+    t1->SetBranchStatus("Pass_dPhiMETLowDM",1);
+    t1->SetBranchStatus("Pass_dPhiMETHighDM",1);
+    //t1->SetBranchStatus("Jet_dPhiMET",1);                                                                                                        
+    t1->SetBranchStatus("MET_pt",1);
+    t1->SetBranchStatus("Stop0l_evtWeight",1);
+    t1->SetBranchStatus("puWeight",1);
+    t1->SetBranchStatus("BTagWeight",1);
+    t1->SetBranchStatus("ISRWeight",1);
+    t1->SetBranchStatus("Pass_JetID",1);
+    t1->SetBranchStatus("Pass_EventFilter",1);
+    t1->SetBranchStatus("Pass_LeptonVeto",1);
+    t1->SetBranchStatus("Pass_NJets20",1);
+    t1->SetBranchStatus("Pass_MET",1);
+    t1->SetBranchStatus("Pass_HT",1);
+    t1->SetBranchStatus("Pass_QCDCR",1);
+    t1->SetBranchStatus("Pass_QCDCR_lowDM",1);
+    t1->SetBranchStatus("Pass_QCDCR_highDM",1);
+    //   t1->SetBranchStatus("Jet_Stop0l",1);
+    t1->SetBranchStatus("Stop0l_HT",1);
+    t1->SetBranchStatus("Pass_LLCR",1);
+    t1->SetBranchStatus("Pass_lowDM",1);
+    t1->SetBranchStatus("Pass_highDM",1);
+    t1->SetBranchStatus("Pass_CaloMETRatio",1);
+    t1->SetBranchStatus("Stop0l_Mtb",1);
+    t1->SetBranchStatus("Stop0l_nTop",1);
+    t1->SetBranchStatus("Stop0l_nW",1);
+    t1->SetBranchStatus("Stop0l_nResolved",1);
+    t1->SetBranchStatus("Pass_trigger_MET",1);
+    t1->SetBranchStatus("Pass_exHEMVeto30",1);
+    t1->SetBranchStatus("Stop0l_nVetoElecMuon",1);
+    // t1->SetBranchStatus("qcdRespTailWeight",1);
+
+
+    //  t1->SetBranchAddress("Jet_jetID",&Jet_jetID);
+    t1->SetBranchAddress("nJet",&nJet);
+    t1->SetBranchAddress("nLeptonVeto",&nLeptonVeto);
+    t1->SetBranchAddress("Stop0l_MtLepMET",&Stop0l_MtLepMET);
+    t1->SetBranchAddress("Pass_dPhiMETLowDM",&Pass_dPhiMETLowDM);
+    t1->SetBranchAddress("Pass_dPhiMETHighDM",&Pass_dPhiMETHighDM);
+    // t1->SetBranchAddress("Jet_eta",&Jet_eta);
+    // t1->SetBranchAddress("Jet_pt",&Jet_pt);
+    // t1->SetBranchAddress("Jet_phi",&Jet_phi);
+    // t1->SetBranchAddress("Jet_dPhiMET",&Jet_dPhiMET); 
+    t1->SetBranchAddress("MET_pt",&MET_pt);
+    t1->SetBranchAddress("Stop0l_evtWeight",&Stop0l_evtWeight);
+    t1->SetBranchAddress("puWeight",&puWeight);
+    t1->SetBranchAddress("BTagWeight",&BTagWeight);
+    t1->SetBranchAddress("ISRWeight",&ISRWeight);
+    t1->SetBranchAddress("Pass_JetID",&Pass_JetID);
+    t1->SetBranchAddress("Pass_EventFilter",&Pass_EventFilter);
+    t1->SetBranchAddress("Pass_LeptonVeto",&Pass_LeptonVeto);
+    t1->SetBranchAddress("Pass_NJets20",&Pass_NJets20);
+    t1->SetBranchAddress("Pass_MET",&Pass_MET);
+    t1->SetBranchAddress("Pass_HT",&Pass_HT);
+    t1->SetBranchAddress("Pass_QCDCR",&Pass_QCDCR);
+    t1->SetBranchAddress("Pass_QCDCR_highDM",&Pass_QCDCR_highDM);
+    t1->SetBranchAddress("Pass_QCDCR_lowDM",&Pass_QCDCR_lowDM);
+    // t1->SetBranchAddress("Jet_Stop0l",&Jet_Stop0l);
+    t1->SetBranchAddress("Stop0l_HT",&Stop0l_HT);
+    t1->SetBranchAddress("Pass_LLCR",&Pass_LLCR);
+    t1->SetBranchAddress("Pass_lowDM",&Pass_lowDM);
+    t1->SetBranchAddress("Pass_highDM",&Pass_highDM);
+    t1->SetBranchAddress("Pass_CaloMETRatio",&Pass_CaloMETRatio);
+    t1->SetBranchAddress("Stop0l_Mtb",&Stop0l_Mtb);
+    t1->SetBranchAddress("Stop0l_nTop",&Stop0l_nTop);
+    t1->SetBranchAddress("Stop0l_nW",&Stop0l_nW);
+    t1->SetBranchAddress("Stop0l_nResolved",&Stop0l_nResolved);
+    t1->SetBranchAddress("Pass_trigger_MET",&Pass_trigger_MET);
+    t1->SetBranchAddress("Pass_exHEMVeto30",&Pass_exHEMVeto30);
+    t1->SetBranchAddress("Stop0l_nVetoElecMuon",&Stop0l_nVetoElecMuon);
+    //  t1->SetBranchAddress("qcdRespTailWeight",&qcdRespTailWeight);
+
+ 
+
+    const Double_t lumistr= 35.9;//35.9;//21.0;//38.8;//21.0;//41.8;//35.9;
+
+   Double_t a,b,c,d;
+    Long_t nentries =(Long_t)t1->GetEntries();
+   
+      cout <<" no of entries of " << j<< ".root " << nentries << endl ;
+    for(Int_t i=0; i < nentries; i++){
+           t1->GetEntry(i);
+	   Double_t weightvar= lumistr * 1000 * Stop0l_evtWeight*puWeight*BTagWeight;
+           Double_t qweightvar= lumistr * 1000 * Stop0l_evtWeight*puWeight*BTagWeight;//*qcdRespTailWeight;
+	   //if(Pass_exHEMVeto30){
+	   if(j==0){if(Pass_trigger_MET && Stop0l_nVetoElecMuon == 1 && Stop0l_MtLepMET < 100 && Pass_CaloMETRatio && Pass_JetID && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) )){data_norm->Fill(MET_pt);} 
+	            if(Pass_QCDCR && Pass_CaloMETRatio && Pass_JetID ){data_CR->Fill(MET_pt);}}
+	   if(j==1){if(Stop0l_nVetoElecMuon == 1 && Stop0l_MtLepMET < 100 && Pass_NJets20 && Pass_MET && Pass_HT && Pass_CaloMETRatio && Pass_JetID && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) )) {qcd_norm->Fill(MET_pt,qweightvar);}
+	            if(Pass_QCDCR && Pass_CaloMETRatio && Pass_JetID ){qcd_CR->Fill(MET_pt,qweightvar);}}
+	   if(j==2){if(Pass_QCDCR && Pass_CaloMETRatio && Pass_JetID )znunu_CR->Fill(MET_pt,weightvar);}
+	   if(j==3){if(Stop0l_nVetoElecMuon == 1 && Stop0l_MtLepMET < 100 && Pass_NJets20 && Pass_MET && Pass_HT && Pass_CaloMETRatio && Pass_JetID && ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && Pass_dPhiMETLowDM) )){nonQCD_noznorm->Fill(MET_pt,weightvar);}
+	            if(Pass_QCDCR && Pass_CaloMETRatio && Pass_JetID ){nonQCD_nozCR->Fill(MET_pt,weightvar);}}
+	   // if(Pass_QCDCR && Pass_CaloMETRatio && Pass_JetID){        
+	   //   if(j==0){qcd_CR->Fill(MET_pt,weightvar);}
+           //   if(j==1){qcd_data->Fill(MET_pt,weightvar);}
+	   //}
+	   }
+  }
+    // }Pass_dPhiMETLowDM
+   //  ( ((Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Jet_dPhiMET[0]>0.5 && Jet_dPhiMET[1]>0.15 && Jet_dPhiMET[2]>0.15)) || (!(Stop0l_Mtb<175 && Stop0l_nTop==0 && Stop0l_nW==0 && Stop0l_nResolved==0) && (Jet_dPhiMET[0]>0.5 && Jet_dPhiMET[1]>0.5 && Jet_dPhiMET[2]>0.5 && Jet_dPhiMET[3]>0.5)) )
+  TH1D* normtotal_samp=(TH1D*)nonQCD_noznorm->Clone("normtotal_samp");
+  normtotal_samp->Add(qcd_norm); 
+  
+  TH1D* normfac=(TH1D*)data_norm->Clone("normfac");
+  normfac->Divide(normtotal_samp);  
+  //  cout << "(1)" <<nonQCD_noznorm->GetEntries() <<endl;
+  // cout << "(2)"<< nonQCD_nozCR->GetEntries()<<endl;
+
+TH1D* nonQCD_nozcorr=(TH1D*)nonQCD_nozCR->Clone("nonQCD_nozcorr");
+nonQCD_nozcorr->Multiply(normfac);
+
+TH1D* nonQCD_total = (TH1D*)nonQCD_nozcorr->Clone("nonQCD_total"); 
+nonQCD_total->Add(znunu_CR);
+ Int_t nbins= data_norm->GetNbinsX();
+ // for(Int_t p=0;p<nbins;p++){
+ //   cout <<"data norm : " <<data_norm->GetBinContent(p) << endl;
+ //   cout <<"background norm: " <<normtotal_samp->GetBinContent(p) << endl;
+ //   cout << "nonQCD in CR: "<<nonQCD_nozCR->GetBinContent(p) << endl;
+ //   cout << "nonQCD corr in CR: "<<nonQCD_nozcorr->GetBinContent(p) << endl;
+ //   cout << "nonQCD total: "<<nonQCD_total->GetBinContent(p) << endl;
+ //  }                     
+// 
+  TH1D* ratio_corr = (TH1D*)nonQCD_total->Clone("ratio_corr");
+ratio_corr->Divide(data_CR);   
+TH1D* corrfac=new TH1D("corrfac","",40,200,600);
+Int_t bin= ratio_corr->GetNbinsX(); 
+for(Int_t k=0;k<bin ; k++){ 
+  corrfac->SetBinContent(k,(1-(ratio_corr->GetBinContent(k))));   
+ 
+ }
+ TH1D* qcd_data=(TH1D*)data_CR->Clone("qcd_data");
+ qcd_data->Multiply(corrfac);
+
+  cout << "see here 1" << endl;
+ TCanvas *c1 =new TCanvas("c1","c1",800,800);
+  c1->cd();
+ 
+  TPad *pad1 = new TPad("pad1", "pad1", 0, 0.3, 1,1.0);                                                                                          
+  pad1->Draw();
+  pad1->cd();
+  pad1->SetGrid();
+  //pad1->SetTicks(2,2);
+  pad1->SetTopMargin(0.2);
+  pad1->SetBottomMargin(0); //upper and lower pad are joined         
+  pad1->SetLeftMargin(0.08);
+  pad1->SetRightMargin(0.05);
+  pad1->SetLogy();
+  //     stack->GetYaxis()->SetMaximum( 200000);                       
+  gStyle->SetOptStat(0);                                                                           
+  qcd_CR->SetAxisRange(0.01,100000000,"y");
+  qcd_CR->GetYaxis()->SetTitleOffset(0.9);
+  qcd_CR->Draw("PE");
+  qcd_CR->SetTitle("QCD MC vs QCD data(2016");
+  qcd_CR->GetYaxis()->SetTitle("# events");
+  //gStyle->SetTitleFont(30);
+  qcd_CR->GetYaxis()->SetTitleFont(42);
+  qcd_CR->GetXaxis()->SetLabelFont(42);
+  qcd_CR->GetYaxis()->SetLabelFont(42);
+  qcd_CR->SetLineColor(kRed);
+  qcd_CR->SetLineWidth(3);
+  //qcd_CR->SetMarkerColor(kBlack);
+  qcd_CR->SetMarkerStyle(20);
+  qcd_CR->SetMarkerSize(0.8);
+  qcd_CR->GetYaxis()->SetLabelSize(0.04);
+  // qcd_CR->Scale(1/qcd_CR->Integral());
+  qcd_data->Draw("PEsame");
+  qcd_data->SetLineColor(kBlack);
+  qcd_data->SetLineWidth(3);
+  //qcd_data->Scale(1/qcd_data->Integral());
+  TLegend *leg = new TLegend(.6,.7,.8,.9,"");                                                                                                   
+  leg->SetFillColor(0);                                                                                                                         
+  leg->AddEntry(qcd_CR,"QCD_MC","l");      
+  leg->AddEntry(qcd_data,"QCD_data","l");
+  leg->Draw();
+  c1->cd();
+  TPad *pad2 = new TPad("pad2", "pad2", 0, 0.0,1, 0.3);
+  pad2->SetGrid();
+  //pad2->SetTicks(2,2);
+  pad2->SetTopMargin(0);
+  pad2->SetBottomMargin(0.2);
+  pad2->SetLeftMargin(0.08);
+  pad2->SetRightMargin(0.05);
+  pad2->Draw();
+  pad2->cd();                                                           
+  gStyle->SetOptStat(0);          
+   //pad2->SetTopMargin(0.1);
+  // pad2->SetBottomMargin(0);
+  TH1D *hratio = (TH1D*)qcd_CR->Clone("hratio");
+  hratio->Divide(qcd_data);
+  hratio->SetTitle("");
+  hratio->SetMarkerStyle(20);
+  hratio->SetMarkerSize(1);
+  hratio->GetXaxis()->SetTitle("MET_pt(GeV)");
+  hratio->GetYaxis()->SetTitle("");
+  hratio->GetXaxis()->SetTitleFont(62);
+  hratio->SetAxisRange(0,2,"y");                                        
+  hratio->GetYaxis()->SetLabelSize(0.1);                               
+  hratio->GetXaxis()->SetLabelSize(0.1);
+  hratio->GetXaxis()->SetLabelFont(42);
+  hratio->GetYaxis()->SetLabelFont(42);
+  hratio->Draw("E1same");
+  TLine *line = new TLine(200,1,600,1);                              
+  line->SetLineColor(kRed);                                             
+  line->SetLineWidth(3);                                               
+  line->Draw("same");
+  c1->SaveAs("qcd_mc_data_16.pdf");
+  // double value=0;
+  // TH1D *test =new TH1D("test","",40,200,600);
+  // TCanvas *c3 =new TCanvas("c3","c3",800,800);
+  // c3->cd();
+  // ratio_corr->SetTitle("ratio corr;MET(PT) bin;factor");
+  // ratio_corr->Draw();
+  // TCanvas *c4 =new TCanvas("c4","c4",800,800);
+  // c4->cd();
+  // normfac->SetTitle("norm factor;MET(PT) bin;factor");
+  // normfac->Draw();
+ 
+
+
+
+}

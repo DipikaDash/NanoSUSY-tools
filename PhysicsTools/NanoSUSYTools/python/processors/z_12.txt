@@ -1,0 +1,1 @@
+root://cmseos.fnal.gov//store/user/lpcsusyhad/Stop_production/Summer16_94X_v3/PostProcessed_22Feb2019_v3/ZJetsToNuNu_HT_600to800_2016/ZJetsToNuNu_HT_600to800_2016_4.root

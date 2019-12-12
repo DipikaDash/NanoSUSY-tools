@@ -1,0 +1,4 @@
+root://cmseos.fnal.gov//eos/uscms/store/user/lpcsusyhad/Stop_production/Autumn18_102X_v1/PostProcessed_22March2019/MET_v2p9_splitHEM/Data_MET_2018_PeriodB/Data_MET_2018_PeriodB_0_postHEM.root
+root://cmseos.fnal.gov//eos/uscms/store/user/lpcsusyhad/Stop_production/Autumn18_102X_v1/PostProcessed_22March2019/MET_v2p9_splitHEM/Data_MET_2018_PeriodB/Data_MET_2018_PeriodB_1_postHEM.root
+root://cmseos.fnal.gov//eos/uscms/store/user/lpcsusyhad/Stop_production/Autumn18_102X_v1/PostProcessed_22March2019/MET_v2p9_splitHEM/Data_MET_2018_PeriodB/Data_MET_2018_PeriodB_13_postHEM.root
+root://cmseos.fnal.gov//eos/uscms/store/user/lpcsusyhad/Stop_production/Autumn18_102X_v1/PostProcessed_22March2019/MET_v2p9_splitHEM/Data_MET_2018_PeriodB/Data_MET_2018_PeriodB_14_postHEM.root

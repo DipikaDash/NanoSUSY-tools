@@ -312,7 +312,7 @@ class qcdSmearProducer(Module):
                 recoJets_mass.append(newp4.M())
                 met -= newp4
 
-            if met.Pt() > 200:
+            if met.Pt() > 0:
                 for j in xrange(len(originalRecoJets)):
                     if j == SmearJets[0][2] or j == SmearJets[1][2] :
                         continue

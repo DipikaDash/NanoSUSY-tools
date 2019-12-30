@@ -55,7 +55,7 @@ DataDepInputs = {
                   "pileup_MC": "pileup_profile_2018.root",
                   "JERMC": "Autumn18_V7_MC",
                   "JECMC": "Autumn18_V19_MC",
-                  "redoJEC": True,
+                  "redoJEC": False,
                   "taggerWD": "TopTaggerCfg-DeepResolved_DeepCSV_GR_nanoAOD_2018_v1.0.3",
                  }
     },

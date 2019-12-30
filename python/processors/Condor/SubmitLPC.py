@@ -16,12 +16,12 @@ import uproot
 from collections import defaultdict
 from multiprocessing import Pool
 
-DelExe    = '../Stop0l_postproc.py'
-tempdir = '/uscmst1b_scratch/lpc1/3DayLifetime/%s/TestCondor/'  % getpass.getuser()
+#DelExe    = '../Stop0l_postproc.py'
+tempdir = '/uscms_data/d3/%s/condor_temp/' % getpass.getuser()
 ShortProjectName = 'PostProcess'
-VersionNumber = '_v5'
+VersionNumber = '_v5_post'
 argument = "--inputFiles=%s.$(Process).list "
-sendfiles = ["../keep_and_drop.txt"]
+sendfiles = ["../keep_and_drop.txt", "../keep_and_drop_skim.txt", "../keep_and_drop_res.txt", "../keep_and_drop_QCD.txt","../keep_and_drop_sf.txt"]
 TTreeName = "Events"
 NProcess = 10
 
@@ -77,21 +77,12 @@ def ConfigList(config):
         stripped_entry = [ i.strip() for i in entry]
         #print(stripped_entry)
         replaced_outdir = stripped_entry[1].replace("Pre","Post")
-
-        #cut off anything after the processing date folder 
-        replaced_outdir = replaced_outdir.split("/")
-        nCut = 0
-        for i, s in enumerate(replaced_outdir):
-            if"PostProcessed" in s:
-                nCut = i
-                break
-        replaced_outdir = "/".join(replaced_outdir[:nCut + 1])
-            
         process[stripped_entry[0]] = {
             #Note that anything appended with __ will not be passed along. These are for bookkeeping. Furthermore, Outpath is not used if an output directory argument is given.
             "Filepath__" : "%s/%s" % (stripped_entry[1], stripped_entry[2]),
             #"Outpath__" : "%s" % (stripped_entry[1]) + "/" + ShortProjectName + VersionNumber + "/" + stripped_entry[0]+"/", #old
-            "Outpath__" : "%s" % (replaced_outdir) + VersionNumber + "/" + stripped_entry[0] + "/", #new
+            #"Outpath__" : "%s" % (replaced_outdir) + VersionNumber + "/" + stripped_entry[0] + "/", #new
+            "Outpath__" : "%s" % (replaced_outdir) + VersionNumber + "/", #new
             "isData__" : "Data" in stripped_entry[0],
             "isFastSim" : "fastsim" in stripped_entry[0], #isFastSim is a toggle in Stop0l_postproc.py, so it should be sent with no value.
             "era" : temp_era,
@@ -109,6 +100,10 @@ def ConfigList(config):
                 "sampleName": stripped_entry[0], #process
                 "totEvents__":  int(stripped_entry[5]) + int(stripped_entry[6]), # using all event weight
             })
+	if args.process != "":
+            process[stripped_entry[0]].update( {
+                "process" : args.process
+            })
 
     return process
 
@@ -122,7 +117,7 @@ def Condor_Sub(condor_file):
 def GetNEvent(file):
     return (file, uproot.numentries(file, TTreeName))
 
-def SplitPro(key, file, lineperfile=20, eventsplit=2**20, TreeName=None):
+def SplitPro(key, file, lineperfile=10, eventsplit=2**20, TreeName=None):
     # Default to 20 file per job, or 2**20 ~ 1M event per job
     # At 26Hz processing time in postv2, 1M event runs ~11 hours
     splitedfiles = []
@@ -172,7 +167,7 @@ def my_process(args):
     ## temp dir for submit
     global tempdir
     global ProjectName
-    ProjectName = time.strftime('%b%d') + ShortProjectName + VersionNumber
+    ProjectName = time.strftime('%b%d') + ShortProjectName + VersionNumber + ""
     if args.era == 0:
         tempdir = tempdir + os.getlogin() + "/" + ProjectName +  "/"
     else:
@@ -195,7 +190,7 @@ def my_process(args):
         Tarfiles+= npro
         NewNpro[key] = len(npro)
 
-    Tarfiles.append(os.path.abspath(DelExe))
+    Tarfiles.append(os.path.abspath(args.runfile))
     tarballname ="%s/%s.tar.gz" % (tempdir, ProjectName)
     with tarfile.open(tarballname, "w:gz", dereference=True) as tar:
         [tar.add(f, arcname=f.split('/')[-1]) for f in Tarfiles]
@@ -209,6 +204,7 @@ def my_process(args):
         #define output directory
         if args.outputdir == "": outdir = sample["Outpath__"]
         else: outdir = args.outputdir + "/" + name + "/"
+        #else: outdir = args.outputdir + "/"
 
         #Update RunExe.csh
         RunHTFile = tempdir + "/" + name + "_RunExe.csh"
@@ -216,7 +212,8 @@ def my_process(args):
             for line in open("RunExe.csh","r"):
                 line = line.replace("DELSCR", os.environ['SCRAM_ARCH'])
                 line = line.replace("DELDIR", os.environ['CMSSW_VERSION'])
-                line = line.replace("DELEXE", DelExe.split('/')[-1])
+                line = line.replace("DELEXE", args.runfile.split('/')[-1])
+		#line = line.replace("DELEXE", DelExe.split('/')[-1])
                 line = line.replace("OUTDIR", outdir)
                 outfile.write(line)
 
@@ -242,6 +239,7 @@ def my_process(args):
                 line = line.replace("TEMPDIR", tempdir)
                 line = line.replace("PROJECTNAME", ProjectName)
                 line = line.replace("SAMPLENAME", name)
+		line = line.replace("MEMORY", args.memory + " GB")
                 line = line.replace("ARGUMENTS", arg)
                 outfile.write(line)
 
@@ -258,6 +256,15 @@ if __name__ == "__main__":
     parser.add_argument('-o', '--outputdir',
         default = "", 
         help = 'Path to the output directory.')
+    parser.add_argument('-f', '--runfile',
+        default = "../Stop0l_postproc.py",
+        help = 'Path to the process file')
+    parser.add_argument('-m', '--memory',
+        default = "2",
+        help = 'Amount of memory to request.')
+    parser.add_argument('-p', '--process',
+        default = "",
+        help = 'Change process for QCD running.')
 
     args = parser.parse_args()
     my_process(args)

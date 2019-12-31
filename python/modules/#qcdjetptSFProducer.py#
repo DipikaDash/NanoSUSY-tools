@@ -45,7 +45,7 @@ class qcdjetptSFProducer(Module):
         self.out.branch("qcdJetPtWeightLM","F")
         self.out.branch("qcdJetPtWeightHMwq","F")
         self.out.branch("qcdJetPtWeightHM","F")
-
+        self.out.branch("","F")
         self.corrhistLM1=self.loadhisto(self.correctionfile,self.correctionhistLM1)
         self.corrhistHM1=self.loadhisto(self.correctionfile,self.correctionhistHM1)
         self.corrhistLM=self.loadhisto(self.correctionfile,self.correctionhistLM)
@@ -122,6 +122,7 @@ class qcdjetptSFProducer(Module):
         muons     = Collection(event, "Muon")
         isotracks = Collection(event, "IsoTrack")
         taus      = Collection(event, "Tau")
+        genjets = Collection(event, "GenJet")
         countEle, countMu, countIsk, countTauPOG = self.calculateNLeptons(electrons, muons, isotracks, taus)
         PassElecVeto   = countEle == 0
         PassMuonVeto   = countMu == 0
@@ -149,17 +150,21 @@ class qcdjetptSFProducer(Module):
             #print 'test1'
             qcdjetptweightLMwq=self.corrhistLM1.GetBinContent(self.corrhistLM1.GetXaxis().FindBin(jet1pt))
             qcdjetptweightLM=self.corrhistLM.GetBinContent(self.corrhistLM.GetXaxis().FindBin(jet1pt))        
-
+            qcdrespleadjetLM = jets[0].pt /genjets[iG].pt
         if qcdjetptweightLMwq==0: qcdjetptweightLMwq =1
         if qcdjetptweightLM==0: qcdjetptweightLM =1
+        if qcdrespleadjetLM==0: qcdrespleadjetLM =1
         self.out.fillBranch("qcdJetPtWeightLMwq", qcdjetptweightLMwq)
         self.out.fillBranch("qcdJetPtWeightLM", qcdjetptweightLM)
+        self.out.fillBranch("qcdRespleadjetLM", qcdrespleadjetLM)
         if PassQCDCR and stop0l.nJets >= 5 and stop0l.nbtags >= 1 and PassCaloMETRatio:
             qcdjetptweightHMwq=self.corrhistHM1.GetBinContent(self.corrhistHM1.GetXaxis().FindBin(jet1pt))
             qcdjetptweightHM=self.corrhistHM.GetBinContent(self.corrhistHM.GetXaxis().FindBin(jet1pt))
+            qcdrespleadjetHM = jets[0].pt /genjets[iG].pt
         if qcdjetptweightHMwq==0: qcdjetptweightHMwq =1
         if qcdjetptweightHM==0: qcdjetptweightHM =1
         self.out.fillBranch("qcdJetPtWeightHMwq", qcdjetptweightHMwq)
         self.out.fillBranch("qcdJetPtWeightHM", qcdjetptweightHM)
+        self.out.fillBranch("qcdRespleadjetHM", qcdrespleadjetHM)
         return True
     

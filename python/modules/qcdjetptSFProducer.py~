@@ -41,16 +41,14 @@ class qcdjetptSFProducer(Module):
 
     def beginFile(self, inputFile, outputFile, inputTree, wrappedOutputTree):
         self.out = wrappedOutputTree
-        self.out.branch("qcdJetPtWeightLMwq","F")
         self.out.branch("qcdJetPtWeightLM","F")
-        self.out.branch("qcdJetPtWeightHMwq","F")
         self.out.branch("qcdJetPtWeightHM","F")
-
-        self.corrhistLM1=self.loadhisto(self.correctionfile,self.correctionhistLM1)
-        self.corrhistHM1=self.loadhisto(self.correctionfile,self.correctionhistHM1)
+        self.out.branch("qcdJetPtWeightLMwq","F")
+        self.out.branch("qcdJetPtWeightHMwq","F")
         self.corrhistLM=self.loadhisto(self.correctionfile,self.correctionhistLM)
         self.corrhistHM=self.loadhisto(self.correctionfile,self.correctionhistHM)
-
+        self.corrhistLM1=self.loadhisto(self.correctionfile,self.correctionhistLM1)
+        self.corrhistHM1=self.loadhisto(self.correctionfile,self.correctionhistHM1)
     def endFile(self, inputFile, outputFile, inputTree, wrappedOutputTree):
         pass
     def calculateNLeptons(self, eles, muons, isks, taus):
@@ -144,22 +142,20 @@ class qcdjetptSFProducer(Module):
         qcdjetptweightLMwq=1.0
         qcdjetptweightHM=1.0
         qcdjetptweightHMwq=1.0
-        iG =jets[0].genJetIdx
         if PassQCDCR and stop0l.nTop == 0 and stop0l.nW == 0 and stop0l.nResolved == 0 and stop0l.Mtb < 175 and stop0l.ISRJetPt >= 200 and stop0l.METSig > 10 and PassCaloMETRatio :
             #print 'test1'
+            qcdjetptweightLM = self.corrhistLM.GetBinContent(self.corrhistLM.GetXaxis().FindBin(jet1pt))
             qcdjetptweightLMwq=self.corrhistLM1.GetBinContent(self.corrhistLM1.GetXaxis().FindBin(jet1pt))
-            qcdjetptweightLM=self.corrhistLM.GetBinContent(self.corrhistLM.GetXaxis().FindBin(jet1pt))        
-
+        if qcdjetptweightLM==0: qcdjetptweightLM =1 
         if qcdjetptweightLMwq==0: qcdjetptweightLMwq =1
-        if qcdjetptweightLM==0: qcdjetptweightLM =1
-        self.out.fillBranch("qcdJetPtWeightLMwq", qcdjetptweightLMwq)
         self.out.fillBranch("qcdJetPtWeightLM", qcdjetptweightLM)
+        self.out.fillBranch("qcdJetPtWeightLMwq", qcdjetptweightLMwq)
         if PassQCDCR and stop0l.nJets >= 5 and stop0l.nbtags >= 1 and PassCaloMETRatio:
+            qcdjetptweightHM = self.corrhistHM.GetBinContent(self.corrhistHM.GetXaxis().FindBin(jet1pt))
             qcdjetptweightHMwq=self.corrhistHM1.GetBinContent(self.corrhistHM1.GetXaxis().FindBin(jet1pt))
-            qcdjetptweightHM=self.corrhistHM.GetBinContent(self.corrhistHM.GetXaxis().FindBin(jet1pt))
-        if qcdjetptweightHMwq==0: qcdjetptweightHMwq =1
         if qcdjetptweightHM==0: qcdjetptweightHM =1
-        self.out.fillBranch("qcdJetPtWeightHMwq", qcdjetptweightHMwq)
+        if qcdjetptweightHMwq==0: qcdjetptweightHMwq =1
         self.out.fillBranch("qcdJetPtWeightHM", qcdjetptweightHM)
+        self.out.fillBranch("qcdJetPtWeightHMwq", qcdjetptweightHMwq)
         return True
     
